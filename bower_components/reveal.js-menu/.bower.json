@@ -1,0 +1,31 @@
+{
+  "name": "reveal.js-menu",
+  "version": "0.6.0",
+  "homepage": "https://denehyg.github.io/reveal.js-menu",
+  "authors": [
+    "Greg Denehy"
+  ],
+  "description": "A slideout menu for navigating reveal.js presentations",
+  "keywords": [
+    "reveal",
+    "menu"
+  ],
+  "license": "MIT, Copyright (C) 2015 Greg Denehy",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.6.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.6.0",
+    "commit": "828b015eaa57d2016942660945b87b84221e83d1"
+  },
+  "_source": "https://github.com/denehyg/reveal.js-menu.git",
+  "_target": "^0.6.0",
+  "_originalSource": "reveal.js-menu",
+  "_direct": true
+}
