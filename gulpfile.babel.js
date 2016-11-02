@@ -4,6 +4,12 @@ const reveal = require('gulp-revealjs');
 const webserver = require('gulp-webserver');
 const minimist = require('minimist');
 const rename = require("gulp-rename");
+const replace = require("gulp-replace");
+const markdown = require('gulp-markdown');
+const html2jade = require('gulp-html2jade');
+const jade = require('gulp-jade');
+var gulpSequence = require('gulp-sequence')
+
 
 gulp.task('default',()=>{
   console.log("test");
@@ -40,14 +46,31 @@ gulp.task('rename',()=>{
 
 gulp.task('pug', ()=> {
   gulp.src('pug/index.pug')
-  .pipe(pug({pretty: true}))
+  .pipe(pug({pretty: true, basedir:"./"}))
   .pipe(gulp.dest('reveal'))
 });
+
+gulp.task('pug_md', ()=> {
+  gulp.src('pug/index.pug')
+  .pipe(pug({pretty: true, basedir:"./"}))
+  .pipe(html2jade())
+  .pipe(replace("  hr"," section"))
+  .pipe(gulp.dest('reveal'))
+});
+gulp.task('jade',()=>{
+  gulp.src('reveal/index.jade')
+  .pipe(jade({
+      pretty: true
+    }))
+  .pipe(gulp.dest('reveal'))
+})
+
 gulp.task('watch', ()=>{
   gulp.watch('pug/*.pug',['rename','pug'])
 })
 
-gulp.task('dev',['rename','pug','serve','watch'])
+gulp.task('dev',gulpSequence(['rename','pug','serve','watch']))
+gulp.task('dev_md',gulpSequence(['rename','pug_md','jade', 'serve']))
 
 
 

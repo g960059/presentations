@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/mytheme.css">
     <link rel="stylesheet" href="lib/css/zenburn.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="bower_components/highcharts/highcharts.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script>
       var link = document.createElement( 'link' );
       link.rel = 'stylesheet';
@@ -19,225 +21,740 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section>
-          <h1>頭部外傷に出会ったら</h1>
-          <p>平川雄亮</p>
+        <section> 
+          <h1>フィリピン出張から帰国後、濃染尿・食欲不振・全身倦怠感を主訴に受診した59歳男性の１例</h1>
+          <h5>東京逓信病院 消化器内科　*同病理科　**同放射線科</h5>
+          <p>平川雄亮、北村和貴子、古谷建悟、加藤知爾<br>大久保政雄、小林克也、関川憲一郎、光井洋、橋本直明<br>*岸田由起子、*田村浩一、**鈴木丈夫</p>
         </section>
         <section>
-          <h2>症例: 65歳 男性</h2>
-          <p>AM: 3:15, 急患室からPHSがかかってきた。   </p>
-          <p>
-            「患者Aが廊下で転倒し、床に頭をぶつけたと言い、救急外来を受診しています。
-            家で様子を見ていたが、一度嘔吐をして心配となり来院したそうです。」
+          <h2>症例： 59歳男性</h2>
+          <p><em>主訴</em><br>茶褐色便、濃染尿、食欲不振、全身倦怠感<br><em>現病歴</em><br>検診を定期的に受けており、肝機能異常を指摘されたことがなかった。<br>入院17日前に咽頭痛と咳嗽を自覚したが、市販薬で症状は改善した。<br>10日前に尿の濃染と食思不振を認めたが、様子を見ていた。<br>5日前から1日前にかけて会社の出張でフィリピンを視察したが、<br>帰国後も尿の濃染と食思不振が持続したため、近医を受診。<br>採血で肝胆道系酵素の上昇を認めたため、精査加療目的に同日当科入院となった(第1病日)。</p>
+        </section>
+        <section>
+          <h2>症例： 59歳男性</h2>
+          <p><em>既往歴</em><br>高脂血症(54歳-)<br>高尿酸血症(57歳-)<br>内痔核(手術加療後)<br>左真珠腫中耳炎(手術加療後)<br>飛蚊症<br><em>家族歴</em> 祖母:胃癌, 父:肺癌<br><em>アレルギー</em> food(-), drug(-)  <em>輸血/刺青</em> なし<br><em>生活歴</em><br>飲酒:ウイスキー水割り5杯/週, 喫煙:20歳から36歳まで16年x20本<br><em>渡航歴</em> 約1年前にカンボジア, 入院5日前から前日までフィリピン<br><em>性関係</em> last contact: 2010年、Partner(女性)は同一。<br><em>内服歴</em> アロプリノール100mg1T1X, エゼチミブ10mg1T1X,<br>ベザフィブラート200mg2T2X, ヨウ素レシチン100μg3T3X,<br>ルテイン1T1X, 市販のCa・Vit.D製剤</p>
+        </section>
+        <section>
+          <h2>入院時現症</h2>
+          <p><em>全身</em> JCS-0, 身長 165.5 cm, 体重 70.8 kg, BMI 25.8 kg/㎡<br><em>Vital</em> BT 36.6 ℃, PR 95 bpm, BP 150/99 mmHg</p>
+          <p><em>頭頸部</em> 眼瞼結膜貧血なし, <strong>眼球結膜黄染あり</strong>, 頸部リンパ節腫脹なし<br><em>胸部</em> 肺野・心音異常なし<br><em>腹部</em> 平坦/軟, 圧痛なし, 腸蠕動音正常, <strong>右季肋部下に1.5横指肝臓触知</strong>
+            <!-- 脾臓は触知せず--><em>四肢</em> 下腿浮腫なし, <strong>両手の掌側尺側に手掌紅班あり</strong>
           </p>
         </section>
         <section>
-          <h2>症例: 65歳 男性</h2>
-          <p>診察したところ、頭部の腫脹なく、明らかな陥没もなかった。<br>神経学的にも異常なく、GCSは15点であった。<br>頭痛はあるものの、本人は痛みのせいだといい、早く帰りたそうにしている。</p>
-        </section>
-        <section>
-          <h2>あなたなら何をしますか？</h2>
-          <ol>
-            <li>さっさと帰宅させる</li>
-            <li>念のため、頭部CTを撮る</li>
-            <li>頭部Xpで骨折を確認する</li>
-            <li>リカバリーでしばらく経過観察す</li>
-            <li>とりあえず、脳外科を呼ぶ</li>
-          </ol>
-        </section>
-        <section>
-          <h2>頭部外傷へのアプローチ</h2>
-          <ol>
-            <li>ABCの安定、他部位の外傷を見逃さないようにする!</li>
-            <li>vital sign、病歴、身体診察が重要、後頸部痛に注意！</li>
-            <li>受傷原因を同定せよ！</li>
-            <li>頭部CTは必要か？</li>
-            <li>帰宅可能か判断する！</li>
-          </ol>
-        </section>
-        <section>
-          <h2>頭部外傷へのアプローチ</h2>
-          <ol>
-            <li>ABCの安定、他部位の外傷を見逃さないようにする!</li>
-            <li>vital sign、病歴、身体診察が重要、後頸部痛に注意！</li>
-            <li><strong>受傷原因を同定せよ！</strong></li>
-            <li>頭部CTは必要か？</li>
-            <li>帰宅可能か判断する！</li>
-          </ol>
-        </section>
-        <section>
-          <h2>受傷原因を同定せよ！</h2>
-          <p>軽傷頭部外傷患者では<strong>頭部外傷をきたした理由が最も重要</strong></p>
-          <ul>
-            <li>失神して頭部外傷</li>
-            <li>痙攣して頭部外傷</li>
-            <li>下肢の脱力で頭部外傷 などなど</li>
-          </ul>
-        </section>
-        <section>
-          <h2>受傷原因を同定せよ！目撃者をさがせ！</h2>
-          <p>意識障害がなければ、本人から<strong>詳細に病歴を聴取する (AMPLE)</strong><br><strong>目撃者がいれば必ず病歴聴取する！</strong></p>
-          <h4>高齢者でよくあるパターン</h4>
-          <ul>
-            <li>Parkinson病や変形性膝関節症などによる歩行障害で転倒</li>
-            <li>睡眠薬や疼痛治療薬、抗ヒスタミン薬で足元がおぼつかなくなる</li>
-          </ul>
-        </section>
-        <section>
-          <h2>受傷原因を同定できない時は？</h2>
-          <ul>
-            <li>健忘や意識消失で受傷原因を特定できないことも多い。</li>
-            <li>否定出来ない場合は<strong>失神や痙攣に伴う頭部外傷を常に考慮する！</strong></li>
-            <li>特に失神の場合は<em>頭部や顔面に激しい外傷</em>があることが多い！</li>
-          </ul>
-        </section>
-        <section>
-          <h2>受傷原因例</h2>
-          <ul>
-            <li>消化管出血による起立性低血圧のために転倒し頭部外傷</li>
-            <li>不整脈による心血管性失神で卒倒し頭部外傷</li>
-            <li>症候性てんかんによる痙攣で転倒し頭部外傷 etc..</li>
-          </ul>
-        </section>
-        <section>
-          <h2 id="-65-">再び症例: 65歳 男性</h2>
-          <p>話をよく聞くと、トイレに行こうとして部屋を出たことは覚えているが、なぜ転倒してしまったかは分からないという。  </p>
-        </section>
-        <section>
-          <h2 id="-">あなたならどうしますか？</h2>
-        </section>
-        <section>
-          <h2 id="-">あなたならどうしますか？</h2>
-          <ol>
-            <li>さっさと帰宅させる</li>
-            <li>心電図を取る</li>
-            <li>頭部CTを撮影する</li>
-            <li>採血する</li>
-            <li>とりあえず、脳外科を呼ぶ</li>
-          </ol>
-        </section>
-        <section>
-          <h2>失神の考え方</h2>
-          <ul>
-            <li>失神とは脳の虚血による一過性の意識障害
-              <ul>
-                <li>上行性脳幹網様体賦活系の一過性の虚血</li>
-                <li>5-10秒の血流途絶や35%以上の血流減少で起きる</li>
-              </ul>
-            </li>
-            <li>失神には脱力を伴い、数分(30秒-5分以内)で    自然に元の状態に戻る
-              <ul>
-                <li>戻りが悪い場合は一過性意識障害との鑑別が必要</li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>失神の分類(原因)</h2>
-          <p>頻度や予後の観点から大きく以下の3つに分類できる(フラミンガムスタディ)</p>
-          <ol>
-            <li>心血管性失神(５－３７％)</li>
-            <li>起立性低血圧(３－２４％)</li>
-            <li>神経調節性失神(３５－６５％)</li>
-          </ol>
-        </section>
-        <section>
-          <h2>これ以上は時間がないため割愛</h2>
-          <p>失神については下のスライドが分かりやすいです  </p>
-          <p><img src="http://cdn.slidesharecdn.com/ss_thumbnails/2-150709001641-lva1-app6892-thumbnail-4.jpg?cb=1455959081" width="60%"></p>
-        </section>
-        <section>
-          <h2>頭部外傷へのアプローチ</h2>
-          <ol>
-            <li>ABCの安定、他部位の外傷を見逃さないようにする!</li>
-            <li>vital sign、病歴、身体診察が重要、後頸部痛に注意！</li>
-            <li>受傷原因を同定せよ！</li>
-            <li><strong>頭部CTは必要か？</strong></li>
-            <li>帰宅可能か判断する！</li>
-          </ol>
-        </section>
-        <section>
-          <h2>どんな時に頭部CTを撮るの？</h2>
-          <p><small> Ann Emerg Med, 30: 14-21 1997</small><br>カナダの16の病院で行われた軽傷頭部外傷患者(GCS 13-15+意識消失or健忘)を対象にしたスタディ</p>
-          <ul>
-            <li>頭部CTを撮影するかどうかの病院間のばらつきは大きい(15.9〜70.4%)</li>
-            <li>頭部CTをたくさん撮る病院ほど見逃し症例が多かった。</li>
-          </ul>
-          <p>➡頭部CTの適応症例を正しく判断しよう！</p>
-        </section>
-        <section>
-          <h2>どんな時に頭部CTを撮るの？</h2>
-          <p><small> J Emerg Med, 24: 157-162 2003</small></p>
-          <ul>
-            <li>GCS15+意識消失 ➡ CTで異常あり 6%, 要手術 0.2%</li>
-            <li>嘔吐+GCS15+意識消失 ➡ CTで異常あり 18%</li>
-            <li>老人(>60)+GCS15+意識消失 ➡ CTで異常あり 28% etc..</li>
-          </ul>
-        </section>
-        <section>
-          <h2>どんな時に頭部CTを撮るの？</h2>
-          <h4>各国の様々なガイドライン</h4>
-          <ul>
-            <li>NICEガイドライン</li>
-            <li>The New Orleans</li>
-            <li>The Canadian CT Head Rule</li>
-            <li>CHIP rule</li>
-            <li>重症頭部外傷・管理のガイドライン第3版</li>
-          </ul>
-        </section>
-        <section>
-          <h2>どんな時に頭部CTを撮るの？</h2>
-          <h5>各ガイドラインの共通項目</h5>
-          <table class="table table-striped">
+          <h2> <small>入院時検査所見</small></h2>
+          <table class="table table-condensed table-striped">
             <thead>
               <tr>
-                <th style="text-align:left">頭部CTの適応</th>
-                <th style="text-align:left"></th>
+                <th>血算</th>
+                <th></th>
+                <th></th>
+                <th>生化学</th>
+                <th></th>
+                <th></th>
+                <th>感染症</th>
+                <th></th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="text-align:left">①受傷原因不明</td>
-                <td style="text-align:left">⑥健忘</td>
+                <td>WBC</td>
+                <td>5700</td>
+                <td>/μl</td>
+                <td>Na</td>
+                <td>144.1</td>
+                <td>mEq/l</td>
+                <td>HIV Ab</td>
+                <td>(ー)</td>
+                <td></td>
               </tr>
               <tr>
-                <td style="text-align:left">②意識障害</td>
-                <td style="text-align:left">⑦高エネルギー外傷</td>
+                <td>Atypical</td>
+                <td>(ー)</td>
+                <td></td>
+                <td>K</td>
+                <td>4.1</td>
+                <td>mEq/</td>
+                <td>CMV-IgG</td>
+                <td>
+                  <div class="red">5.7
+                    <div></div>
+                  </div>
+                </td>
+                <td></td>
               </tr>
               <tr>
-                <td style="text-align:left">③痙攣</td>
-                <td style="text-align:left">⑧頭痛</td>
+                <td>Hb</td>
+                <td>13.1</td>
+                <td>g /dl</td>
+                <td>Cl</td>
+                <td>110.4</td>
+                <td>mEq/</td>
+                <td>CMV-IgM</td>
+                <td>0.65</td>
+                <td></td>
               </tr>
               <tr>
-                <td style="text-align:left">④神経局在所見</td>
-                <td style="text-align:left">⑨抗血栓薬内服</td>
+                <td>Hct</td>
+                <td>38.6</td>
+                <td>%</td>
+                <td>ALP</td>
+                <td>
+                  <div class="red">517
+                    <div></div>
+                  </div>
+                </td>
+                <td>IU/l</td>
+                <td>EBV-IgG</td>
+                <td>
+                  <div class="red">40
+                    <div></div>
+                  </div>
+                </td>
+                <td></td>
               </tr>
               <tr>
-                <td style="text-align:left">⑤健忘</td>
-                <td style="text-align:left">⑩繰り返す嘔吐</td>
+                <td>Plt</td>
+                <td>19.8</td>
+                <td>万/μl</td>
+                <td>AST</td>
+                <td>
+                  <div class="red">1410
+                    <div></div>
+                  </div>
+                </td>
+                <td>IU/l</td>
+                <td>EBV-IgM</td>
+                <td>< 10</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>ALT</td>
+                <td>
+                  <div class="red">2060
+                    <div></div>
+                  </div>
+                </td>
+                <td>IU/l</td>
+                <td>EBV-EBNA</td>
+                <td>< 10</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><em>凝固</em></td>
+                <td></td>
+                <td></td>
+                <td>T.Bill</td>
+                <td>
+                  <div class="red">6.3
+                    <div></div>
+                  </div>
+                </td>
+                <td>mg/dl</td>
+                <td>HBsAb</td>
+                <td>0.1</td>
+                <td>mIU/ml</td>
+              </tr>
+              <tr>
+                <td>PT</td>
+                <td>98</td>
+                <td>%</td>
+                <td>D.Bill</td>
+                <td>
+                  <div class="red">5.1
+                    <div></div>
+                  </div>
+                </td>
+                <td>mg/dl</td>
+                <td>HBeAb</td>
+                <td>
+                  <div class="red">31
+                    <div></div>
+                  </div>
+                </td>
+                <td>%</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>γ-GTP</td>
+                <td>
+                  <div class="red">280
+                    <div></div>
+                  </div>
+                </td>
+                <td>IU/l</td>
+                <td>HBeAg</td>
+                <td>0.1</td>
+                <td>COI</td>
+              </tr>
+              <tr>
+                <td><em>免疫</em></td>
+                <td></td>
+                <td></td>
+                <td>LDH</td>
+                <td>670</td>
+                <td>IU/l</td>
+                <td>IgMHBcAb</td>
+                <td>(ー)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>CRP</td>
+                <td>
+                  <div class="red">0.52
+                    <div></div>
+                  </div>
+                </td>
+                <td>mg/dl</td>
+                <td>Alb</td>
+                <td>4.3</td>
+                <td>g/dl</td>
+                <td>HBcAb</td>
+                <td>0.2</td>
+                <td>COI</td>
+              </tr>
+              <tr>
+                <td>IgG</td>
+                <td>1100</td>
+                <td>mg/dl</td>
+                <td>BUN</td>
+                <td>11.1</td>
+                <td>mg/dl</td>
+                <td>HBVDNA</td>
+                <td>(ー）</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>IgM</td>
+                <td>20</td>
+                <td>mg/dl</td>
+                <td>Cre</td>
+                <td>0.85</td>
+                <td>mg/dl</td>
+                <td>IgMHA</td>
+                <td>(ー)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>ANA</td>
+                <td>< 40</td>
+                <td></td>
+                <td>UA</td>
+                <td>5.3</td>
+                <td>mg/dl</td>
+                <td>HCVRNA</td>
+                <td>(ー)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>SMA</td>
+                <td>(ー)</td>
+                <td></td>
+                <td>T.Chol</td>
+                <td>178</td>
+                <td>mg/dl</td>
+                <td>HCVAbEIA</td>
+                <td>0.1</td>
+                <td>COI</td>
+              </tr>
+              <tr>
+                <td>AMA</td>
+                <td>(ー)</td>
+                <td></td>
+                <td>TG</td>
+                <td>
+                  <div class="red">191
+                    <div></div>
+                  </div>
+                </td>
+                <td>mg/dl</td>
+                <td>IgAHEVAb</td>
+                <td>(ー)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>TBA</td>
+                <td>
+                  <div class="red">274.2
+                    <div></div>
+                  </div>
+                </td>
+                <td>μmol/l</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Lypase</td>
+                <td>
+                  <div class="red">119
+                    <div></div>
+                  </div>
+                </td>
+                <td>IU/l</td>
+                <td></td>
+                <td></td>
               </tr>
             </tbody>
           </table>
         </section>
         <section>
-          <h2>頭部CTの読影手順</h2>
-          <p>受傷・疼痛部位から打撲部位を同定し、以下の順に確認</p>
-          <ol>
-            <li>皮下出血・骨折の有無</li>
-            <li>硬膜外血腫</li>
-            <li>硬膜下血腫</li>
-            <li>くも膜下出血</li>
-            <li>脳挫傷</li>
-          </ol>
+          <h2>入院時検査所見</h2>
+          <p><em>心電図</em><br>HR 91/min, sinus rhythm</p>
+          <p><em>腹部エコー(第１病日)</em><br>肝内胆管総胆管の拡張(-), 胆囊の壁肥厚(+)<br>肝臓は内部エコー均一, 辺縁はやや鈍, 明らかなSOL(-)</p>
+          <!--
+          *腹部dynamic造影CT(第1病日)*
+          肝内胆管総胆管の拡張(-), 胆囊周囲の浮腫性変化(+), 明らかなリンパ腫大なし
+          -->
+          <!--
+          *腹部単純CT(第14病日)*
+          門脈周囲の浮腫性変化(+), 胆囊周囲の浮腫性変化は増強した
+          -->
         </section>
         <section>
-          <h2>再び症例: 65歳 男性</h2>
-          <p>心電図では異常を認めなかった。<br>採血ではHb 9.3と貧血を認めた。<br>頭部CTでは小さな外傷性くも膜下出血を認めた。</p>
-          <p>貧血精査及びSAH後の経過観察目的に入院となった。</p>
+          <video width="1280" height="650" controls="controls">
+            <source src="../source/CT第1病日.mp4" type="video/mp4">
+          </video>
         </section>
         <section>
-          <h2>今回のスライドはここに置いておきます</h2>
-          <p></p><a sectionef="https://slideck.io/github.com/g960059/presentations/%E9%A0%AD%E9%83%A8%E5%A4%96%E5%82%B7%E3%81%AB%E5%87%BA%E4%BC%9A%E3%81%A3%E3%81%9F%E3%82%89.md#/7">https://slideck.io/github.com/g960059/presentations/%E9%A0%AD%E9%83%A8%E5%A4%96%E5%82%B7%E3%81%AB%E5%87%BA%E4%BC%9A%E3%81%A3%E3%81%9F%E3%82%89.md#/7</a>
+          <h2>入院後経過</h2>
+          <ul>
+            <li>第1病日より病歴聴取、感染症、各種画像検査を施行したが、明らかな原因は指摘できず。  </li>
+            <li>第5病日：安静臥床、補液にて様子を経過観察していたが、<br>肝胆道系酵素の上昇のため、SMNC iv
+              <!-- .element: class="fragment" data-fragment-index="1"-->
+            </li>
+          </ul>
+        </section>
+        <section>
+          <div class="row">
+            <div class="col-md-8">
+              <div id="container" style="width:100%; height:600px"></div>
+            </div>
+            <div class="col-md-4">
+              <p>第5病日 SMNC iv</p>
+              <h5>↓</h5>
+              <p>第14病日 肝生検</p>
+            </div>
+          </div>
+          <script>
+            $(document).ready(function() { 
+                var myChart = Highcharts.chart('container', {
+                    chart: {
+                      type: 'spline',
+                      zoomType: 'x'
+                    },
+                    title: {
+                      text: '入院後経過'
+                    },
+                    xAxis: {
+                      type: 'linear',
+                      labels: {
+                        formatter: function() {
+                          return '第'+this.value + '病日';
+                        }
+                      },
+                      title: {
+                        text: '入院後日数'
+                      },
+                      plotBands: [{
+                        color: '#FCFFC5', 
+                        from: 4.85, 
+                        to: 5.15 
+                      }]
+                    },
+                    yAxis: {
+                      title: {
+                        text: '酵素活性'
+                      }
+                    },
+                    series: [{
+                      name: 'AST(IU/l)',
+                      data: [{"x":1, "y":1410}, {"x":3, "y":1478}, {"x":5, "y":1710}, {"x":6, "y":892}, {"x":8, "y":421}, {"x":11, "y":438}, {"x":14, "y":529}]},
+                      {
+                      name: 'ALT(IU/l)',
+                      data: [{"x":1, "y":2060}, {"x":3, "y":1900}, {"x":5, "y":2090}, {"x":6, "y":1560}, {"x":8, "y":998}, {"x":11, "y":679}, {"x":14, "y":642}]},
+                      {
+                      name: 'γ-GDP(IU/l)',
+                      data: [{"x":1, "y":280}, {"x":3, "y":224}, {"x":5, "y":214}, {"x":6, "y":206}, {"x":8, "y":195}, {"x":11, "y":191}, {"x":14, "y":198}]},
+                      {
+                      name: 'ALP(IU/l)',
+                      data: [{"x":1, "y":517}, {"x":3, "y":351}, {"x":5, "y":332}, {"x":6, "y":324}, {"x":8, "y":384}, {"x":11, "y":402}, {"x":14, "y":418}]},
+                      {
+                      name: 'LDH(IU/l)',
+                      data: [{"x":1, "y":670}, {"x":3, "y":612}, {"x":5, "y":667}, {"x":6, "y":279}, {"x":8, "y":240}, {"x":11, "y":248}, {"x":14, "y":291}]}
+                    ]
+                });
+            }); 
+            
+          </script>
+        </section>
+        <section>
+          <div id="container1" style="width:100%; height:600px" data-background-transition="fade"></div>
+          <div class="balloon fragment" data-fragment-index="2" style="top:41px;left:305px">第5病日<br>  SMNC iv</div>
+          <div class="balloon fragment" data-fragment-index="3" style="top:328px;left:881px">第14病日<br>  肝生検</div>
+          <script>
+            $(document).ready(function() { 
+                var myChart = Highcharts.chart('container1', {
+                    chart: {
+                      type: 'spline',
+                      zoomType: 'x'
+                    },
+                    title: {
+                      text: '入院後経過'
+                    },
+                    xAxis: {
+                      type: 'linear',
+                    labels: {
+                      formatter: function() {
+                        return '第'+this.value + '病日';
+                      }
+                    },
+                      title: {
+                        text: '入院後日数'
+                      }
+                    },
+                    yAxis: {
+                      max: 2200, 
+                      title: {
+                        text: '酵素活性'
+                      }
+                    },
+                    series: [
+                      {
+                      name: 'γ-GDP(IU/l)',
+                      data: [{"x":1, "y":280}, {"x":3, "y":224}, {"x":5, "y":214}, {"x":6, "y":206}, {"x":8, "y":195}, {"x":11, "y":191}, {"x":14, "y":198}]}, 
+                      {
+                      name: 'ALP(IU/l)',
+                      data: [{"x":1, "y":517}, {"x":3, "y":351}, {"x":5, "y":332}, {"x":6, "y":324}, {"x":8, "y":384}, {"x":11, "y":402}, {"x":14, "y":418}]},
+                      {
+                      name: 'LDH(IU/l)',
+                      data: [{"x":1, "y":670}, {"x":3, "y":612}, {"x":5, "y":667}, {"x":6, "y":279}, {"x":8, "y":240}, {"x":11, "y":248}, {"x":14, "y":291}]}
+                    ]
+                });
+            }); 
+            
+          </script>
+        </section>
+        <section>
+          <h2>入院後経過</h2>
+          <canvas class="fragment" data-chart="line" data-fragment-index="0">
+            <!--
+            {
+            "data": {
+            "datasets": [
+            {
+            "data":[{"x":1, "y":6.3}, {"x":3, "y":6.6}, {"x":5, "y":10}, {"x":6, "y":11.9}, {"x":8, "y":15}, {"x":11, "y":21.4}, {"x":14, "y":26.4}],"label":"総Bil(mg/dl)","backgroundColor":"rgba(20,220,120,.8)","fill":false
+            }, {
+            "data":[{"x":1, "y":5.1}, {"x":3, "y":5.5}, {"x":5, "y":8.2}, {"x":6, "y":9.7}, {"x":8, "y":12.2}, {"x":11, "y":17.1}, {"x":14, "y":20.6}],"label":"直接Bil(mg/dl)","backgroundColor":"rgba(20,120,220,.8)","fill":false
+            }
+            ]
+            },
+            "options": {
+            "scales": {
+            "xAxes": [{
+            "type": "linear",
+            "position": "bottom"
+            }]
+            }
+            }
+            }
+            -->
+          </canvas>
+          <div class="balloon fragment" data-fragment-index="1" style="top:341px;left:290px">第5病日<br>  SMNC iv</div>
+          <div class="balloon fragment" data-fragment-index="2" style="top:103px;left:881px">第14病日<br>  肝生検</div>
+        </section>
+        <section>
+          <video width="1280" height="650" controls="controls">
+            <source src="../source/CT第14病日.mp4" type="video/mp4">
+          </video>
+        </section>
+        <section> 
+          <h2>入院後経過</h2>
+          <ul> 
+            <li>第1病日より病歴聴取、感染症、各種画像検査を施行したが、明らかな原因は指摘できず。</li>
+            <li>第5病日：安静臥床、補液にて様子を経過観察していたが、肝胆道系酵素の上昇のため、SMNC iv</li>
+            <li>第14病日：以上の画像検査、血液検査から診断が確定できず、肝生検を実施した。</li>
+          </ul>
+          <!-- .element: class="fragment" data-fragment-index="1"-->
+          <p class="fragment" data-fragment-index="2"><em>除外済み</em><br>A,B,C,E型肝炎、EBV, CMV, HIV</p>
+          <p class="fragment" data-fragment-index="3"><em>Unlikely</em><br>薬剤性, アルコール性(γ-GTP➡、ALT>AST), 脂肪肝、うっ血性</p>
+        </section>
+        <section>
+          <h1>さて、診断は何でしょう？</h1>
+        </section>
+        <section>
+          <h2>入院後経過</h2>
+          <canvas class="fragment" data-chart="line" data-fragment-index="1">
+            <!--
+            {
+            "data": {
+            "datasets": [
+            {
+            "data":[{"x":1, "y":1410}, {"x":3, "y":1478}, {"x":5, "y":1710}, {"x":6, "y":892}, {"x":8, "y":421}, {"x":11, "y":438}, {"x":14, "y":529}, {"x":15, "y":518}, {"x":17, "y":288}, {"x":19, "y":230}, {"x":21, "y":189}, {"x":24, "y":113}, {"x":28, "y":70}, {"x":31, "y":48}, {"x":35, "y":39}, {"x":38, "y":28}],"label":"AST(IU/l)","backgroundColor":"rgba(20,220,220,.8)","fill":false
+            }, {
+            "data":[{"x":1, "y":2060}, {"x":3, "y":1900}, {"x":5, "y":2090}, {"x":6, "y":1560}, {"x":8, "y":998}, {"x":11, "y":679}, {"x":14, "y":642}, {"x":15, "y":624}, {"x":17, "y":458}, {"x":19, "y":416}, {"x":21, "y":368}, {"x":24, "y":271}, {"x":28, "y":179}, {"x":31, "y":125}, {"x":35, "y":91}, {"x":38, "y":61}],"label":"ALT(IU/l)","backgroundColor":"rgba(220,120,120,.8)","fill":false
+            }, {
+            "data":[{"x":1, "y":280}, {"x":3, "y":224}, {"x":5, "y":214}, {"x":6, "y":206}, {"x":8, "y":195}, {"x":11, "y":191}, {"x":14, "y":198}, {"x":15, "y":207}, {"x":17, "y":243}, {"x":19, "y":359}, {"x":21, "y":426}, {"x":24, "y":416}, {"x":28, "y":311}, {"x":31, "y":253}, {"x":35, "y":224}, {"x":38, "y":171}],"label":"γ-GDP(IU/l)","backgroundColor":"rgba(20,120,220,.8)","fill":false
+            }, {
+            "data":[{"x":1, "y":517}, {"x":3, "y":351}, {"x":5, "y":332}, {"x":6, "y":324}, {"x":8, "y":384}, {"x":11, "y":402}, {"x":14, "y":418}, {"x":15, "y":384}, {"x":17, "y":355}, {"x":19, "y":346}, {"x":21, "y":362}, {"x":24, "y":360}, {"x":28, "y":299}, {"x":31, "y":289}, {"x":35, "y":307}, {"x":38, "y":254}],"backgroundColor":"rgba(120,220,20,.8)","borderColor":"rgba(120,220,20,.8)", "label":"ALP(IU/l)","fill":false
+            },{
+            "data":[{"x":1, "y":670}, {"x":3, "y":612}, {"x":5, "y":667}, {"x":6, "y":279}, {"x":8, "y":240}, {"x":11, "y":248}, {"x":14, "y":291}, {"x":15, "y":258}, {"x":17, "y":213}, {"x":19, "y":230}, {"x":21, "y":238}, {"x":24, "y":191}, {"x":28, "y":212}, {"x":31, "y":180}, {"x":35, "y":177}, {"x":38, "y":167}],"label":"LDH(IU/l)","backgroundColor":"rgba(220,20,120,.8)","borderColor":"rgba(220,20,120,.8)","fill":false
+            }
+            ]
+            },
+            "options": {
+            "scales": {
+            "xAxes": [{
+            "type": "linear",
+            "position": "bottom"
+            }]
+            }
+            }
+            }
+            -->
+          </canvas>
+          <div class="balloon fragment" data-fragment-index="1" style="top:102px;left:92px">第5病日<br>  SMNC iv</div>
+          <div class="balloon fragment" data-fragment-index="1" style="top:328px;left:295px">第14病日<br>  肝生検</div>
+          <div class="balloon fragment" data-fragment-index="2" style="top:207px;left:331px">第15病日<br>  PSL 30mg/日 開始</div>
+        </section>
+        <section>
+          <h2>入院後経過</h2>
+          <canvas class="fragment" data-chart="line" data-fragment-index="1">
+            <!--
+            {
+            "data": {
+            "datasets": [
+            {
+            "data":[{"x":1, "y":6.3}, {"x":3, "y":6.6}, {"x":5, "y":10}, {"x":6, "y":11.9}, {"x":8, "y":15}, {"x":11, "y":21.4}, {"x":14, "y":26.4}, {"x":15, "y":26.1}, {"x":17, "y":17.2}, {"x":19, "y":11.7}, {"x":21, "y":9.2}, {"x":24, "y":7.2}, {"x":28, "y":4.9}, {"x":31, "y":3.9}, {"x":35, "y":3.3}, {"x":38, "y":2.7}],"label":"総Bil(mg/dl)","backgroundColor":"rgba(20,220,120,.8)","fill":false
+            }, {
+            "data":[{"x":1, "y":5.1}, {"x":3, "y":5.5}, {"x":5, "y":8.2}, {"x":6, "y":9.7}, {"x":8, "y":12.2}, {"x":11, "y":17.1}, {"x":14, "y":20.6}, {"x":15, "y":20.7}, {"x":17, "y":14.3}, {"x":19, "y":9.4}, {"x":21, "y":7.3}, {"x":24, "y":5.6}, {"x":28, "y":4}, {"x":31, "y":3.2}, {"x":35, "y":2.7}, {"x":38, "y":2.1}],"label":"直接Bil(mg/dl)","backgroundColor":"rgba(20,120,220,.8)","fill":false
+            }
+            ]
+            },
+            "options": {
+            "scales": {
+            "xAxes": [{
+            "type": "linear",
+            "position": "bottom"
+            }]
+            }
+            }
+            }
+            -->
+          </canvas>
+          <div class="balloon fragment" data-fragment-index="2" style="top:93px;left:285px">PSL 30mg/日 開始</div>
+        </section>
+        <section>
+          <h1>診断： 自己免疫性肝炎</h1>
+        </section>
+        <section>
+          <h2>入院後経過</h2>
+          <ul>
+            <li>PSL内服後はAST・ALTも徐々に改善。</li>
+            <li>HLAが帰着し、A*24:33-B*75:51-DRB1*04:05-09:01:02であった。</li>
+            <li>肝生検ではCentri-Lobular Necrosisであり、PSLに対する反応性も考慮し、<strong>急性発症型自己免疫性肝炎</strong>の診断となった。</li>
+            <li>以降はAST・ALTの再燃もなく経過し、徐々にPSLをtapering、PSL 20 mg/日で第38病日に退院となった。</li>
+          </ul>
+        </section>
+        <section>
+          <h2>自己免疫性肝炎の臨床的特徴</h2>
+          <ul>
+            <li>中年以降の女性に好発する原因不明の肝疾患</li>
+            <li>発症様式には遺伝的素因、自己免疫機序が関与</li>
+            <li>臨床的には①抗核抗体等の自己抗体、②血清IgG高値を伴う</li>
+            <li>ほとんどは潜在性に発症するが、急性肝障害の臨床像を呈するものもあり</li>
+          </ul>
+          <p>1.潜行性に発症した後に、AST・ALTが急激に増悪するタイプ(病理は慢性肝炎像)<br>2.急性肝炎様の臨床像を呈し、病理も画像も急性肝炎様のタイプ</p>
+          <ul>
+            <li>2の場合は<strong>抗核抗体陰性であり、血清IgG高値でないこともあり、診断が難しい</strong></li>
+            <li>しかし、1,2も<strong>副腎皮質ステロイド投与が著効することは共通である。</strong></li>
+          </ul>
+        </section>
+        <section>
+          <h2>自己免疫性肝炎の一般的な病理所見</h2>
+          <ul>
+            <li>組織学的には典型例では慢性肝炎象を呈する</li>
+            <li><strong>特徴的な組織像</strong>
+              <ul>
+                <li>門脈域の線維性拡大</li>
+                <li>同部への単核球浸潤</li>
+                <li>浸潤細胞には形質細胞が多い </li>
+                <li>interface hepatitisの所見あり</li>
+                <li>肝細胞の多数の巣状壊死</li>
+                <li>帯状、架橋形成性肝壊死</li>
+                <li>肝細胞ロゼット形成</li>
+              </ul>
+            </li>
+            <li>診断には上記の特徴に加えて肝炎ウイルス等、薬物性、アルコール性等の<strong>既知の肝障害の原因を除外</strong>することが重要である</li>
+          </ul>
+        </section>
+        <section>
+          <h2>自己免疫性肝炎診断の国際スコアリングシステム</h2>
+          <table class="table table-condensed table-striped table-elegant">
+            <thead>
+              <tr>
+                <th>項目</th>
+                <th>基準</th>
+                <th>点数</th>
+                <th>項目</th>
+                <th>基準</th>
+                <th>点数</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>性別</td>
+                <td>女性</td>
+                <td>2</td>
+                <td>薬物投与歴</td>
+                <td>陽性</td>
+                <td>-4</td>
+              </tr>
+              <tr>
+                <td>ALP/AST or ALP/ALT</td>
+                <td><strong>< 1.5</strong></td>
+                <td><strong>2</strong></td>
+                <td></td>
+                <td><strong>陰性</strong></td>
+                <td><strong>1</strong></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>1.5 - 3.0</td>
+                <td>0</td>
+                <td>平均アルコール摂取量</td>
+                <td><strong><25g/日</strong></td>
+                <td><strong>2</strong></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>> 3.0</td>
+                <td>-2</td>
+                <td></td>
+                <td>>60g/日</td>
+                <td>-2</td>
+              </tr>
+              <tr>
+                <td>グロブリン or IgG</td>
+                <td>> 2.0</td>
+                <td>3</td>
+                <td>HLA</td>
+                <td>DR3 or DR4</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>1.5 - 2.0</td>
+                <td>2</td>
+                <td>他の自己免疫疾患</td>
+                <td>陽性</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>1.0 - 1.5</td>
+                <td>1</td>
+                <td>他の自己抗体</td>
+                <td>陽性</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><strong>< 1.0</strong></td>
+                <td><strong>0</strong></td>
+                <td>組織所見</td>
+                <td><strong>Interface hepatitis</strong></td>
+                <td><strong>3</strong></td>
+              </tr>
+              <tr>
+                <td>ANA，SMA2，LKM-1抗体3</td>
+                <td>> 1：80</td>
+                <td>3</td>
+                <td></td>
+                <td>形質細胞浸潤</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>1：80</td>
+                <td>2</td>
+                <td></td>
+                <td>ロゼット形成</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>1：40</td>
+                <td>1</td>
+                <td></td>
+                <td>上記所見なし</td>
+                <td>-5</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><strong>< 1：40</strong></td>
+                <td><strong>0</strong></td>
+                <td></td>
+                <td>胆管病変</td>
+                <td>-3</td>
+              </tr>
+              <tr>
+                <td>AMA4</td>
+                <td>陽性</td>
+                <td>-4</td>
+                <td></td>
+                <td>他の所見</td>
+                <td>-3</td>
+              </tr>
+              <tr>
+                <td>肝炎ウイルスマーカー</td>
+                <td>陽性</td>
+                <td>-3</td>
+                <td>治療反応性</td>
+                <td>著効</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><strong>陰性</strong></td>
+                <td><strong>3</strong></td>
+                <td></td>
+                <td>再発</td>
+                <td>3</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>以上の得点合計による評価<br><em>治療前</em> Definite: 16以上, Probable: 10-15  ➡ <strong>今回Probable(11点)</strong></p>
+        </section>
+        <section>
+          <h2>厚生労働省の診断指針</h2>
+          <p>①. <strong>他の原因による肝障害が否定される</strong><br>②. 抗核抗体陽性あるいは抗平滑筋抗体陽性<br>③. IgG高値（＞基準上限値1.1倍）<br>④. <strong>組織学的にinterface hepatitisや形質細胞浸潤がみられる</strong><br>⑤. <strong>副腎皮質ステロイドが著効する</strong></p>
+          <p><em>典型例</em><br>上記項目で1を満たし、2～5のうち3項目以上を認める。<br><em>非典型例</em><br><strong>上記項目で1を満たし、2～5の所見の1～2項目を認める。</strong></p>
+          <p>なお国際診断スコアが計算できる場合にはその値を参考とし、<br><strong>疑診以上は自己免疫性肝炎と診断</strong>する。また<strong>急性発症例では上記項目2,3を認めない場合もある。</strong></p>
+        </section>
+        <section>
+          <h2>急性発症型自己免疫性肝炎の考察</h2>
+          <ul>
+            <li>発症直後の自己免疫性肝炎はCentri-Lobular Necrosisを初期像とする見解がある。  </li>
+            <li>Centri-Lobular Necrosisを呈する急性発症例は、自己抗体が陰性、血清IgGが低い、診断指針・基準を満たさない、T/Aの極期にのみ自己抗体陽性となる例が報告されている。</li>
+            <li>原因不明の肝障害を精査する際にはすみやかに原因検索を行い、自己免疫性肝炎の可能性を考慮し肝生検を行うことが診断の一助となる。  </li>
+            <li><strong>診断的治療を兼ねてのステロイド投与は他の肝炎の原因が否定され、かつ肝生検を行った後に速やかに投与することが、肝炎の劇症化を未然に防ぎ、場合によっては自己免疫性肝炎の診断にもつながる。</strong></li>
+          </ul>
+        </section>
+        <section>
+          <h1>ご清聴有難うございました</h1>
         </section>
       </div>
     </div>

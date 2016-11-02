@@ -63,7 +63,6 @@ body {
     color: #C56950;
     font: bold;
     font-weight: bold !important;
-    font-size: 1.2rem !important;
 }
 /*********************************************
  * HEADERS
@@ -178,6 +177,10 @@ li:before {
   margin: 20px 0;
   line-height: 1.3; }
 
+text.highcharts-credits {
+  display: none;
+}
+
 /* Ensure certain elements are never larger than the slide itself */
 .reveal img,
 .reveal video,
@@ -279,7 +282,7 @@ li:before {
 .reveal table td {
   text-align: left;
   padding: 0.2em 0.5em 0.2em 0.5em;
-  border-bottom: 1px solid; }
+}
 
 .reveal table th[align="center"],
 .reveal table td[align="center"] {
@@ -291,6 +294,21 @@ li:before {
 
 .reveal table tr:last-child td {
   border-bottom: none; }
+
+.reveal table.table-elegant thead tr {
+    background-color: #0084B4;
+    color: white;
+}
+.reveal table.table-elegant thead tr th {
+    font-size: 60%;
+}
+
+.table-condensed thead tr th {
+  font-size: 50%;
+}
+.table-condensed tbody tr td {
+  font-size: 50%;
+}
 
 .reveal sup {
   vertical-align: super; }
@@ -391,3 +409,6 @@ li:before {
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+
+  
