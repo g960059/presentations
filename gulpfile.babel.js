@@ -12,7 +12,7 @@ var gulpSequence = require('gulp-sequence');
 
 
 gulp.task('serve', ()=> {
-  gulp.src('reveal') //Webサーバーで表示するサイトのルートディレクトリを指定
+  gulp.src('docs') //Webサーバーで表示するサイトのルートディレクトリを指定
     .pipe(webserver({
       livereload: true, //ライブリロードを有効に
       //directoryListing: true //ディレクトリ一覧を表示するか。オプションもあり
@@ -32,7 +32,7 @@ gulp.task('rename',()=>{
 gulp.task('pug', ()=> {
   return gulp.src('pug/index.pug')
   .pipe(pug({pretty: true, basedir:"./"}))
-  .pipe(gulp.dest('reveal'))
+  .pipe(gulp.dest('docs'))
 });
 
 gulp.task('pug_md', ()=> {
@@ -40,14 +40,14 @@ gulp.task('pug_md', ()=> {
   .pipe(pug({pretty: true, basedir:"./"}))
   .pipe(html2jade())
   .pipe(replace("  hr"," section"))
-  .pipe(gulp.dest('reveal'))
+  .pipe(gulp.dest('docs'))
 });
 gulp.task('jade',()=>{
-  return gulp.src('reveal/index.jade')
+  return gulp.src('docs/index.jade')
   .pipe(jade({
       pretty: true
     }))
-  .pipe(gulp.dest('reveal'))
+  .pipe(gulp.dest('docs'))
 })
 
 gulp.task('watch', ()=>{
