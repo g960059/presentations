@@ -35,6 +35,7 @@
     "gulp-webserver": "^0.9.1",
     "jstransformer-markdown-it": "^2.0.0",
     "minimist": "^1.2.0",
-    "rename": "^1.0.3"
+    "rename": "^1.0.3",
+    "run-sequence": "^1.2.2"
   }
 }

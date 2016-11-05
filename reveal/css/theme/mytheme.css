@@ -89,14 +89,10 @@ body {
 }
 
 /*.reveal h2 {
-  font-size: 2.0em; }*/
+  font-size: 2.0em; }*/ l
 
 .reveal h3 {
   font-size: 1.55em; 
-  color: white;
-  position: relative;
-  top: -17rem;
-  left: -9rem;
 }
 
 .reveal h4 {
@@ -309,6 +305,11 @@ text.highcharts-credits {
 .table-condensed tbody tr td {
   font-size: 50%;
 }
+
+.table tbody tr:first-child td{
+  border-top: none;
+}
+
 
 .reveal sup {
   vertical-align: super; }

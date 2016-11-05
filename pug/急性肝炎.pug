@@ -91,9 +91,8 @@ section
     |  下腿浮腫なし, 
     strong 両手の掌側尺側に手掌紅班あり
 section
-  h2 
-    small 入院時検査所見
-  table.table.table-condensed.table-striped
+  h2 入院時検査所見
+  table.table.table-condensed(style="margin-top:-10px;")
     thead
       tr
         th 血算
@@ -357,12 +356,13 @@ section
       | 肝胆道系酵素の上昇のため、SMNC iv
       // .element: class="fragment" data-fragment-index="1"
 section
+  h2 入院後経過
   .row
     .col-md-8
       #container(style="width:100%; height:600px;")
     .col-md-4
       p 第5病日 SMNC iv
-      h5 ↓
+      span.glyphicon.glyphicon-arrow-down
       p 第14病日 肝生検
   script.
     $(document).ready(function() { 
@@ -436,17 +436,21 @@ section
             },
             xAxis: {
               type: 'linear',
-            labels: {
-              formatter: function() {
-                return '第'+this.value + '病日';
-              }
-            },
+              labels: {
+                formatter: function() {
+                  return '第'+this.value + '病日';
+                }
+              },
               title: {
                 text: '入院後日数'
-              }
+              },
+              plotBands: [{
+                color: '#FCFFC5', 
+                from: 4.85, 
+                to: 5.15 
+              }]
             },
             yAxis: {
-              max: 2200, 
               title: {
                 text: '酵素活性'
               }
