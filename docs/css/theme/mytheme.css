@@ -110,6 +110,7 @@ body {
   color: #FFBD00;
 }
 
+
 .reveal h1 + p{
   text-align: right;
   color: #0084B5;
@@ -145,15 +146,44 @@ body {
     height: 12px;
     width: 12px;
 }
+
+.reveal section h3 {
+    color: #fff;
+    border-left: 0;
+    padding: 30px 40px;
+    background-color: #0084B5;
+    font-size: 4.5rem;
+    font-weight: bold;
+    text-align: -webkit-center;
+}
+
 .reveal p{
   text-align: left;
 }
+
+.reveal .caption_white{
+  color: white;
+  position: relative;
+  top: -250px;
+  left: -100px;
+  font-size: 4.5rem;
+}
+
+.reveal .slides section .fragment.gray.visible{
+  color:#ccc;
+}
+.reveal .slides section .fragment.gray{
+  opacity: 1;
+  visibility: visible;
+}
+
 .reveal strong{
   color: #0084B5;
 }
 
 li {
     list-style-type: none;
+    text-indent: -1em;
 }
 
 li:before {
@@ -321,7 +351,9 @@ text.highcharts-credits {
   display: inline-block;
   font-size: 0.6em;
   line-height: 1.2em;
-  vertical-align: top; }
+  vertical-align: top; 
+  color: inherit;
+}
 
 .reveal small * {
   vertical-align: top; }
@@ -412,4 +444,74 @@ text.highcharts-credits {
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 
 
-  
+@media screen and (min-width: 768px) { 
+  .reveal section .md-p-5 { padding: 5px; }
+  .reveal section .md-p-10 { padding: 10px; }
+  .reveal section .md-p-15 { padding: 15px; }
+  .reveal section .md-p-20 { padding: 20px; }
+  .reveal section .md-p-30 { padding: 30px; }
+  .reveal section .md-p-40 { padding: 40px; }
+  .reveal section .md-p-50 { padding: 50px; }
+  .reveal section .md-pt-5 { padding-top: 5px; }
+  .reveal section .md-pt-10 { padding-top: 10px; }
+  .reveal section .md-pt-15 { padding-top: 15px; }
+  .reveal section .md-pt-20 { padding-top: 20px; }
+  .reveal section .md-pt-30 { padding-top: 30px; }
+  .reveal section .md-pt-40 { padding-top: 40px; }
+  .reveal section .md-pt-50 { padding-top: 50px; }
+  .reveal section .md-pr-5 { padding-right: 5px; }
+  .reveal section .md-pr-10 { padding-right: 10px; }
+  .reveal section .md-pr-15 { padding-right: 15px; }
+  .reveal section .md-pr-20 { padding-right: 20px; }
+  .reveal section .md-pr-30 { padding-right: 30px; }
+  .reveal section .md-pr-40 { padding-right: 40px; }
+  .reveal section .md-pr-50 { padding-right: 50px; }
+  .reveal section .md-pb-5 { padding-bottom: 5px; }
+  .reveal section .md-pb-10 { padding-bottom: 10px; }
+  .reveal section .md-pb-15 { padding-bottom: 15px; }
+  .reveal section .md-pb-20 { padding-bottom: 20px; }
+  .reveal section .md-pb-30 { padding-bottom: 30px; }
+  .reveal section .md-pb-40 { padding-bottom: 40px; }
+  .reveal section .md-pb-50 { padding-bottom: 50px; }
+  .reveal section .md-pl-5 { padding-left: 5px; }
+  .reveal section .md-pl-10 { padding-left: 10px; }
+  .reveal section .md-pl-15 { padding-left: 15px; }
+  .reveal section .md-pl-20 { padding-left: 20px; }
+  .reveal section .md-pl-30 { padding-left: 30px; }
+  .reveal section .md-pl-40 { padding-left: 40px; }
+  .reveal section .md-pl-50 { padding-left: 50px; }
+  .reveal section .md-m-5 { margin: 5px; }
+  .reveal section .md-m-10 { margin: 10px; }
+  .reveal section .md-m-15 { margin: 15px; }
+  .reveal section .md-m-20 { margin: 20px; }
+  .reveal section .md-m-30 { margin: 30px; }
+  .reveal section .md-m-40 { margin: 40px; }
+  .reveal section .md-m-50 { margin: 50px; }
+  .reveal section .md-mt-5 { margin-top: 5px; }
+  .reveal section .md-mt-10 { margin-top: 10px; }
+  .reveal section .md-mt-15 { margin-top: 15px; }
+  .reveal section .md-mt-20 { margin-top: 20px; }
+  .reveal section .md-mt-30 { margin-top: 30px; }
+  .reveal section .md-mt-40 { margin-top: 40px; }
+  .reveal section .md-mt-50 { margin-top: 50px; }
+  .reveal section .md-mr-5 { margin-right: 5px; }
+  .reveal section .md-mr-10 { margin-right: 10px; }
+  .reveal section .md-mr-15 { margin-right: 15px; }
+  .reveal section .md-mr-20 { margin-right: 20px; }
+  .reveal section .md-mr-30 { margin-right: 30px; }
+  .reveal section .md-mr-40 { margin-right: 40px; }
+  .reveal section .md-mr-50 { margin-right: 50px; }
+  .reveal section .md-mb-5 { margin-bottom: 5px; }
+  .reveal section .md-mb-10 { margin-bottom: 10px; }
+  .reveal section .md-mb-15 { margin-bottom: 15px; }
+  .reveal section .md-mb-20 { margin-bottom: 20px; }
+  .reveal section .md-mb-30 { margin-bottom: 30px; }
+  .reveal section .md-mb-40 { margin-bottom: 40px; }
+  .reveal section .md-mb-50 { margin-bottom: 50px; }
+  .reveal section .md-ml-5 { margin-left: 5px; }
+  .reveal section .md-ml-10 { margin-left: 10px; }
+  .reveal section .md-ml-15 { margin-left: 15px; }
+  .reveal section .md-ml-20 { margin-left: 20px; }
+  .reveal section .md-ml-30 { margin-left: 30px; }
+  .reveal section .md-ml-40 { margin-left: 40px; }
+  .reveal section .md-ml-50 { margin-left: 50px; } }

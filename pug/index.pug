@@ -10,6 +10,7 @@ html
     link(rel='stylesheet', href='bower_components/bootstrap/dist/css/bootstrap.min.css')
     script(src='bower_components/highcharts/highcharts.js')
     script(src='bower_components/jquery/dist/jquery.min.js')
+    script(src='js/myscript.js')
     script.
       var link = document.createElement( 'link' );
       link.rel = 'stylesheet';
@@ -27,7 +28,9 @@ html
     script.
       // More info https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+      controls: false,
       history: true,
+      transition: 'fade-in',
       // More info https://github.com/hakimel/reveal.js#dependencies
       dependencies: [
       { src: 'plugin/markdown/marked.js' },

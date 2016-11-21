@@ -8,7 +8,8 @@ const replace = require("gulp-replace");
 const markdown = require('gulp-markdown');
 const html2jade = require('gulp-html2jade');
 const jade = require('gulp-jade');
-var gulpSequence = require('gulp-sequence');
+const runSequence = require('run-sequence');
+const fileSync = require('gulp-file-sync');
 
 
 gulp.task('serve', ()=> {
@@ -22,6 +23,15 @@ gulp.task('serve', ()=> {
 var argv = minimist(process.argv.slice(2));
 var file_name = argv['f'];
 
+gulp.task('sync', function() {
+  gulp.watch(['src/*.*'], function() {
+    fileSync('src', 'docs/src', {recursive: false});
+  });
+});
+
+gulp.task('sync_',  function() {
+    fileSync('src', 'docs/src', {recursive: false});
+});
 
 gulp.task('rename',()=>{
   return gulp.src(file_name)
@@ -54,8 +64,9 @@ gulp.task('watch', ()=>{
   return gulp.watch('pug/*.pug',['rename','pug'])
 })
 
-gulp.task('dev',gulpSequence(['rename','pug','serve','watch']))
-gulp.task('dev_md',gulpSequence(['rename','pug_md','jade', 'serve']))
+gulp.task('dev',(cb) => {
+  return runSequence('sync_','rename','pug','serve','watch','sync', cb);
+});
 
 
 
