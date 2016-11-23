@@ -37,7 +37,7 @@ section
     *全身* JCS-0, 身長 185 cm, 体重 71.90 kg, BMI 21.0 kg/㎡  
     *Vital* BT 39.1 ℃, PR 92 bpm, BP 110/80 mmHg, SpO2 96 %
        
-    *頭頸部* 眼瞼結膜貧血なし, 眼球結膜黄染なし, 頸部リンパ節腫脹なし, 咽頭発赤なし、口腔内白苔なし   
+    *頭頸部* 眼瞼結膜貧血なし, 眼球結膜黄染なし, **頸部・鎖骨上・腋窩にリンパ節腫脹あり**, 咽頭発赤なし、口腔内白苔なし   
     *胸部* 肺野・心音異常なし  
     *腹部* 平坦/軟, 圧痛なし, 腸蠕動音正常, 脾臓は触知せず  
     *四肢* 下腿浮腫なし, 末梢冷感なし、足背動脈触知可  
@@ -252,243 +252,39 @@ section
   section(data-background-color='#000000')
     video(width='1280', height='650', controls='controls' data-autoplay)
       source(src='../src/acuteHepatitisA_0605_2.mp4', type='video/mp4')
-section
-  section
-    h2 臨床経過
-    .row
-      .col-md-6
-        #container1.md-tm-0(style="width:auto; height:450px;")
-        button.btn.btn-default.fragment.gray(data-fragment-index="1") ウイルス肝炎
-        button.btn.btn-default.fragment.gray(data-fragment-index="1") 自己免疫性肝炎
-        button.btn.btn-default.fragment.gray(data-fragment-index="1") 薬剤性肝障害
-        button.btn.btn-default.fragment.gray(data-fragment-index="1") アルコール性肝炎
-        button.btn.btn-default.fragment.gray(data-fragment-index="1") 非アルコール性脂肪肝炎
-        button.btn.btn-default.fragment.gray(data-fragment-index="1") 代謝性肝障害(Wilson病など）
-        button.btn.btn-default EBV,CMVなどのウイルス感染
-        button.btn.btn-default.fragment.gray(data-fragment-index="1") 悪性リンパ腫
-        button.btn.btn-default HPS
-      .col-md-6.md-pl-20
-        p.fg-10 血小板減少が進行 
-          br
-          em  ➡ EBV + HPSの可能性
-          br 
-          | 第3病日：骨髄穿刺施行
-          br
-          | ➡ HPSは否定的
-        p.fg-20.inline m-PSL250mg/日開始
-        p.fg-30 第6病日：肝生検施行
-          br
-          | 各種ウイルス血清検査が帰着
-        p.fg-40: em IgM-HA 2.34
-        h1.fg-50 診断:
-          br
-          | A型急性肝炎
-    script.
-      $(document).ready(()=> { 
-        var updating = false;
-        var myChart = Highcharts.chart('container1', {
-            chart: {
-              zoomType: 'x'
-            },
-            title: {
-              text: ''
-            },
-            xAxis: {
-              type: 'linear',
-              min:0,
-              max:20,
-              labels: {
-                formatter: function() {
-                  return '第'+(this.value+1) + '病日';
-                }
-              },
-              title: {
-                text: '入院前日数'
-              },
-              plotBands: [{
-                color: '#ccc', // Color value
-                className: 'fg-10', // Style of the plot line. Default to solid
-                from: 1.9, // Value of where the line will appear
-                to: 2.1,
-                zIndex:1, // Width of the line  
-                label:{
-                  text: "<em class='fg-10'>骨髄穿刺</em>",
-                  useHTML:true
-                }},{
-                color: '#ccc', // Color value
-                className: 'fg-30', // Style of the plot line. Default to solid
-                from: 4.9, // Value of where the line will appear
-                to: 5.1, // Width of the line  
-                zIndex:2,
-                label:{
-                  text: "<em class='fg-30'>肝生検</em>",
-                  useHTML:true
-                }},{
-                color: '#eee', // Color value
-                className: 'fg-20', // Style of the plot line. Default to solid
-                from: 1.9, // Value of where the line will appear
-                to: 4.9,
-                zIndex:0,
-                label:{
-                  text: "<em class='fg-20'>m-PSL 250mg</em>",
-                  useHTML:true
-                }},{
-                color: '#ccc', // Color value
-                className: 'fg-60', // Style of the plot line. Default to solid
-                from: 19.5, // Value of where the line will appear
-                to: 20.5, // Width of the line  
-                zIndex:2,
-                label:{
-                  text: "<em class='fg-60'>退院</em>",
-                  useHTML:true
-                }}
-              ]
-            },
-            yAxis: {
-              title: {
-                text: '酵素活性'
-              }
-            },
-            series: [
-            {
-              name:"AST",
-              marker: {
-                enabled: true,
-                radius: 3
-              },
-              data: [[0,718], [1,1488], [1.33,1831], [2,2140], [2.33,2407], [3,2130], [4,2050], [4.33,1350], [5,1237], [6,1196], [8,549], [12,251], [16,93], [20,65], [43,79], [71,33], [162,21]]
-            },
-            {
-              name:"ALT",
-              marker: {
-                enabled: true,
-                radius: 3
-              },
-              data: [[0,422], [1,952], [1.33,1313], [2,1765], [2.33,2084], [3,2430], [4,3860], [4.33,2930], [5,2620], [6,2310], [8,1610], [12,817], [16,357], [20,182], [43,130], [71,60], [162,16]]
-            },
-            {
-              name:"γ-GTP",
-              marker: {
-                enabled: true,
-                radius: 3
-              },
-              data: [[0,354],[1,455],[1.33,512],[2,525],[2.33,542],[3,646],[4,544],[4.33,493],[5,509],[6,453],[8,511],[12,460],[16,342],[20,253],[43,105],[71,64],[162,42]]
-            },
-            {
-              name:"ALP",
-              marker: {
-                enabled: true,
-                radius: 3
-              },
-              data: [[0,741], [1,815], [1.33,905], [2,941], [2.33,1018], [3,1131], [4,1110], [4.33,855], [5,901], [6,720], [8,758], [12,794], [16,701], [20,629], [43,320], [71,246], [162,211]]
-            }                                              
-            ]
-        });
-        if (!updating) {
-          updating = true;
-          myChart.xAxis[0].setExtremes(0, 7);
-          myChart.showResetZoom();
-        }
-      }); 
-
-  section
-    h2 臨床経過
-    .row
-      .col-md-5
-        table.table.table-condensed
-          tr
-            td: em ウイルス血清検査
-            td
-            td
-          tr
-            td CMV-IgG
-            td.red 80
-            td
-          tr
-            td CMV-IgM
-            td.red < 4
-            td
-          tr
-            td EBV-IgG
-            td < 10
-            td
-          tr
-            td EBV-IgM
-            td < 10
-            td
-          tr
-            td EBV-EBNA
-            td 20
-            td
-          tr
-            td HBsAb
-            td 0.2
-            td mIU/ml
-          tr
-            td HBeAb
-            td 33
-            td %
-          tr
-            td HBeAg
-            td 0.1
-            td COI
-          tr
-            td IgMHBcAb
-            td 0.2
-            td COI
-          tr
-            td HBcAb
-            td 0.2
-            td COI
-          tr
-            td HBVDNA
-            td (ー）
-            td
-          tr.warning
-            td IgMHA
-            td.red 2.34
-            td
-          tr
-            td HCVAbEIA
-            td 0.1
-            td COI
-          tr
-            td IgAHEVAb
-            td (ー)
-            td
-      .col-md-6.md-pl-40
-        h4: strong 診断：A型急性肝炎
-
-section
-  h2 臨床経過
-  ul 第1病日、全身倦怠感以外の感染徴候はなく、病歴からは急性肝炎の原因は判然とせず。
-  p.fragment(data-fragment-index='1')
-    em 除外済み
-    br
-    | A,B,C,E型肝炎、EBV, CMV, HIV
-  p.fragment(data-fragment-index='2')
-    em Unlikely
-    br
-    | 薬剤性, アルコール性(γ-GTP➡、ALT>AST), 脂肪肝、うっ血性
 
 section
   h2 臨床経過
   .row
-    .col-md-8
-      #container2(style="width:auto; height:600px;")
-    .col-md-4
-      ul
-        li ウイルス肝炎
-        li 自己免疫性肝炎
-        li 薬剤性肝障害
-        li アルコール性肝炎
-        li 非アルコール性脂肪肝炎
-        li 代謝性肝障害(Wilson病など）
-        li EBV,CMVなどのウイルス感染
+    .col-md-6
+      #container1.md-tm-0(style="width:auto; height:450px;")
+      button.btn.btn-default ウイルス肝炎
+      button.btn.btn-default.fragment.gray(data-fragment-index="1") 自己免疫性肝炎
+      button.btn.btn-default.fragment.gray(data-fragment-index="1") 薬剤性肝障害
+      button.btn.btn-default アルコール性肝炎
+      button.btn.btn-default.fragment.gray(data-fragment-index="1") 非アルコール性脂肪肝炎
+      button.btn.btn-default.fragment.gray(data-fragment-index="1") 代謝性肝障害(Wilson病など）
+      button.btn.btn-default EBV,CMVなどのウイルス感染
+      button.btn.btn-default.gray.fg-10 リンパ腫
+      button.btn.btn-default.gray.fg-10 HPS
+    .col-md-6.md-pl-20
+      ul.md-pt-40.md-mt-40
+        li.fg-10 EBV + HPSの可能性
+          br 
+          | ➡第3病日：骨髄穿刺施行
+          br
+          | ➡ HPSは否定的
+        li.fg-20 m-PSL250mg/日開始
+        li.fg-20 ➡肝胆道系酵素はpeek out
+        li.fg-30 第6病日：肝生検施行
+        //-   br
+        //-   | 各種ウイルス血清検査が帰着
+        //- p.fg-40: em IgM-HA 2.34
+        //- p.fg-50: em ➡ A型急性肝炎？
   script.
-    $(document).ready(function() { 
+    $(document).ready(()=> { 
       var updating = false;
-      var myChart = Highcharts.chart('container2', {
+      var myChart = Highcharts.chart('container1', {
           chart: {
             zoomType: 'x'
           },
@@ -497,82 +293,567 @@ section
           },
           xAxis: {
             type: 'linear',
+            min:0,
+            max:7,
             labels: {
               formatter: function() {
-                return '第'+this.value + '病日';
+                return '第'+(this.value+1) + '病日';
               }
             },
             title: {
               text: '入院前日数'
-            }
+            },
+            plotBands: [{
+              color: '#ccc', // Color value
+              className: 'fg-10', // Style of the plot line. Default to solid
+              from: 1.9, // Value of where the line will appear
+              to: 2.1,
+              zIndex:1, // Width of the line  
+              label:{
+                text: "<em class='fg-10'>骨髄穿刺</em>",
+                useHTML:true
+              }},{
+              color: '#ccc', // Color value
+              className: 'fg-30', // Style of the plot line. Default to solid
+              from: 4.9, // Value of where the line will appear
+              to: 5.1, // Width of the line  
+              zIndex:2,
+              label:{
+                text: "<em class='fg-30'>肝生検</em>",
+                useHTML:true
+              }},{
+              color: '#eee', // Color value
+              className: 'fg-20', // Style of the plot line. Default to solid
+              from: 1.9, // Value of where the line will appear
+              to: 4.9,
+              zIndex:0,
+              label:{
+                text: "<em class='fg-20'>m-PSL 250mg</em>",
+                useHTML:true
+              }},{
+              color: '#ccc', // Color value
+              className: 'fg-60', // Style of the plot line. Default to solid
+              from: 19.5, // Value of where the line will appear
+              to: 20.5, // Width of the line  
+              zIndex:2,
+              label:{
+                text: "<em class='fg-60'>退院</em>",
+                useHTML:true
+              }}
+            ]
           },
           yAxis: {
             title: {
-              text: '1/sCr'
+              text: '酵素活性'
             }
           },
+          tooltip:{
+              headerFormat: '',
+              pointFormat: '{series.name}: <b>{point.y}</b><br/>'
+            },
           series: [
-            {
-              name:"AST",
-              marker: {
-                enabled: true,
-                radius: 3
-              },
-              data: [[0,718], [1,1488], [1.33,1831], [2,2140], [2.33,2407], [3,2130], [4,2050], [4.33,1350], [5,1237], [6,1196], [8,549], [12,251], [16,93], [20,65], [43,79], [71,33], [162,21]]
-            },
-            {
-              name:"ALT",
-              marker: {
-                enabled: true,
-                radius: 3
-              },
-              data: [[0,422], [1,952], [1.33,1313], [2,1765], [2.33,2084], [3,2430], [4,3860], [4.33,2930], [5,2620], [6,2310], [8,1610], [12,817], [16,357], [20,182], [43,130], [71,60], [162,16]]
-            },
-            {
-              name:"γ-GTP",
-              marker: {
-                enabled: true,
-                radius: 3
-              },
-              data: [[0,354],[1,455],[1.33,512],[2,525],[2.33,542],[3,646],[4,544],[4.33,493],[5,509],[6,453],[8,511],[12,460],[16,342],[20,253],[43,105],[71,64],[162,42]]
-            },
-            {
-              name:"ALP",
-              marker: {
-                enabled: true,
-                radius: 3
-              },
-              data: [[0,741], [1,815], [1.33,905], [2,941], [2.33,1018], [3,1131], [4,1110], [4.33,855], [5,901], [6,720], [8,758], [12,794], [16,701], [20,629], [43,320], [71,246], [162,211]]
-            }                                          
+          {
+            name:"AST",
+            data: [[0,718], [1,1488], [1.33,1831], [2,2140], [2.33,2407], [3,2130], [4,2050], [4.33,1350], [5,1237], [6,1196], [8,549], [12,251], [16,93], [20,65], [43,79], [71,33], [162,21]]
+          },
+          {
+            name:"ALT",
+            data: [[0,422], [1,952], [1.33,1313], [2,1765], [2.33,2084], [3,2430], [4,3860], [4.33,2930], [5,2620], [6,2310], [8,1610], [12,817], [16,357], [20,182], [43,130], [71,60], [162,16]]
+          },
+          {
+            name:"γ-GTP",
+            data: [[0,354],[1,455],[1.33,512],[2,525],[2.33,542],[3,646],[4,544],[4.33,493],[5,509],[6,453],[8,511],[12,460],[16,342],[20,253],[43,105],[71,64],[162,42]]
+          },
+          {
+            name:"ALP",
+            data: [[0,741], [1,815], [1.33,905], [2,941], [2.33,1018], [3,1131], [4,1110], [4.33,855], [5,901], [6,720], [8,758], [12,794], [16,701], [20,629], [43,320], [71,246], [162,211]]
+          },{
+              name:"血小板(10^2)",
+              data: [[0,920], [1,800], [1.33,760], [2,700], [2.33,680], [3,900], [4,1240], [4.33,1310], [5,1390], [6,1400], [8,1710], [12,1290], [16,1210], [20,1370], [43,1300], [71,1470], [162,1500]]
+            },{
+              name:"異型リンパ球(%)",
+              data: [[0,1], [2,3], [2.33,1], [5,40], [6,27], [8,20], [12,10]]
+            },{
+              name:"CRP",
+              data: [[0,6.43], [1,6.7], [1.33,7.08], [2,6.41], [2.33,5.96], [3,6.47], [4,3.55], [4.33,2.69], [5,2.07], [6,1.3], [8,0.86], [12,0.59], [16,0.31], [20,0.27], [43,0.09], [71,0.07], [162,0.06]]
+            }                                               
           ]
       });
       if (!updating) {
         updating = true;
-        myChart.xAxis[0].setExtremes(0, 11);
+        myChart.xAxis[0].setExtremes(0, 2.5);
         myChart.showResetZoom();
       }
     }); 
 
 section
-  h2 急性肝炎の鑑別診断
-  ul
-    li ウイルス肝炎(A型、B型、C型)
-    li 自己免疫性肝炎
-    li 薬剤性肝障害
-    li アルコール性肝炎
-    li 非アルコール性脂肪肝炎
-    li 代謝性肝障害(Wilson病など）
-    li EBV,CMVなどのウイルス感染
+  h2 診断: 
+    span.fragment(data-fragment-index="3") A型急性肝炎
+  .row
+    .col-md-6
+      p: em 肝生検
+      img.plain.img-rounded(src='../src/HAV_bx.jpg')
+      p 形質細胞浸潤<<リンパ球浸潤
+    .col-md-5.md-pl-20.fragment(data-fragment-index="1")
+      p: em ウイルス血清検査
+      table.table.table-condensed
+        tr
+          td CMV-IgG
+          td.red 80
+          td
+        tr
+          td CMV-IgM
+          td.red < 4
+          td
+        tr
+          td EBV-IgG
+          td < 10
+          td
+        tr
+          td EBV-IgM
+          td < 10
+          td
+        tr
+          td EBV-EBNA
+          td 20
+          td
+        tr
+          td HBsAb
+          td 0.2
+          td mIU/ml
+        tr
+          td HBeAb
+          td 33
+          td %
+        tr
+          td HBeAg
+          td 0.1
+          td COI
+        tr
+          td IgMHBcAb
+          td 0.2
+          td COI
+        tr
+          td HBcAb
+          td 0.2
+          td COI
+        tr
+          td HBVDNA
+          td (ー）
+          td
+        tr.warning.fragment(data-fragment-index="2")
+          td IgMHA
+          td.red 2.34
+          td
+        tr
+          td HCVAbEIA
+          td 0.1
+          td COI
+        tr
+          td IgAHEVAb
+          td (ー)
+          td  
 
 section
+  h2 その後の臨床経過
+  .row
+    .col-md-12
+      #container4.md-tm-0(style="width:auto; height:600px;")
+  script.
+    $(document).ready(()=> { 
+      var updating = false;
+      var myChart = Highcharts.chart('container4', {
+          chart: {
+            zoomType: 'x'
+          },
+          title: {
+            text: ''
+          },
+          tooltip:{
+            formatter:function(){
+              return '<span style="font-size: 10px">第'+(parseFloat(this.x)+1)+'病日</span><br/>'+this.series.name+": <b>"+this.y+"</b><br/>"
+          }},
+          xAxis: {
+            type: 'linear',
+            labels: {
+              formatter: function() {
+                return '第'+(this.value+1) + '病日';
+              }
+            },
+            title: {
+              text: '入院前日数'
+            },
+            plotBands: [{
+              color: '#ccc', // Color value
+              from: 1.9, // Value of where the line will appear
+              to: 2.1,
+              zIndex:1, // Width of the line  
+              label:{
+                text: "<em>骨髄穿刺</em>",
+                useHTML:true
+              }},{
+              color: '#ccc', // Color value
+              from: 4.9, // Value of where the line will appear
+              to: 5.1, // Width of the line  
+              zIndex:2,
+              label:{
+                text: "<em>肝生検</em>",
+                useHTML:true
+              }},{
+              color: '#eee', // Color value
+              from: 1.9, // Value of where the line will appear
+              to: 4.9,
+              zIndex:0,
+              label:{
+                text: "<em>m-PSL 250mg</em>",
+                useHTML:true
+              }},{
+              color: '#ccc', // Color value
+              className: 'fg-10', // Style of the plot line. Default to solid
+              from: 19.9, // Value of where the line will appear
+              to: 20.1, // Width of the line  
+              zIndex:2,
+              label:{
+                text: "<em class='fg-10'>退院</em>",
+                useHTML:true
+              }}
+            ]
+          },
+          yAxis: {
+            title: {
+              text: '酵素活性'
+            }
+          },
+          series: [
+          {
+            name:"AST",
+            marker: {
+              enabled: true,
+              radius: 3
+            },
+            data: [[0,718], [1,1488], [1.33,1831], [2,2140], [2.33,2407], [3,2130], [4,2050], [4.33,1350], [5,1237], [6,1196], [8,549], [12,251], [16,93], [20,65], [43,79], [71,33], [162,21]]
+          },
+          {
+            name:"ALT",
+            marker: {
+              enabled: true,
+              radius: 3
+            },
+            data: [[0,422], [1,952], [1.33,1313], [2,1765], [2.33,2084], [3,2430], [4,3860], [4.33,2930], [5,2620], [6,2310], [8,1610], [12,817], [16,357], [20,182], [43,130], [71,60], [162,16]]
+          },
+          {
+            name:"γ-GTP",
+            marker: {
+              enabled: true,
+              radius: 3
+            },
+            data: [[0,354],[1,455],[1.33,512],[2,525],[2.33,542],[3,646],[4,544],[4.33,493],[5,509],[6,453],[8,511],[12,460],[16,342],[20,253],[43,105],[71,64],[162,42]]
+          },
+          {
+            name:"ALP",
+            marker: {
+              enabled: true,
+              radius: 3
+            },
+            data: [[0,741], [1,815], [1.33,905], [2,941], [2.33,1018], [3,1131], [4,1110], [4.33,855], [5,901], [6,720], [8,758], [12,794], [16,701], [20,629], [43,320], [71,246], [162,211]]
+          }, {
+            name:"LDH",
+            marker: {
+              enabled: true,
+              radius: 3
+            },
+            data: [[0,652], [1,1164], [1.33,1341], [2,1447], [2.33,1530], [3,1461], [4,890], [4.33,559], [5,570], [6,521], [8,261], [12,161], [16,136], [20,142], [43,167], [71,133], [162,133]]
+          },{
+            name:"T.Bil",
+            marker: {
+              enabled: true,
+              radius: 3
+            },
+            data: [[0,0.7], [1,0.9], [1.33,1], [2,1.2], [2.33,1.6], [3,2.7], [4,2.9], [4.33,2.8], [5,3.1], [6,3.6], [8,4.9], [12,2.4], [16,1.9], [20,1.3], [43,0.9], [71,0.6], [162,0.5]]
+          },{
+            name:"D.Bil",
+            marker: {
+              enabled: true,
+              radius: 3
+            },
+            data: [[0,0.3], [1,0.4], [1.33,0.6], [2,0.8], [2.33,1.2], [3,2.1], [4,2.4], [4.33,2.3], [5,2.5], [6,2.9], [8,4.1], [12,1.8], [16,1.2], [20,0.9], [43,0.5], [71,0.3], [162,0.1]]
+          },{
+            name:"CRP",
+            marker: {
+              enabled: true,
+              radius: 3
+            },
+            data: [[0,6.43], [1,6.7], [1.33,7.08], [2,6.41], [2.33,5.96], [3,6.47], [4,3.55], [4.33,2.69], [5,2.07], [6,1.3], [8,0.86], [12,0.59], [16,0.31], [20,0.27], [43,0.09], [71,0.07], [162,0.06]]
+          },{
+            name:"IgM-HA",
+            marker: {
+              enabled: true,
+              radius: 3
+            },
+            data: [[1,2.34], [8,7.76], [16,6.16], [20,5.77], [43,3.74]]
+          }                                               
+          ]
+      });
+      if (!updating) {
+        updating = true;
+        myChart.xAxis[0].setExtremes(0, 21);
+        myChart.showResetZoom();
+      }
+    }); 
 
-  p 入院後各種画像検査では門脈周囲の浮腫と肝門部、右横隔膜下リンパ節の腫脹のみで、感染源は見つけられず、通常の肝炎ウイルスによる急性肝炎を考えた。しかし、腫脹熱が持続し、血小板の減少が進行、肝機能障害増悪しているため、EBV等のウイルス感染による肝炎の合併も考え、第３病日に血球貪色症候群（HPS））否定目的に骨髄穿刺および塗抹染色施行。HPSは否定されたが、各種肝酵素も上昇傾向にあり、その翌日に肝生検施行。また、抗炎症作用期待としてm-PSL 250 mg/day開始とした。第5病日にCRPが初めて低下、同時にIgM-HA　陽性の報告あり、A型急性肝炎と診断しした。PSLは漸減中止とし、その後肝逸脱酵素、炎症所見、熱発も改善し第２１病日退院となった。
+section
+  h1 A型肝炎について
+section
+  h2 疫学
+  img.plain.img-rounded(src='../src/HAV_map_original.png').md-mt-5
+section
+  h2 症状
+  .row
+    .col-md-4.fragment
+      img.plain.img-rounded(src='../src/fever.png' style='width:250px')
+    .col-md-4.fragment
+      img.plain.img-rounded(src='../src/fatigue.png' style='width:200px')
+    .col-md-4.fragment
+      img.plain.img-rounded(src='../src/vomitting.png' style='width:250px')
+section
+  h2 検査
+  img.plain.img-rounded(src='../src/HAV_time_course.png')
+  p AST、ALT、 ALP、LDHなどが上昇
+  p 異型リンパ球 < 20%
+section
+  h2 伝染性単核球症様の急性A型肝炎
+  .row
+    .col-md-6
+      img.plain.img-rounded(src='../src/AHV_study.png' style='width:100%')
+    .col-md-6
+      ul
+        li.fragment CD4/CD8 1.23と正常範囲内
+          br
+          | (EBV感染：CD8⇑,CD4/CD8↓)
+        li.fragment EBVによる異型リンパ球と成因が異なる
+        li.fragment CD4+/CD45RO+がCD4+リンパ球の86.3%まで上昇
+        li.fragment HAVによる異型リンパ球の増加はCD4+/CD45RO+(activated)リンパ球の過剰な活性化が原因?
+section
+  :markdown-it
+    ## 結語
+     * 今回、血小板減少と炎症反応の上昇及び異型リンパ球増多を伴った  
+       急性A型肝炎を経験した
+     * 本症例ではウイルス血清検査ではCMV, EBV感染は否定的であり、  
+       HAV単独感染でも伝染性単核球症様の経過をたどる貴重な症例を経験した
 
-  p 急性A型肝炎のみで説明できない血小板減少と炎症所見上昇と持続する発熱があり、当初は急性肝炎に何か他のウイルス感染症が合併した可能性を考えた。結果EBV、CMV感染は否定されたが、肝生検ではリンパ球浸潤形式からEBV感染の可能性も考えられる所見であった。通常急性A型肝炎ではCRPが上昇することは少ないが、HAV単独感染でもCRPが比較的高値の場合には、肝炎以外のウイルス性感染による肝機能障害様の経過をたどると考えられた。貴重な症例を経験したので報告する。
+section
+  h1 ご清聴有難うございました。
 
-section 
-  h2 link集
-  p http://ameblo.jp/bfgkh628/entry-11319671790.html
+section
+  h2 参考文献
+  ul
+    li Increase of atypical lymphocytes expressing CD4+/CD45RO+ in an infectious 
+      br
+      | mononucleosis-like syndrome associated with hepatitis A virus infection
+      br
+      | Hidehiro Watanabe et.al J Infect Chemother (2009) 15:187–190 
+
+section
+  h2 補遺：病歴
+  ul
+    li 発症日の昼にランチと共にワイングラス2杯程度の飲酒量
+section
+  h2 気になるところ
+  ul
+    li 大人になるほどA型肝炎が重篤化するのはactivated memory cellが惹起されやすくなっている？
+    li この症例でもCMV, EBVは既感染パターン
+    li 以前にペニシリンアレルギーが出ているが、IMになっていた？
+
+section
+  h2 HPS/HLH診断基準（2009年のHLH-2004改訂案）
+  p 以下のいずれかを満たせばHPS/HLHと診断される。
+  ul
+    li HPS/HLHまたはXLPの分子診断が得られる。
+    li Aの4項目中3項目以上、Bの4項目中1項目以上を満たす。C項目はHPS/HLH診断を支持する。
+  .row
+    .col-md-4
+      p: em  A項目
+      ul 
+       li 発熱
+       li 脾腫
+       li 2系統以上の血球減少
+       li 肝炎様所見
+    .col-md-4
+      p: em  B項目
+      ul
+        li 血球貪食像
+        li フェリチン上昇
+        li 可溶性IL-2R上昇
+        li NK細胞活性の低下または消失
+    .col-md-4
+      p: em  C項目
+      ul
+        li 高トリグリセライド血症
+        li 低フィブリノゲン血症
+        li 低ナトリウム血症
+
+section
+  h2 Todo
+  ul
+    li リンパ球の割合
+    li 肝機能の評価、劇症化になってなかったか
+    li IgM-HAの推移
 
 
-
+//- section
+//-   section
+//-     h2 本当にA型肝炎？：その他の検査推移
+//-     .row
+//-       .col-md-6
+//-         #container3.md-tm-0(style="width:auto; height:600px;")
+//-     script.
+//-       $(document).ready(()=> { 
+//-         var updating = false;
+//-         var myChart = Highcharts.chart('container3', {
+//-             chart: {
+//-               zoomType: 'x'
+//-             },
+//-             title: {
+//-               text: ''
+//-             },
+//-             xAxis: {
+//-               type: 'linear',
+//-               labels: {
+//-                 formatter: function() {
+//-                   return '第'+(this.value+1) + '病日';
+//-                 }
+//-               },
+//-               title: {
+//-                 text: '入院日数'
+//-               }
+//-             },
+//-             yAxis: {
+//-               title: {
+//-                 text: '酵素活性'
+//-               }
+//-             },
+//-             tooltip:{
+//-               formatter:function(){
+//-                 return '<span style="font-size: 10px">第'+(parseFloat(this.x)+1)+'病日</span><br/>'+this.series.name+": <b>"+this.y+"</b><br/>"
+//-               }
+//-             },
+//-             series: [
+//-             {
+//-               name:"T.Bil",
+//-               marker: {
+//-                 enabled: true,
+//-                 radius: 3
+//-               },
+//-               data: [[0,0.7], [1,0.9], [1.33,1], [2,1.2], [2.33,1.6], [3,2.7], [4,2.9], [4.33,2.8], [5,3.1], [6,3.6], [8,4.9], [12,2.4], [16,1.9], [20,1.3], [43,0.9], [71,0.6], [162,0.5]]
+//-             },{
+//-               name:"D.Bil",
+//-               marker: {
+//-                 enabled: true,
+//-                 radius: 3
+//-               },
+//-               data: [[0,0.3], [1,0.4], [1.33,0.6], [2,0.8], [2.33,1.2], [3,2.1], [4,2.4], [4.33,2.3], [5,2.5], [6,2.9], [8,4.1], [12,1.8], [16,1.2], [20,0.9], [43,0.5], [71,0.3], [162,0.1]]
+//-             },{
+//-               name:"CRP",
+//-               marker: {
+//-                 enabled: true,
+//-                 radius: 3
+//-               },
+//-               data: [[0,6.43], [1,6.7], [1.33,7.08], [2,6.41], [2.33,5.96], [3,6.47], [4,3.55], [4.33,2.69], [5,2.07], [6,1.3], [8,0.86], [12,0.59], [16,0.31], [20,0.27], [43,0.09], [71,0.07], [162,0.06]]
+//-             },{
+//-               name:"血小板(10^4)",
+//-               marker: {
+//-                 enabled: true,
+//-                 radius: 3
+//-               },
+//-               data: [[0,9.2], [1,8], [1.33,7.6], [2,7], [2.33,6.8], [3,9], [4,12.4], [4.33,13.1], [5,13.9], [6,14], [8,17.1], [12,12.9], [16,12.1], [20,13.7], [43,13], [71,14.7], [162,15]]
+//-             },{
+//-               name:"異型リンパ球(%)",
+//-               marker: {
+//-                 enabled: true,
+//-                 radius: 3
+//-               },
+//-               data: [[0,1], [2,3], [2.33,1], [5,40], [6,27], [8,20], [12,10]]
+//-             }                                               
+//-             ]
+//-         });
+//-         if (!updating) {
+//-           updating = true;
+//-           myChart.xAxis[0].setExtremes(0, 7);
+//-           myChart.showResetZoom();
+//-         }
+//-       }); 
+    
+//- section
+//-   h2 退院後経過
+//-   .row
+//-     .col-md-8
+//-       #container2(style="width:auto; height:600px;")
+//-     .col-md-4
+      
+//-   script.
+//-     $(document).ready(function() { 
+//-       var updating = false;
+//-       var myChart = Highcharts.chart('container2', {
+//-           chart: {
+//-             zoomType: 'x'
+//-           },
+//-           title: {
+//-             text: ''
+//-           },
+//-           xAxis: {
+//-             type: 'linear',
+//-             labels: {
+//-               formatter: function() {
+//-                 return '第'+this.value + '病日';
+//-               }
+//-             },
+//-             title: {
+//-               text: '入院前日数'
+//-             }
+//-           },
+//-           yAxis: {
+//-             title: {
+//-               text: '1/sCr'
+//-             }
+//-           },
+//-           series: [
+//-             {
+//-               name:"AST",
+//-               marker: {
+//-                 enabled: true,
+//-                 radius: 3
+//-               },
+//-               data: [[0,718], [1,1488], [1.33,1831], [2,2140], [2.33,2407], [3,2130], [4,2050], [4.33,1350], [5,1237], [6,1196], [8,549], [12,251], [16,93], [20,65], [43,79], [71,33], [162,21]]
+//-             },
+//-             {
+//-               name:"ALT",
+//-               marker: {
+//-                 enabled: true,
+//-                 radius: 3
+//-               },
+//-               data: [[0,422], [1,952], [1.33,1313], [2,1765], [2.33,2084], [3,2430], [4,3860], [4.33,2930], [5,2620], [6,2310], [8,1610], [12,817], [16,357], [20,182], [43,130], [71,60], [162,16]]
+//-             },
+//-             {
+//-               name:"γ-GTP",
+//-               marker: {
+//-                 enabled: true,
+//-                 radius: 3
+//-               },
+//-               data: [[0,354],[1,455],[1.33,512],[2,525],[2.33,542],[3,646],[4,544],[4.33,493],[5,509],[6,453],[8,511],[12,460],[16,342],[20,253],[43,105],[71,64],[162,42]]
+//-             },
+//-             {
+//-               name:"ALP",
+//-               marker: {
+//-                 enabled: true,
+//-                 radius: 3
+//-               },
+//-               data: [[0,741], [1,815], [1.33,905], [2,941], [2.33,1018], [3,1131], [4,1110], [4.33,855], [5,901], [6,720], [8,758], [12,794], [16,701], [20,629], [43,320], [71,246], [162,211]]
+//-             }                                          
+//-           ]
+//-       });
+//-       if (!updating) {
+//-         updating = true;
+//-         myChart.xAxis[0].setExtremes(0, 21);
+//-         myChart.showResetZoom();
+//-       }
+//-     }); 

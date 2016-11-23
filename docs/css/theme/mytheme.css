@@ -151,10 +151,15 @@ body {
     color: #fff;
     border-left: 0;
     padding: 30px 40px;
-    background-color: #0084B5;
+    background-color:rgba(0,132,181,0.4);
     font-size: 4.5rem;
     font-weight: bold;
     text-align: -webkit-center;
+    float:left;
+}
+.reveal section .empty-block{
+  width:1000px;
+  height:500px;
 }
 
 .reveal p{
@@ -175,6 +180,14 @@ body {
 .reveal .slides section .fragment.gray{
   opacity: 1;
   visibility: visible;
+}
+
+.reveal .slides section tr.fragment:not(.visible){
+  opacity: 1;
+  visibility: visible;
+}
+.reveal .slides section tr.fragment.warning:not(.visible) td{
+  background-color: white;
 }
 
 .reveal strong{
