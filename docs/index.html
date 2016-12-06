@@ -672,6 +672,7 @@
                   ]
               });
               var series = myChart.series;
+              var counter = 0;
               var reset =()=> _.each(series,(data)=>{
                   data.setVisible(false, false);
                   data.update({ showInLegend: false}, false);
@@ -693,7 +694,6 @@
                 );
                 myChart.redraw();
               }
-            
               Reveal.addEventListener( 'fragmentshown', function( event ) {
                 counter++;
                 render(counter);
