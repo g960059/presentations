@@ -94,7 +94,7 @@
           </dl>
         </section>
         <section>
-          <h2>院時現症</h2>
+          <h2>入院時現症</h2>
           <dl class="dl-horizontal">
             <dt>全身</dt>
             <dd>JCS-0, 身長 165.5 cm, 体重 70.8 kg, BMI 25.8 kg/㎡ </dd>
@@ -397,7 +397,6 @@
           <div class="row">
             <div class="col-xs-8">
               <div id="container" style="width:100%; height:600px"></div>
-              <div class="pull-left" id="btn1" style="position: relative;top: -20px;cursor: pointer">>></div>
             </div>
             <div class="col-xs-4 md-pl-40 fg-30">
               <p><em>鑑別</em></p>
@@ -410,6 +409,7 @@
                 <li class="fg-50 gray">脂肪肝</li>
                 <li class="fg-50 gray">うっ血性</li>
               </ul>
+              <div class="invisible-counter fg-2"></div>
             </div>
           </div>
           <script>
@@ -468,9 +468,9 @@
                       color: '#ddd', 
                       from: 4.85, 
                       to: 5.15,
-                      className: 'fg-10',
+                      className: 'fg-1',
                       label:{
-                        text: "<div class='gray-balloon fg-10'>SMNC 60ml</div>",
+                        text: "<div class='gray-balloon fg-1'>SMNC 60ml</div>",
                         useHTML:true
                       }
                     },{
@@ -485,11 +485,11 @@
                     }]
                   },
                   series: [{
-                    name: 'AST<small>(IU/l)</small>',
-                    data: [{"x":1, "y":1410}, {"x":3, "y":1478}, {"x":5, "y":1710}, {"x":6, "y":892}, {"x":8, "y":421}, {"x":11, "y":438}, {"x":14, "y":529}]},
-                    {
                     name: 'ALT<small>(IU/l)</small>',
                     data: [{"x":1, "y":2060}, {"x":3, "y":1900}, {"x":5, "y":2090}, {"x":6, "y":1560}, {"x":8, "y":998}, {"x":11, "y":679}, {"x":14, "y":642}]},
+                    {
+                    name: 'AST<small>(IU/l)</small>',
+                    data: [{"x":1, "y":1410}, {"x":3, "y":1478}, {"x":5, "y":1710}, {"x":6, "y":892}, {"x":8, "y":421}, {"x":11, "y":438}, {"x":14, "y":529}]},
                     {
                     name: 'LDH<small>(IU/l)</small>',
                     data: [{"x":1, "y":670}, {"x":3, "y":612}, {"x":5, "y":667}, {"x":6, "y":279}, {"x":8, "y":240}, {"x":11, "y":248}, {"x":14, "y":291}]},
@@ -524,17 +524,24 @@
                 );
                 myChart.redraw();
               }
-              show_series_only([0,1,2]);
-              $('#btn1').click(()=>{
-                var series = myChart.series;
-                switch(counter%2){
-                  case 0:
-                    show_series_only([3,4]); break;
-                  case 1:
-                    show_series_only([0,1,2]); break;
-                }
+              Reveal.addEventListener( 'fragmentshown', function( event ) {
                 counter++;
-              })
+                render(counter);
+              });
+              Reveal.addEventListener( 'fragmenthidden', function( event ) {
+                counter--;
+                render(counter);
+              });
+              var render = (counter) =>{
+                switch(counter){
+                  case 0:
+                    show_series_only([0,1,2]); break;
+                  case 2:
+                    show_series_only([3,4]); break;
+                  default: break; 
+                }
+              }
+              render(counter);
             }); 
             
           </script>
@@ -545,7 +552,8 @@
           <div class="row">
             <div class="col-xs-12">
               <div id="container2" style="width:100%; height:600px"></div>
-              <div class="pull-left" id="btn2" style="position: relative;top: -20px;cursor: pointer"> >></div>
+              <div class="invisible-counter fg-2"></div>
+              <div class="invisible-counter fg-3"></div>
             </div>
           </div>
           <script>
@@ -620,28 +628,28 @@
                       color: '#d6f4ff', 
                       from: 15.75, 
                       to: 16.25,
-                      className: 'fg-10',
+                      className: 'fg-1',
                       label:{
-                        text: "<div class='balloon fg-10'>PSL 30mg開始</div>",
+                        text: "<div class='balloon fg-1'>PSL 30mg開始</div>",
                         useHTML:true
                       }
                     },{
                       color: '#d6f4ff', 
                       from: 37.5, 
                       to: 38,
-                      className: 'fg-20',
+                      className: 'fg-4',
                       label:{
-                        text: "<div class='balloon fg-20'>退院</div>",
+                        text: "<div class='balloon fg-4'>退院</div>",
                         useHTML:true
                       }
                     }]
                   },
                   series: [{
-                    name: 'AST<small>(IU/l)</small>',
-                    data: [{"x":1, "y":1410}, {"x":3, "y":1478}, {"x":5, "y":1710}, {"x":6, "y":892}, {"x":8, "y":421}, {"x":11, "y":438}, {"x":14, "y":529}, {"x":15, "y":518}, {"x":17, "y":288}, {"x":19, "y":230}, {"x":21, "y":189}, {"x":24, "y":113}, {"x":28, "y":70}, {"x":31, "y":48}, {"x":35, "y":39}, {"x":38, "y":28}]},
-                    {
                     name: 'ALT<small>(IU/l)</small>',
                     data: [{"x":1, "y":2060}, {"x":3, "y":1900}, {"x":5, "y":2090}, {"x":6, "y":1560}, {"x":8, "y":998}, {"x":11, "y":679}, {"x":14, "y":642}, {"x":15, "y":624}, {"x":17, "y":458}, {"x":19, "y":416}, {"x":21, "y":368}, {"x":24, "y":271}, {"x":28, "y":179}, {"x":31, "y":125}, {"x":35, "y":91}, {"x":38, "y":61}]},
+                    {
+                    name: 'AST<small>(IU/l)</small>',
+                    data: [{"x":1, "y":1410}, {"x":3, "y":1478}, {"x":5, "y":1710}, {"x":6, "y":892}, {"x":8, "y":421}, {"x":11, "y":438}, {"x":14, "y":529}, {"x":15, "y":518}, {"x":17, "y":288}, {"x":19, "y":230}, {"x":21, "y":189}, {"x":24, "y":113}, {"x":28, "y":70}, {"x":31, "y":48}, {"x":35, "y":39}, {"x":38, "y":28}]},
                     {
                     name: 'LDH<small>(IU/l)</small>',
                     data: [{"x":1, "y":670}, {"x":3, "y":612}, {"x":5, "y":667}, {"x":6, "y":279}, {"x":8, "y":240}, {"x":11, "y":248}, {"x":14, "y":291}, {"x":15, "y":258}, {"x":17, "y":213}, {"x":19, "y":230}, {"x":21, "y":238}, {"x":24, "y":191}, {"x":28, "y":212}, {"x":31, "y":180}, {"x":35, "y":177}, {"x":38, "y":167}]},
@@ -687,35 +695,41 @@
                 );
                 myChart.redraw();
               }
-              show_series_only([0,1,2]);
-              $('#btn2').click(()=>{
-                switch(counter%3){
-                  case 0:
-                    myChart.xAxis[0].setExtremes(1, 40);
-                    break;
-                  case 1:
-                    show_series_only([0,1,2]);
-                    break;
-                  case 2:
-                    show_series_only([5,6]);
-                    break;
             
-                }
+              Reveal.addEventListener( 'fragmentshown', function( event ) {
                 counter++;
-              })
+                render(counter);
+              });
+              Reveal.addEventListener( 'fragmenthidden', function( event ) {
+                counter--;
+                render(counter);
+              });
+              var render = (counter) =>{
+                switch(counter){
+                  case 0:
+                    show_series_only([0,1,2]); break;
+                  case 2:
+                    myChart.xAxis[0].setExtremes(1, 40); break;
+                  case 3:
+                    show_series_only([5,6]);break;
+                  default: break; 
+                }
+              } 
+              render(counter);
             }); 
+            
                 
           </script>
         </section>
         <section>
           <h2>本症例の特徴</h2>
           <ul class="list">
-            <li>中年男性</li>
-            <li>急性肝障害</li>
-            <li>ウイルス、アルコール、自己免疫、薬剤性等は否定的</li>
-            <li>ANA陰性, IgG低値</li>
-            <li>病理にてcentrilobular necrosis</li>
-            <li>ステロイド著効</li>
+            <li class="fragment">中年男性</li>
+            <li class="fragment">急性肝障害</li>
+            <li class="fragment">ウイルス、アルコール、薬剤性等は否定的</li>
+            <li class="fragment">自己抗体陰性, IgG低値</li>
+            <li class="fragment">病理にてcentrilobular necrosis</li>
+            <li class="fragment">ステロイド著効</li>
           </ul>
         </section>
         <section>
@@ -875,26 +889,29 @@
               </ul>
             </div>
             <div class="col-xs-6">
-              <p><em style="font-size:120%">急性肝炎型AIH</em></p>
-              <ul class="list">
-                <li>急性肝炎様の臨床像</li>
-                <li>自己抗体<strong>陰性</strong>・血清IgG<strong>低値</strong><br>の場合が多い</li>
-                <li>病理は<strong>急性肝炎像</strong><br>(centrilobular necrosisなど)</li>
-                <li>診断基準を満たさないことも</li>
+              <p class="fg-1"><em style="font-size:120%">急性肝炎型AIH</em></p>
+              <ul class="fg-1 list">
+                <li class="fg-2">急性肝炎様の臨床像</li>
+                <li class="fg-3">自己抗体<strong>陰性</strong>・血清IgG<strong>低値</strong><br>の場合が多い</li>
+                <li class="fg-4">病理は<strong>急性肝炎像</strong><br>(centrilobular necrosisなど)</li>
+                <li class="fg-5">診断基準を満たさないことも</li>
               </ul>
             </div>
-          </div><br><strong style="font-size:120%">どちらも副腎皮質ステロイドは著効する！</strong>
+          </div><br><strong class="fg-6" style="font-size:120%">どちらも副腎皮質ステロイドは著効する！</strong>
         </section>
         <section>
           <h2>考察・結語</h2>
           <ul class="list">
-            <li><em>原因不明の急性肝障害</em>では、<em>自己抗体陰性・IgG低値であっても</em>、<br><strong>急性肝炎様AIHを想定し</strong>、早期に肝生検を行い、<br><em>Centri-lobular necrosis</em>等の急性肝炎様の病理所見があれば、<br><strong>ステロイドを試用する</strong>必要があるのではないかと考えた</li>
-            <li>急性肝炎様AIHの症例はまだ報告は少なく、症例の蓄積が必要</li>
-            <li><em>急性発症様AIHの診断基準の作成が待ち望まれる</em></li>
+            <li class="fragment"><em>原因不明の急性肝障害</em>では、<em>自己抗体陰性・IgG低値であっても</em>、<br><strong>急性肝炎様AIHを想定し</strong>、早期に肝生検を行い、<br><em>Centri-lobular necrosis</em>等の急性肝炎様の病理所見があれば、<br><strong>ステロイドを試用する</strong>必要があるのではないかと考えた</li>
+            <li class="fragment">急性肝炎様AIHの症例はまだ報告は少なく、症例の蓄積が必要</li>
+            <li class="fragment"><em>急性発症様AIHの診断基準の作成が待ち望まれる</em></li>
           </ul>
         </section>
         <section>
           <h1>ご清聴有難うございました</h1>
+        </section>
+        <section>
+          <h1>未使用スライド</h1>
         </section>
         <section>
           <h2>自己免疫性肝炎の一般的な病理所見</h2>
@@ -937,6 +954,63 @@
               <!-- .element: class="fragment" data-fragment-index="1"-->
             </li>
           </ul>
+        </section>
+        <section>
+          <div id="container4" style="width:100%; height:600px" data-background-transition="fade"></div>
+          <div class="balloon fragment" data-fragment-index="2" style="top:41px;left:305px">第5病日<br>  SMNC iv</div>
+          <div class="balloon fragment" data-fragment-index="3" style="top:328px;left:881px">第14病日<br>  肝生検</div>
+          <script>
+            $(document).ready(function() { 
+                var myChart = Highcharts.chart('container4', {
+                    chart: {
+                      type: 'spline',
+                      zoomType: 'x'
+                    },
+                    title: {
+                      text: '入院後経過'
+                    },
+                    xAxis: {
+                      type: 'linear',
+                      labels: {
+                        formatter: function() {
+                          return this.value ;
+                        }
+                      },
+                      title: {
+                        text: '入院後日数'
+                      }
+                    },
+                    yAxis: {
+                      title: {
+                        text: '酵素活性'
+                      }
+                    },
+                    series: [{
+                    name: 'AST<small>(IU/l)</small>',
+                    data: [{"x":1, "y":1410}, {"x":3, "y":1478}, {"x":5, "y":1710}, {"x":6, "y":892}, {"x":8, "y":421}, {"x":11, "y":438}, {"x":14, "y":529}, {"x":15, "y":518}, {"x":17, "y":288}, {"x":19, "y":230}, {"x":21, "y":189}, {"x":24, "y":113}, {"x":28, "y":70}, {"x":31, "y":48}, {"x":35, "y":39}, {"x":38, "y":28}]},
+                    {
+                    name: 'ALT<small>(IU/l)</small>',
+                    data: [{"x":1, "y":2060}, {"x":3, "y":1900}, {"x":5, "y":2090}, {"x":6, "y":1560}, {"x":8, "y":998}, {"x":11, "y":679}, {"x":14, "y":642}, {"x":15, "y":624}, {"x":17, "y":458}, {"x":19, "y":416}, {"x":21, "y":368}, {"x":24, "y":271}, {"x":28, "y":179}, {"x":31, "y":125}, {"x":35, "y":91}, {"x":38, "y":61}]},
+                    {
+                    name: 'LDH<small>(IU/l)</small>',
+                    data: [{"x":1, "y":670}, {"x":3, "y":612}, {"x":5, "y":667}, {"x":6, "y":279}, {"x":8, "y":240}, {"x":11, "y":248}, {"x":14, "y":291}, {"x":15, "y":258}, {"x":17, "y":213}, {"x":19, "y":230}, {"x":21, "y":238}, {"x":24, "y":191}, {"x":28, "y":212}, {"x":31, "y":180}, {"x":35, "y":177}, {"x":38, "y":167}]},
+                    {
+                    name: 'γ-GDP<small>(IU/l)</small>',
+                    data: [{"x":1, "y":280}, {"x":3, "y":224}, {"x":5, "y":214}, {"x":6, "y":206}, {"x":8, "y":195}, {"x":11, "y":191}, {"x":14, "y":198}, {"x":15, "y":207}, {"x":17, "y":243}, {"x":19, "y":359}, {"x":21, "y":426}, {"x":24, "y":416}, {"x":28, "y":311}, {"x":31, "y":253}, {"x":35, "y":224}, {"x":38, "y":171}]},
+                    {
+                    name: 'ALP<small>(IU/l)</small>',
+                    data: [{"x":1, "y":517}, {"x":3, "y":351}, {"x":5, "y":332}, {"x":6, "y":324}, {"x":8, "y":384}, {"x":11, "y":402}, {"x":14, "y":418}, {"x":15, "y":384}, {"x":17, "y":355}, {"x":19, "y":346}, {"x":21, "y":362}, {"x":24, "y":360}, {"x":28, "y":299}, {"x":31, "y":289}, {"x":35, "y":307}, {"x":38, "y":254}]},
+                    {
+                    name: '総Bil<small>(mg/dl)</small>',
+                    data: [{"x":1, "y":6.3}, {"x":3, "y":6.6}, {"x":5, "y":10}, {"x":6, "y":11.9}, {"x":8, "y":15}, {"x":11, "y":21.4}, {"x":14, "y":26.4}, {"x":15, "y":26.1}, {"x":17, "y":17.2}, {"x":19, "y":11.7}, {"x":21, "y":9.2}, {"x":24, "y":7.2}, {"x":28, "y":4.9}, {"x":31, "y":3.9}, {"x":35, "y":3.3}, {"x":38, "y":2.7}]},
+                    {
+                    name: '直接Bil<small>(mg/dl)</small>',
+                    data: [{"x":1, "y":5.1}, {"x":3, "y":5.5}, {"x":5, "y":8.2}, {"x":6, "y":9.7}, {"x":8, "y":12.2}, {"x":11, "y":17.1}, {"x":14, "y":20.6}, {"x":15, "y":20.7}, {"x":17, "y":14.3}, {"x":19, "y":9.4}, {"x":21, "y":7.3}, {"x":24, "y":5.6}, {"x":28, "y":4}, {"x":31, "y":3.2}, {"x":35, "y":2.7}, {"x":38, "y":2.1}]}
+                  ]
+                });
+            }); 
+            
+          </script>
         </section>
       </div>
     </div>

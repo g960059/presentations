@@ -14,6 +14,11 @@
   max-width: none !important;
   width:970px;
 }
+.invisible-counter{
+  display: none;
+  width:0;
+  hight:0;
+}
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
