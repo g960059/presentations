@@ -532,6 +532,10 @@
                 counter--;
                 render(counter);
               });
+              Reveal.addEventListener( 'slidechanged', function( event ) {
+                 counter = 0;
+                 render(counter);
+              });
               var render = (counter) =>{
                 switch(counter){
                   case 0:
@@ -667,13 +671,7 @@
                     data: [{"x":1, "y":5.1}, {"x":3, "y":5.5}, {"x":5, "y":8.2}, {"x":6, "y":9.7}, {"x":8, "y":12.2}, {"x":11, "y":17.1}, {"x":14, "y":20.6}, {"x":15, "y":20.7}, {"x":17, "y":14.3}, {"x":19, "y":9.4}, {"x":21, "y":7.3}, {"x":24, "y":5.6}, {"x":28, "y":4}, {"x":31, "y":3.2}, {"x":35, "y":2.7}, {"x":38, "y":2.1}]}
                   ]
               });
-              var updating = false;
-              var counter = 0;
               var series = myChart.series;
-              if (!updating) {
-                updating = true;
-                myChart.xAxis[0].setExtremes(1, 17);
-              }
               var reset =()=> _.each(series,(data)=>{
                   data.setVisible(false, false);
                   data.update({ showInLegend: false}, false);
@@ -704,10 +702,16 @@
                 counter--;
                 render(counter);
               });
+              Reveal.addEventListener( 'slidechanged', function( event ) {
+                 counter = 0;
+                 render(counter);
+              });
               var render = (counter) =>{
                 switch(counter){
                   case 0:
-                    show_series_only([0,1,2]); break;
+                    show_series_only([0,1,2]); 
+                    myChart.xAxis[0].setExtremes(1, 17);
+                    break;
                   case 2:
                     myChart.xAxis[0].setExtremes(1, 40); break;
                   case 3:
@@ -715,7 +719,7 @@
                   default: break; 
                 }
               } 
-              render(counter);
+              
             }); 
             
                 
