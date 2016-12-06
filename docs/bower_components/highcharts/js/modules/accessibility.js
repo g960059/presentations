@@ -1,5 +1,5 @@
 /*
- Highcharts JS v5.0.2 (2016-10-26)
+ Highcharts JS v5.0.4 (2016-11-22)
  Accessibility module
 
  (c) 2010-2016 Highsoft AS

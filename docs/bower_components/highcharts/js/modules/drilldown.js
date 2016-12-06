@@ -1,5 +1,5 @@
 /*
- Highcharts JS v5.0.2 (2016-10-26)
+ Highcharts JS v5.0.4 (2016-11-22)
  Highcharts Drilldown module
 
  Author: Torstein Honsi

@@ -9,7 +9,10 @@ html
     link(rel='stylesheet', href='lib/css/zenburn.css')
     link(rel='stylesheet', href='bower_components/bootstrap/dist/css/bootstrap.min.css')
     script(src='bower_components/highcharts/highcharts.js')
+    script(src='bower_components/highcharts/highcharts-more.js')
+    script(src='bower_components/highcharts/modules/drilldown.js')
     script(src='bower_components/jquery/dist/jquery.min.js')
+    script(src='bower_components/underscore/underscore-min.js')
     script(src='js/myscript.js')
     script.
       var link = document.createElement( 'link' );
@@ -28,9 +31,13 @@ html
     script.
       // More info https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
-      controls: false,
-      history: true,
-      transition: 'fade-in',
+        controls: false,
+        history: true,
+        viewDistance: 100,
+        transition: 'none',
+        menu:{
+          openButton: false
+        },
       // More info https://github.com/hakimel/reveal.js#dependencies
       dependencies: [
       { src: 'plugin/markdown/marked.js' },

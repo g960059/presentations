@@ -10,7 +10,19 @@ const html2jade = require('gulp-html2jade');
 const jade = require('gulp-jade');
 const runSequence = require('run-sequence');
 const fileSync = require('gulp-file-sync');
+var s3 = require('gulp-s3-upload')({
+    accessKeyId: "AKIAIOIJOCJNUTSYCRXQ",
+    secretAccessKey: "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",
+    region:"ap-northeast-1"
+});
+var splitExt = (filename) =>{
+    return filename.split(/\.(?=[^.]+$)/);
+}
 
+
+var argv = minimist(process.argv.slice(2));
+var file_name = argv['f'];
+var file = file_name.split('/')[1];
 
 gulp.task('serve', ()=> {
   gulp.src('docs') //Webサーバーで表示するサイトのルートディレクトリを指定
@@ -19,9 +31,6 @@ gulp.task('serve', ()=> {
       //directoryListing: true //ディレクトリ一覧を表示するか。オプションもあり
     }));
 });
-
-var argv = minimist(process.argv.slice(2));
-var file_name = argv['f'];
 
 gulp.task('sync', function() {
   gulp.watch(['src/*.*'], function() {
@@ -58,15 +67,48 @@ gulp.task('jade',()=>{
       pretty: true
     }))
   .pipe(gulp.dest('docs'))
-})
+});
+gulp.task('pug_s3', ()=> {
+  return gulp.src('pug/index.pug')
+  .pipe(pug({
+    pretty: true, 
+    basedir:"./",
+    locals: {
+        src: 'https://s3-ap-northeast-1.amazonaws.com/presentation-src',
+      }
+  }))
+  .pipe(rename(splitExt(file)[0]+".html"))
+  .pipe(gulp.dest('docs'))
+});
 
 gulp.task('watch', ()=>{
   return gulp.watch('pug/*.pug',['rename','pug'])
-})
+});
+gulp.task('watch_s3', ()=>{
+  return gulp.watch('pug/*.pug',['rename','pug_s3'])
+});
+gulp.task('watch-src', function(){
+  gulp.watch('src/**',['upload']);
+});
 
 gulp.task('dev',(cb) => {
   return runSequence('sync_','rename','pug','serve','watch','sync', cb);
 });
+gulp.task('dev_s3',(cb) => {
+  return runSequence('sync_','rename','pug_s3','serve','watch_s3','sync', cb);
+});
 
 
+
+//upload to S3
+gulp.task("upload", () => {
+  return  gulp.src("src/**")
+        .pipe(s3({
+            Bucket: 'presentation-src', //  Required 
+            ACL:    'public-read'       //  Needs to be user-defined 
+        }, {
+            // S3 Constructor Options, ie: 
+            maxRetries: 5
+        }))
+});
 

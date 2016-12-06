@@ -33,6 +33,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
     "gulp-revealjs": "0.0.2",
+    "gulp-s3": "^0.3.0",
+    "gulp-s3-upload": "^1.6.4",
     "gulp-sequence": "^0.4.6",
     "gulp-webserver": "^0.9.1",
     "jstransformer-markdown-it": "^2.0.0",
