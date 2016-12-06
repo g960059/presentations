@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>reveal.js</title>
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/mytheme.css">
@@ -126,7 +125,7 @@
         <section>
           <h2>入院時検査所見</h2>
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-xs-4">
               <table class="table table-condensed" style="margin-top:-10px;font-size: 120%">
                 <tr>
                   <td><em>血算</em></td>
@@ -205,7 +204,7 @@
                 </tr>
               </table>
             </div>
-            <div class="col-md-4">
+            <div class="col-xs-4">
               <table class="table table-condensed" style="margin-top:-10px;font-size: 120%">
                 <tr>
                   <td><em>生化学</em></td>
@@ -294,7 +293,7 @@
                 </tr>
               </table>
             </div>
-            <div class="col-md-4"> 
+            <div class="col-xs-4"> 
               <table class="table table-condensed" style="margin-top:-10px;font-size: 120%">   
                 <tr>
                   <td><em>感染症</em></td>
@@ -396,11 +395,11 @@
         <section>
           <h2>臨床経過</h2>
           <div class="row">
-            <div class="col-md-8">
+            <div class="col-xs-8">
               <div id="container" style="width:100%; height:600px"></div>
               <div class="pull-left" id="btn1" style="position: relative;top: -20px;cursor: pointer">>></div>
             </div>
-            <div class="col-md-4 md-pl-40 fg-30">
+            <div class="col-xs-4 md-pl-40 fg-30">
               <p><em>鑑別</em></p>
               <ul>
                 <li class="fg-40 gray">肝炎ウイルス</li>
@@ -502,13 +501,8 @@
                     data: [{"x":1, "y":5.1}, {"x":3, "y":5.5}, {"x":5, "y":8.2}, {"x":6, "y":9.7}, {"x":8, "y":12.2}, {"x":11, "y":17.1}, {"x":14, "y":20.6}]}
                   ]
               });
-              //- var updating = false;
               var counter = 0;
               var series = myChart.series;
-              //- if (!updating) {
-              //-   updating = true;
-              //-   myChart.xAxis[0].setExtremes(1, 6);
-              //- }
               var reset =()=> _.each(series,(data)=>{
                   data.setVisible(false, false);
                   data.update({ showInLegend: false}, false);
@@ -549,7 +543,7 @@
         <section>
           <h2>臨床経過</h2>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-xs-12">
               <div id="container2" style="width:100%; height:600px"></div>
               <div class="pull-left" id="btn2" style="position: relative;top: -20px;cursor: pointer"> >></div>
             </div>
@@ -728,7 +722,7 @@
           <h2>診断指針・基準は満たさなかった</h2>
           <p>自己免疫性肝炎診断の国際スコアリングシステム: <strong>8点 </strong>< 10点</p>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-xs-12">
               <table class="table table-condensed table-striped table-elegant">
                 <thead>
                   <tr>
@@ -870,7 +864,7 @@
         <section>
           <h2>急性肝炎様AIHとは？</h2>
           <div class="row">
-            <div class="col-md-6 md-pr-20">   
+            <div class="col-xs-6 md-pr-20">   
               <p><em style="font-size:120%">典型的AIH</em></p>
               <ul class="list">
                 <li>中年以降の女性に好発</li>
@@ -880,7 +874,7 @@
                 <li>まれに急性増悪するが、<br>この場合も慢性肝炎像</li>
               </ul>
             </div>
-            <div class="col-md-6">
+            <div class="col-xs-6">
               <p><em style="font-size:120%">急性肝炎型AIH</em></p>
               <ul class="list">
                 <li>急性肝炎様の臨床像</li>

@@ -94,7 +94,7 @@ section
 section
   h2 入院時検査所見
   .row
-    .col-md-4
+    .col-xs-4
       table.table.table-condensed(style="margin-top:-10px;font-size: 120%;")
         tr
           td: em 血算
@@ -156,7 +156,7 @@ section
           td AMA
           td (ー)
           td
-    .col-md-4
+    .col-xs-4
       table.table.table-condensed(style="margin-top:-10px;font-size: 120%;")
         tr
           td: em 生化学
@@ -226,7 +226,7 @@ section
           td Lypase
           td 119
           td IU/l
-    .col-md-4  
+    .col-xs-4  
       table.table.table-condensed(style="margin-top:-10px;font-size: 120%;")    
         tr
           td: em 感染症
@@ -306,10 +306,10 @@ section
 section
   h2 臨床経過
   .row
-    .col-md-8
+    .col-xs-8
       #container(style="width:100%; height:600px;")
       .pull-left#btn1(style="position: relative;top: -20px;cursor: pointer;") >>
-    .col-md-4.md-pl-40.fg-30
+    .col-xs-4.md-pl-40.fg-30
       p: em 鑑別
       ul
         li.fg-40.gray 肝炎ウイルス
@@ -408,13 +408,8 @@ section
             data: [{"x":1, "y":5.1}, {"x":3, "y":5.5}, {"x":5, "y":8.2}, {"x":6, "y":9.7}, {"x":8, "y":12.2}, {"x":11, "y":17.1}, {"x":14, "y":20.6}]}
           ]
       });
-      //- var updating = false;
       var counter = 0;
       var series = myChart.series;
-      //- if (!updating) {
-      //-   updating = true;
-      //-   myChart.xAxis[0].setExtremes(1, 6);
-      //- }
       var reset =()=> _.each(series,(data)=>{
           data.setVisible(false, false);
           data.update({ showInLegend: false}, false);
@@ -454,7 +449,7 @@ section(data-background-image='./src/AIH_bx.png', data-background-repeat='repeat
 section
   h2 臨床経過
   .row
-    .col-md-12
+    .col-xs-12
       #container2(style="width:100%; height:600px;")
       .pull-left#btn2(style="position: relative;top: -20px;cursor: pointer;")  >>
 
@@ -633,7 +628,7 @@ section
     strong 8点 
     | < 10点
   .row
-    .col-md-12
+    .col-xs-12
       table.table.table-condensed.table-striped.table-elegant
         thead
           tr
@@ -766,7 +761,7 @@ section
 section
   h2 急性肝炎様AIHとは？
   .row
-    .col-md-6.md-pr-20    
+    .col-xs-6.md-pr-20    
       p: em(style="font-size:120%") 典型的AIH
       ul.list
         li 中年以降の女性に好発
@@ -780,7 +775,7 @@ section
         li まれに急性増悪するが、
           br
           | この場合も慢性肝炎像
-    .col-md-6
+    .col-xs-6
       p: em(style="font-size:120%") 急性肝炎型AIH
       ul.list
         li 急性肝炎様の臨床像
