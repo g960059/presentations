@@ -50,7 +50,13 @@ gulp.task('rename',()=>{
 
 gulp.task('pug', ()=> {
   return gulp.src('pug/index.pug')
-  .pipe(pug({pretty: true, basedir:"./"}))
+  .pipe(pug({
+    pretty: true, 
+    basedir:"./",
+    locals: {
+        src: '../src',
+      }
+  }))
   .pipe(gulp.dest('docs'))
 });
 
