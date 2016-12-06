@@ -94,8 +94,8 @@ gulp.task('watch-src', function(){
 gulp.task('dev',(cb) => {
   return runSequence('sync_','rename','pug','serve','watch','sync', cb);
 });
-gulp.task('dev_s3',(cb) => {
-  return runSequence('sync_','rename','pug_s3','serve','watch_s3','sync', cb);
+gulp.task('publish',(cb) => {
+  return runSequence('sync_','rename','upload','pug_s3','serve','watch_s3','sync', cb);
 });
 
 
