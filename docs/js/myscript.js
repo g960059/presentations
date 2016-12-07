@@ -10,6 +10,9 @@ $(window).on('load', function(){
   $(".fg-3").attr('data-fragment-index', 3).addClass("fragment");
   $(".fg-4").attr('data-fragment-index', 4).addClass("fragment");
   $(".fg-5").attr('data-fragment-index', 5).addClass("fragment");
-  $(".fg-6").attr('data-fragment-index', 6).addClass("fragment");  
+  $(".fg-6").attr('data-fragment-index', 6).addClass("fragment");
+  $(".fg-7").attr('data-fragment-index', 7).addClass("fragment");  
+  $(".fg-8").attr('data-fragment-index', 8).addClass("fragment");   
+  $(".fg-9").attr('data-fragment-index', 9).addClass("fragment");  
   $(".fg").addClass("fragment");
 });
