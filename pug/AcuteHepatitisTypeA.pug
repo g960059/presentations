@@ -1,5 +1,5 @@
 section
-  h1 高熱とCRP上昇伴って発症し当初鑑別に苦慮したA型急性
+  h1 高熱とCRP上昇を伴って発症し当初鑑別に苦慮したA型急性
     br
     | 肝炎の一例
   h4 東京逓信病院 消化器内科　*同血液内科  **同病理科
@@ -20,7 +20,7 @@ section
   p: em 理由
   ul.list
     li 高熱とCRP上昇(6〜7mg/dl)が6日間持続
-    li sIL2-R 1480, フェリチン〜と上昇
+    li sIL2-R 1490, フェリチン〜と上昇
     li PLT 9万➡7万に減少(最初の3日間)
     li 異型リンパ球がmax 40%まで増加した
 
@@ -231,8 +231,8 @@ section
           td 0.6
           td ng/ml
 section
-  section(data-background-color='#000000' data-background-video=src+"/acuteHepatitisA_1.mp4" controls='controls')
-    p.caption_white 第1病日 腹部単純CT
+  section(data-background-color='#000000' data-background-video=src+"/acuteHepatitisA_0605_2.mp4" controls='controls')
+    p.bg-caption 造影CT 門脈相
   section(data-background-color='#000000')
     video(width='1280', height='650', controls='controls' data-autoplay)
       source(src=src+'/acuteHepatitisA_0605_2.mp4', type='video/mp4')
@@ -266,6 +266,8 @@ section
       .invisible-counter.fg-2
       .invisible-counter.fg-5
       .invisible-counter.fg-6
+      .invisible-counter.fg-8
+      .invisible-counter.fg-9
         //-   br
         //-   | 各種ウイルス血清検査が帰着
         //- p.fg-40: em IgM-HA 2.34
@@ -499,17 +501,16 @@ section
 
 
 section(data-background-image=src+'/AHV_histo1.jpg', data-background-repeat='repeat')
-section(data-background-image=src+'/AHV-histo2.jpg', data-background-repeat='repeat')
-
 
 section
-  h2 診断: 
-    span.fragment(data-fragment-index="3") A型急性肝炎
+  h2 生検同日にウイルス血清検査が帰着
   .row
-    .col-xs-2
-    .col-xs-8.fragment(data-fragment-index="1")
-      p: em ウイルス血清検査
-      table.table.table-condensed
+    .col-xs-6
+      table.table.table-condensed(style="margin-top:-10px;font-size: 140%;")
+        tr
+          td: em ウイルス血清検査
+          td
+          td
         tr
           td CMV-IgG
           td.red 80
@@ -554,7 +555,7 @@ section
           td HBVDNA
           td (ー）
           td
-        tr.warning.fragment(data-fragment-index="2")
+        tr.warning.fg-1.grow
           td IgMHA
           td.red 2.34
           td
@@ -566,6 +567,10 @@ section
           td IgAHEVAb
           td (ー)
           td  
+    .col-xs-6.md-pl-40
+      p.md-ml-40.fg-2: em 診断
+      br
+      h3.fg-3 急性A型肝炎
 
 section
   h2 その後の臨床経過
@@ -670,12 +675,12 @@ section
               } // Width of the line  
               },{
               color: '#ccc', // Color value
-              className: 'fg-3', // Style of the plot line. Default to solid
+              className: 'fg-2', // Style of the plot line. Default to solid
               from: 19.9, // Value of where the line will appear
               to: 20.1, // Width of the line  
               zIndex:2,
               label:{
-                text: "<em class='fg-3 balloon'>退院</em>",
+                text: "<em class='fg-2 balloon'>退院</em>",
                 useHTML:true
               }}
             ]
@@ -807,31 +812,36 @@ section
           case 0:
             show_series_only([0,1,2]); 
             myChart.xAxis[0].setExtremes(0, 21);
-            break;
-          case 2:
-            show_series_only([3,4]); break;                      
+            break;                   
           default: break; 
         }
       }
     }); 
 
 section
-  h1 考察：A型肝炎
-section
-  h2 高齢発症のA型肝炎が増えてきている
-  .row
-    .col-xs-7
-      img.plain.img-rounded(src=src+'/AHV_epi2011.png')
-      .arrow-down
-      img.plain.img-rounded(src=src+'/AHV_epi2016.png')
-    .col-xs-5
-      .text-center 以前は若年者が多い病気
-      .arrow-down
-      .text-center 衛生状態の改善
-      .arrow-down
-      .text-center 高齢発症が増加
-      br
-      p.strong.md-ml-40.md-pl-40 高齢発症の方が重篤
+  h2 本症例の特徴
+  .row 
+    .col-xs-8
+      ul
+        li 54歳男性
+        li 急性肝障害(入院後もT/Aが上昇を続けた)
+        li.fg-1.highlight-red 高熱とCRP高値(6〜7 mg/dl)が<em>1週間</em>持続
+        li.fg-1.highlight-red 異型リンパ球が<em>40%</em>まで上昇
+        li.fg-2.highlight-blue sIL2R 1490, フェリチン〜と上昇
+        li.fg-2.highlight-blue 血小板が9万→7万に3日間で減少
+        li 病理でinterface hepatitisあり
+    .col-xs-4
+      p: em 鑑別
+      ul
+        li.fg-1.highlight-red HPS/Lymphoma
+        li.fg-2.highlight-blue 伝染性単核球症
+        li アルコール性
+        li 薬剤性
+        li 急性肝炎様自己免疫性肝炎
+
+
+
+
 section
   h2 なぜ診断に苦慮したか
   p.fg-1: em 伝染性単核球症様の検査所見
@@ -923,9 +933,6 @@ section
   h1 ご清聴有難うございました。
 
 section
-  h2 
-
-section
   h2 参考文献
   ul
     li Increase of atypical lymphocytes expressing CD4+/CD45RO+ in an infectious 
@@ -972,7 +979,21 @@ section
         li 高トリグリセライド血症
         li 低フィブリノゲン血症
         li 低ナトリウム血症
-
+section
+  h2 高齢発症のA型肝炎が増えてきている
+  .row
+    .col-xs-7
+      img.plain.img-rounded(src=src+'/AHV_epi2011.png')
+      .arrow-down
+      img.plain.img-rounded(src=src+'/AHV_epi2016.png')
+    .col-xs-5
+      .text-center 以前は若年者が多い病気
+      .arrow-down
+      .text-center 衛生状態の改善
+      .arrow-down
+      .text-center 高齢発症が増加
+      br
+      p.strong.md-ml-40.md-pl-40 高齢発症の方が重篤
 
 section
   h2 Todo
