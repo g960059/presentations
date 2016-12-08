@@ -19,6 +19,10 @@
   width:0;
   hight:0;
 }
+
+g.highcharts-label.highcharts-data-label text tspan {
+  font-size: 150%;
+}
 /*********************************************
  * GLOBAL STYLES
  *********************************************/

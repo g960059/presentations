@@ -308,110 +308,27 @@ section
         br
         | 両側腎動脈の狭窄なし
       img.plain.img-rounded(src=src+'/TIN_MRI.png')
-section
-  h2 入院前経過
-  .row
-    .col-xs-12
-      #container_1(style="width:auto; height:600px;")
-  script.
-    $(window).on("load",()=> { 
-      var myChart = Highcharts.chart('container_1', {
-          chart: {
-            type: 'area',
-            zoomType: 'x'
-          },
-          title: {
-            text: ''
-          },
-          tooltip:{
-            enabled: false
-          },
-          legend:{
-            symbolPadding: 15,
-            symbolRadius: 24,
-            useHTML: true,  
-            itemStyle:{
-              "fontSize": "30px", 
-              "fontWeight": "bold"
-            }
-          },
-          yAxis: {
-            title: {
-              text: '1/sCr',
-              offset:80
-            },
-            labels:{
-              y: 7
-            },
-            tickAmount: 6
-          },
-          plotOptions: {
-            series: {
-              fillOpacity: 0,
-              zoneAxis: 'x',
-              lineWidth: 5,
-              marker: {
-                radius: 10
-              }
-            }
-          },
-          xAxis: {
-            type: 'linear',
-            labels: {
-              formatter: function() {
-                return this.value+1;
-              }
-            },
-            title: {
-              text: '入院前日数'
-            },
-            plotBands: [{
-              color: '#ccc', // Color value
-              className: 'fragment', // Style of the plot line. Default to solid
-              from: -83, // Value of where the line will appear
-              to: -85,
-              label:{
-                text: "",
-              }},{
-              color: '#ccc', // Color value
-              className: 'fragment', // Style of the plot line. Default to solid
-              from: -1, // Value of where the line will appear
-              to: 1,
-              label:{
-                text: "<em class='fg'></em>",
-                useHTML:true
-              }}
-            ]
-          },
-          series: [
-            {
-              name:"1/sCr",
-              data: [[-260, 1.17647058823529], [-259, 1.19047619047619], [-258, 1.14942528735632], [-256, 1.11111111111111], [-250, 1.19047619047619], [-246, 1.17647058823529], [-236, 1.13636363636364], [-215, 1.11111111111111], [-196, 1.04166666666667], [-187, 0.970873786407767], [-160, 1.11111111111111], [-132, 1.04166666666667], [-83, 1.12359550561798], [-27, 0.65359477124183], [-5, 0.526315789473684], [-4, 0.5], [0, 0.492610837438424], [2, 0.492610837438424]]
-            }
-          ]
-      });
-    }); 
-
 
 section
   h2 臨床経過
   .row
     .col-xs-8
       #container1(style="width:auto; height:600px;")
-      .pull-left#btn1(style="position: relative;top: -20px;cursor: pointer;") >>
+      .invisible-counter.fg-5
+      .invisible-counter.fg-4
     .col-xs-4.md-pl-20.small-font
       //- li 各種自己抗体陰性、尿中β2MG, NAG高値
       //- p FENa 1.9%, FEUN 45.2%
-      p.fg-2: em 鑑別
-      ul.list.fg-2
-        li.fg-4.gray 腎前性腎不全
+      p: em 鑑別
+      ul.list
+        li.fg-2.gray 腎前性腎不全
           br
-          small.md-ml-20.fg-3 FENa 1.1%、FEUN 37.6%
+          small.md-ml-20.fg-1 FENa 1.1%、FEUN 37.6%
             br 
             | 補液反応性が乏しい
-        li.fg-4.gray 腎後性腎不全
+        li.fg-2.gray 腎後性腎不全
           br
-          small.md-ml-20.fg-3 画像検査(CT, US)
+          small.md-ml-20.fg-1 画像検査(CT, US)
         li 腎性腎不全
         
 
@@ -475,27 +392,51 @@ section
             },
             plotBands: [{
               color: '#ddd', // Color value
-              className: 'fg-1', // Style of the plot line. Default to solid
-              from: -0.25, // Value of where the line will appear
-              to: 0.25,
+              className: '', // Style of the plot line. Default to solid
+              from: -259.5, // Value of where the line will appear
+              to: -258.5,
               label:{
-                text: "<div class='gray-balloon fragment fg-1'>入院<br>内服中止<br>hydration</div>",
-                useHTML:true
-              }},{
-              color: '#d6f4ff', // Color value
-              className: 'fg-10', // Style of the plot line. Default to solid
-              from: 12.85, // Value of where the line will appear
-              to: 13.15,
-              label:{
-                text: "<div class='balloon fg-10'>Gaシンチ</div>",
+                text: "<div class='gray-balloon'>PPI開始</div>",
                 useHTML:true
               }},{
               color: '#ddd', // Color value
-              className: 'fg-60', // Style of the plot line. Default to solid
+              className: '', // Style of the plot line. Default to solid
+              from: -196.5, // Value of where the line will appear
+              to: -195.5,
+              label:{
+                text: "<div class='gray-balloon'>クレストール開始</div>",
+                useHTML:true
+              }},{
+              color: '#ddd', // Color value
+              className: '', // Style of the plot line. Default to solid
+              from: -27.5, // Value of where the line will appear
+              to: -26.5,
+              label:{
+                text: "<div class='gray-balloon'>アムロジピン開始</div>",
+                useHTML:true
+              }},{
+              color: '#ddd', // Color value
+              className: 'fg-3', // Style of the plot line. Default to solid
+              from: -0.25, // Value of where the line will appear
+              to: 0.25,
+              label:{
+                text: "<div class='balloon fragment fg-3'>入院<br>内服中止<br>hydration</div>",
+                useHTML:true
+              }},{
+              color: '#d6f4ff', // Color value
+              className: 'fg-6', // Style of the plot line. Default to solid
+              from: 12.85, // Value of where the line will appear
+              to: 13.15,
+              label:{
+                text: "<div class='balloon fg-6'>Gaシンチ</div>",
+                useHTML:true
+              }},{
+              color: '#ddd', // Color value
+              className: 'fg-7', // Style of the plot line. Default to solid
               from: 14.85, // Value of where the line will appear
               to: 15.15,
               label:{
-                text: "<div class='gray-balloon fragment fg-60'>腎生検</div>",
+                text: "<div class='gray-balloon fragment fg-7'>腎生検</div>",
                 useHTML:true
               }}
             ]
@@ -536,18 +477,33 @@ section
         );
         myChart.redraw();
       }
-      show_series_only([0]);
-      $('#btn1').click(()=>{
-        switch(counter%3){
-          case 0:
-            myChart.xAxis[0].setExtremes(0, 18); break;
-          case 1:
-            show_series_only([1,2]); break;
-          case 2:
-            show_series_only([0]); break;
-        }
+      Reveal.addEventListener( 'fragmentshown', function( event ) {
         counter++;
-      })
+        render(counter);
+      });
+      Reveal.addEventListener( 'fragmenthidden', function( event ) {
+        counter--;
+        render(counter);
+      });
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+         counter = 0;
+         render(counter);
+      });
+      var render = (counter) =>{
+        switch(counter){
+          case 0:
+            show_series_only([0]); 
+            break;
+          case 4:
+            myChart.xAxis[0].setExtremes(0, 18); 
+            break;
+          case 5:
+            show_series_only([1,2]); 
+            break;
+          default: break; 
+        }
+      }
+      render(counter);
     }); 
 
 section(data-background-image=src+"/TIN_ga.png" data-background-size="contain")
@@ -555,7 +511,6 @@ section(data-background-image=src+"/TIN_ga.png" data-background-size="contain")
 
 section(data-background-image=src+"/AIN_histo1.png")
 section(data-background-image=src+"/AIN_histo2.png")
-section(data-background-image=src+"/AIN_histo3.png")
 
 section
   h2 入院後経過
@@ -884,6 +839,8 @@ section
     li T-cell, Monocyte, Plasma cell, Eosinophilが混在
     li 薬剤性AINではGranulomaを形成することもある
   p.reference.md-mt-40 Corwin HL, Korbet SM, Schwartz MM. Clinical correlates of eosinophiluria. Arch Intern Med 1985; 145:1097.
+
+
 
 section
   h2 急性間質性腎炎の原因を探るために
