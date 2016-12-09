@@ -16,14 +16,16 @@ section
   .text-center 演題発表に関連し、発表者らに開示すべき<br>COI関係にある企業などはありません。
 
 section
-  h2 診断に苦慮したのは、入院後最初の一週間です
-  p: em 理由
+  h2 はじめに
+  p: em 診断に苦慮したのは、入院後<strong>「最初の一週間」</strong>です
+  p: em 理由は...
   ul.list
-    li 高熱とCRP上昇(6〜7mg/dl)が6日間持続
-    li sIL2-R 1490, フェリチン〜と上昇
-    li PLT 9万➡7万に減少(最初の3日間)
-    li 異型リンパ球がmax 40%まで増加した
-
+    li 肝逸脱酵素が<em>3日間以上</em>上昇傾向
+    li 高熱とCRP高値(6〜7 mg/dl)が<em>1週間</em>持続
+    li 異型リンパ球が<em>40%</em>まで上昇
+    li <em>sIL2R・フェリチン</em>が共に高値
+    li 血小板が9万→7万に3日間で減少
+    li 病理で<em>interface hepatitis</em>(慢性肝炎で典型的)の所見あり
 section
   h2 症例：54歳、男性
   dl 
@@ -500,7 +502,7 @@ section
     }); 
 
 
-section(data-background-image=src+'/AHV_histo1.jpg', data-background-repeat='repeat')
+section(data-background-image=src+'/AHV_histo1.png', data-background-repeat='repeat')
 
 section
   h2 生検同日にウイルス血清検査が帰着
@@ -818,56 +820,118 @@ section
       }
     }); 
 
-section
-  h2 本症例の特徴
-  .row 
-    .col-xs-8
-      ul
-        li 54歳男性
-        li 急性肝障害(入院後もT/Aが上昇を続けた)
-        li.fg-1.highlight-red 高熱とCRP高値(6〜7 mg/dl)が<em>1週間</em>持続
-        li.fg-1.highlight-red 異型リンパ球が<em>40%</em>まで上昇
-        li.fg-2.highlight-blue sIL2R 1490, フェリチン〜と上昇
-        li.fg-2.highlight-blue 血小板が9万→7万に3日間で減少
-        li 病理でinterface hepatitisあり
-    .col-xs-4
-      p: em 鑑別
-      ul
-        li.fg-1.highlight-red HPS/Lymphoma
-        li.fg-2.highlight-blue 伝染性単核球症
-        li アルコール性
-        li 薬剤性
-        li 急性肝炎様自己免疫性肝炎
 
 
+section(data-state="animation")
+  h2#move なぜ診断に苦慮したか
+  ul.list-unstyled 
+    li#move1 1. 異型リンパ球が<em>40%</em>まで上昇
+    li#move2 2. 高熱とCRP高値(6〜7 mg/dl)が<em>1週間</em>持続
+    li#move3 3. sIL-2R、フェリチンの上昇
+    li#move4 4. 血小板が7万まで減少
+    li#move5(style="margin-left:5px") 5. 54歳男性
+    li#move6(style="margin-left:5px") 6. 病理でinterface hepatitis
+  .invisible-counter.fg
+  script.
+    $(document).ready(()=>{
+      Reveal.addEventListener( "animation", function( event ) {
+        Reveal.addEventListener( 'fragmentshown', function( event ) {
+          anime({
+            targets: '#move',
+            translateY: '-149px',
+            duration: '1000',
+            easing: 'easeInOutQuad'
+          });
+          anime({
+            targets: '#move1',
+            translateY: '-90px',
+            duration: '1000',
+            easing: 'easeInOutQuad'
+          });
+          anime({
+            targets: '#move2',
+            translateY: '-90px',
+            duration: '1000',
+            easing: 'easeInOutQuad'
+          });
+          anime({
+            targets: '#move3',
+            translateY: '-11px',
+            duration: '1000',
+            easing: 'easeInOutQuad'
+          });
+          anime({
+            targets: '#move4',
+            translateY: '-11px',
+            duration: '1000',
+            easing: 'easeInOutQuad'
+          });
+          anime({
+            targets: '#move5',
+            translateY: '186px',
+            duration: '1000',
+            easing: 'easeInOutQuad'
+          });
+          anime({
+            targets: '#move6',
+            translateY: '186px',
+            duration: '1000',
+            easing: 'easeInOutQuad'
+          });                                      
+          done = true;
+        });
+      });
 
+    })
 
 section
   h2 なぜ診断に苦慮したか
-  p.fg-1: em 伝染性単核球症様の検査所見
-  ul.fg-1
-    li sIL-2R、フェリチンの上昇
-    li 著明な血小板減少
-    li 異型リンパ球の増加
-    li 肝生検組織所見
-  br
-  p.fg-2: em 非典型的な経過(早期の発見・重篤化)
-  ul.fg-2
-    li CRP高値が持続
-    li 入院後数日間、肝逸脱酵素が上昇し続けた
+  p.fg: em 伝染性単核球症？
+  ul.list-unstyled 
+    li 1. 異型リンパ球が<em>40%</em>まで上昇
+    li 2. 高熱とCRP高値(6〜7 mg/dl)が<em>1週間</em>持続
+  p.fg: em HPS/Lymphomaか？
+  ul.list-unstyled
+    li 3. sIL-2R、フェリチンの上昇
+    li 4. 血小板が7万まで減少
+  p.fg
+    em 伝染性単核球症とHPSの合併？ 
+    | ➡ ステロイド開始
+  p.fg
+    em 急性肝炎様自己免疫性肝炎？ 
+    | ➡ 肝生検
+  p.fg: em 矛盾点
+  ul.list-inline.list-unstyled
+    li 5. 54歳男性
+    li.fg ↔ 伝染性単核球症と矛盾
+  ul.list-inline.list-unstyled
+    li 6. 病理でinterface hepatitis
+    li.fg ↔ 急性肝障害と合わない！
 
 section
-  h2 まとめ
-  p: em A型急性肝炎と診断
-  samll IgM-HA 2.8 ➡ 7.0
+  h2 最終的に急性A型肝炎と診断
   p: em 振り返ると...
-  ul.list
-    li A型肝炎は普通はatypical lymphomma 20% ➡
-  ul.list
-    li 高熱とCRP上昇(6〜7mg/dl)が6日間持続
-    li sIL2-R 1480, フェリチン〜と上昇
-    li PLT 9万➡7万に減少(最初の3日間)
-    li 異型リンパ球がmax
+  ul.list-unstyled.md-mb-20
+    li 異型リンパ球が40%まで上昇
+    li ➡ <em>急性A型肝炎</em>ではmax20%が普通。ステロイド投与の影響？
+  ul.list-unstyled.md-mb-20
+    li 肝逸脱酵素が3日間以上上昇傾向
+    li ➡ <em>急性A型肝炎</em>では肝逸脱酵素がpeekの頃に受診することが多い
+  ul.list-unstyled.md-mb-20
+    li 本例は54歳男性
+    li ➡ <em>急性A型肝炎</em>では好発年齢が上昇しつつある
+  ul.list-unstyled.md-mb-20
+    li 病理でinterface hepatitis
+    li ➡ <em>急性A型肝炎</em>ではinterface hepatitis様の所見あり
+
+section
+  h2 結語
+  p: em 高熱とCRP上昇を伴って発症し当初鑑別に苦慮した
+    br
+    | A型急性肝炎の一例を経験した
+
+section
+  h1 ご清聴有難うございました。
 
 section 
   :markdown-it
@@ -930,9 +994,6 @@ section
        HAV単独感染でも伝染性単核球症様の経過をたどる貴重な症例を経験した
 
 section
-  h1 ご清聴有難うございました。
-
-section
   h2 参考文献
   ul
     li Increase of atypical lymphocytes expressing CD4+/CD45RO+ in an infectious 
@@ -951,6 +1012,27 @@ section
     li 大人になるほどA型肝炎が重篤化するのはactivated memory cellが惹起されやすくなっている？
     li この症例でもCMV, EBVは既感染パターン
     li 以前にペニシリンアレルギーが出ているが,IMになっていた？
+
+section
+  h2 本症例の特徴
+  .row 
+    .col-xs-8
+      ul.list
+        li 54歳男性
+        li 急性肝障害(入院後もT/Aが上昇を続けた)
+        li.fg-1.background-red 高熱とCRP高値(6〜7 mg/dl)が<em>1週間</em>持続
+        li.fg-1.background-red 異型リンパ球が<em>40%</em>まで上昇
+        li.fg-2.background-blue sIL2R 1490, フェリチン〜と上昇
+        li.fg-2.background-blue 血小板が9万→7万に3日間で減少
+        li 病理でinterface hepatitisあり
+    .col-xs-4
+      p: em 鑑別
+      ul
+        li.fg-1.highlight-red HPS/Lymphoma
+        li.fg-2.highlight-blue 伝染性単核球症
+        li アルコール性
+        li 薬剤性
+        li 急性肝炎様自己免疫性肝炎
 
 section
   h2 HPS/HLH診断基準（2009年のHLH-2004改訂案）

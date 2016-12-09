@@ -260,12 +260,12 @@ section .strong{
   color: #0084B5;
 }
 
-li {
+ul:not(.list-unstyled) li {
     list-style-type: none;
     text-indent: -1em;
 }
 
-li:before {
+ul:not(.list-unstyled) li:before {
     content: "●";
     font-size: 50%;
     color: #0084B5;
@@ -408,8 +408,8 @@ g.highcharts-series path.highcharts-area.fragment.visible {
 .reveal ol {
   list-style-type: decimal; }
 
-.reveal ul {
-  list-style-type: disc; }
+/*.reveal ul {
+  list-style-type: disc; }*/
 
 .reveal ul ul {
   list-style-type: square; }

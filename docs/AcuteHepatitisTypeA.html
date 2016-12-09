@@ -12,6 +12,7 @@
     <script src="bower_components/highcharts/modules/drilldown.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="bower_components/animejs/anime.min.js"></script>
     <script src="js/myscript.js"></script>
     <script>
       var link = document.createElement( 'link' );
@@ -25,13 +26,26 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <h1>高熱とCRP上昇伴って発症し当初鑑別に苦慮したA型急性<br>肝炎の一例</h1>
+          <h1>高熱とCRP上昇を伴って発症し当初鑑別に苦慮したA型急性<br>肝炎の一例</h1>
           <h4>東京逓信病院 消化器内科　*同血液内科  **同病理科</h4>
           <p>平川雄亮、北村和貴子、古谷建悟、加藤知爾<br>大久保政雄、小林克也、関川憲一郎、光井 洋、橋本直明<br>*水地大輔、**岸田由起子、**田村浩一</p>
         </section>
         <section>
           <h3>日本内科学会 関東地方会<br>発表者のCOI開示</h3>
           <div class="text-center">演題発表に関連し、発表者らに開示すべき<br>COI関係にある企業などはありません。</div>
+        </section>
+        <section>
+          <h2>はじめに</h2>
+          <p><em>診断に苦慮したのは、入院後<strong>「最初の一週間」</strong>です</em></p>
+          <p><em>理由は...</em></p>
+          <ul class="list">
+            <li>肝逸脱酵素が<em>3日間以上</em>上昇傾向</li>
+            <li>高熱とCRP高値(6〜7 mg/dl)が<em>1週間</em>持続</li>
+            <li>異型リンパ球が<em>40%</em>まで上昇</li>
+            <li><em>sIL2R・フェリチン</em>が共に高値</li>
+            <li>血小板が9万→7万に3日間で減少</li>
+            <li>病理で<em>interface hepatitis</em>(慢性肝炎で典型的)の所見あり</li>
+          </ul>
         </section>
         <section>
           <h2>症例：54歳、男性</h2>
@@ -295,8 +309,8 @@
           </div>
         </section>
         <section>
-          <section data-background-color="#000000" data-background-video="https://s3-ap-northeast-1.amazonaws.com/presentation-src/acuteHepatitisA_1.mp4" controls="controls">
-            <p class="caption_white">第1病日 腹部単純CT</p>
+          <section data-background-color="#000000" data-background-video="https://s3-ap-northeast-1.amazonaws.com/presentation-src/acuteHepatitisA_0605_2.mp4" controls="controls">
+            <p class="bg-caption">造影CT 門脈相</p>
           </section>
           <section data-background-color="#000000">
             <video width="1280" height="650" controls="controls" data-autoplay>
@@ -326,6 +340,8 @@
               <div class="invisible-counter fg-2"></div>
               <div class="invisible-counter fg-5"></div>
               <div class="invisible-counter fg-6"></div>
+              <div class="invisible-counter fg-8"></div>
+              <div class="invisible-counter fg-9"></div>
             </div>
           </div>
           <script>
@@ -558,15 +574,17 @@
             
           </script>
         </section>
-        <section data-background-image="https://s3-ap-northeast-1.amazonaws.com/presentation-src/AHV_histo1.jpg" data-background-repeat="repeat"></section>
-        <section data-background-image="https://s3-ap-northeast-1.amazonaws.com/presentation-src/AHV-histo2.jpg" data-background-repeat="repeat"></section>
+        <section data-background-image="https://s3-ap-northeast-1.amazonaws.com/presentation-src/AHV_histo1.png" data-background-repeat="repeat"></section>
         <section>
-          <h2>診断: <span class="fragment" data-fragment-index="3">A型急性肝炎</span></h2>
+          <h2>生検同日にウイルス血清検査が帰着</h2>
           <div class="row">
-            <div class="col-xs-2"></div>
-            <div class="col-xs-8 fragment" data-fragment-index="1">
-              <p><em>ウイルス血清検査</em></p>
-              <table class="table table-condensed">
+            <div class="col-xs-6">
+              <table class="table table-condensed" style="margin-top:-10px;font-size: 140%">
+                <tr>
+                  <td><em>ウイルス血清検査</em></td>
+                  <td></td>
+                  <td></td>
+                </tr>
                 <tr>
                   <td>CMV-IgG</td>
                   <td class="red">80</td>
@@ -622,7 +640,7 @@
                   <td>(ー）</td>
                   <td></td>
                 </tr>
-                <tr class="warning fragment" data-fragment-index="2">
+                <tr class="warning fg-1 grow">
                   <td>IgMHA</td>
                   <td class="red">2.34</td>
                   <td></td>
@@ -638,6 +656,10 @@
                   <td> </td>
                 </tr>
               </table>
+            </div>
+            <div class="col-xs-6 md-pl-40">
+              <p class="md-ml-40 fg-2"><em>診断</em></p><br>
+              <h3 class="fg-3">急性A型肝炎</h3>
             </div>
           </div>
         </section>
@@ -746,12 +768,12 @@
                       } // Width of the line  
                       },{
                       color: '#ccc', // Color value
-                      className: 'fg-3', // Style of the plot line. Default to solid
+                      className: 'fg-2', // Style of the plot line. Default to solid
                       from: 19.9, // Value of where the line will appear
                       to: 20.1, // Width of the line  
                       zIndex:2,
                       label:{
-                        text: "<em class='fg-3 balloon'>退院</em>",
+                        text: "<em class='fg-2 balloon'>退院</em>",
                         useHTML:true
                       }}
                     ]
@@ -883,49 +905,131 @@
                   case 0:
                     show_series_only([0,1,2]); 
                     myChart.xAxis[0].setExtremes(0, 21);
-                    break;
-                  case 2:
-                    show_series_only([3,4]); break;                      
+                    break;                   
                   default: break; 
                 }
               }
             }); 
             
+            
+            
+          </script>
+        </section>
+        <section data-state="animation">
+          <h2 id="move">なぜ診断に苦慮したか</h2>
+          <ul class="list-unstyled"> 
+            <li id="move1">1. 異型リンパ球が<em>40%</em>まで上昇</li>
+            <li id="move2">2. 高熱とCRP高値(6〜7 mg/dl)が<em>1週間</em>持続</li>
+            <li id="move3">3. sIL-2R、フェリチンの上昇</li>
+            <li id="move4">4. 血小板が7万まで減少</li>
+            <li id="move5" style="margin-left:5px">5. 54歳男性</li>
+            <li id="move6" style="margin-left:5px">6. 病理でinterface hepatitis</li>
+          </ul>
+          <div class="invisible-counter fg"></div>
+          <script>
+            $(document).ready(()=>{
+              Reveal.addEventListener( "animation", function( event ) {
+                Reveal.addEventListener( 'fragmentshown', function( event ) {
+                  anime({
+                    targets: '#move',
+                    translateY: '-149px',
+                    duration: '1000',
+                    easing: 'easeInOutQuad'
+                  });
+                  anime({
+                    targets: '#move1',
+                    translateY: '-90px',
+                    duration: '1000',
+                    easing: 'easeInOutQuad'
+                  });
+                  anime({
+                    targets: '#move2',
+                    translateY: '-90px',
+                    duration: '1000',
+                    easing: 'easeInOutQuad'
+                  });
+                  anime({
+                    targets: '#move3',
+                    translateY: '-11px',
+                    duration: '1000',
+                    easing: 'easeInOutQuad'
+                  });
+                  anime({
+                    targets: '#move4',
+                    translateY: '-11px',
+                    duration: '1000',
+                    easing: 'easeInOutQuad'
+                  });
+                  anime({
+                    targets: '#move5',
+                    translateY: '186px',
+                    duration: '1000',
+                    easing: 'easeInOutQuad'
+                  });
+                  anime({
+                    targets: '#move6',
+                    translateY: '186px',
+                    duration: '1000',
+                    easing: 'easeInOutQuad'
+                  });                                      
+                  done = true;
+                });
+              });
+            
+            })
+            
           </script>
         </section>
         <section>
-          <h1>考察：A型肝炎</h1>
-        </section>
-        <section>
-          <h2>高齢発症のA型肝炎が増えてきている</h2>
-          <div class="row">
-            <div class="col-xs-7"><img class="plain img-rounded" src="https://s3-ap-northeast-1.amazonaws.com/presentation-src/AHV_epi2011.png">
-              <div class="arrow-down"></div><img class="plain img-rounded" src="https://s3-ap-northeast-1.amazonaws.com/presentation-src/AHV_epi2016.png">
-            </div>
-            <div class="col-xs-5">
-              <div class="text-center">以前は若年者が多い病気</div>
-              <div class="arrow-down"></div>
-              <div class="text-center">衛生状態の改善</div>
-              <div class="arrow-down"></div>
-              <div class="text-center">高齢発症が増加</div><br>
-              <p class="strong md-ml-40 md-pl-40">高齢発症の方が重篤</p>
-            </div>
-          </div>
-        </section>
-        <section>
           <h2>なぜ診断に苦慮したか</h2>
-          <p class="fg-1"><em>伝染性単核球症様の検査所見</em></p>
-          <ul class="fg-1">
-            <li>sIL-2R、フェリチンの上昇</li>
-            <li>著明な血小板減少</li>
-            <li>異型リンパ球の増加</li>
-            <li>肝生検組織所見</li>
-          </ul><br>
-          <p class="fg-2"><em>非典型的な経過(早期の発見・重篤化)</em></p>
-          <ul class="fg-2">
-            <li>CRP高値が持続</li>
-            <li>入院後数日間、肝逸脱酵素が上昇し続けた</li>
+          <p class="fg"><em>伝染性単核球症？</em></p>
+          <ul class="list-unstyled"> 
+            <li>1. 異型リンパ球が<em>40%</em>まで上昇</li>
+            <li>2. 高熱とCRP高値(6〜7 mg/dl)が<em>1週間</em>持続</li>
           </ul>
+          <p class="fg"><em>HPS/Lymphomaか？</em></p>
+          <ul class="list-unstyled">
+            <li>3. sIL-2R、フェリチンの上昇</li>
+            <li>4. 血小板が7万まで減少</li>
+          </ul>
+          <p class="fg"><em>伝染性単核球症とHPSの合併？ </em>➡ ステロイド開始</p>
+          <p class="fg"><em>急性肝炎様自己免疫性肝炎？ </em>➡ 肝生検</p>
+          <p class="fg"><em>矛盾点</em></p>
+          <ul class="list-inline list-unstyled">
+            <li>5. 54歳男性</li>
+            <li class="fg">↔ 伝染性単核球症と矛盾</li>
+          </ul>
+          <ul class="list-inline list-unstyled">
+            <li>6. 病理でinterface hepatitis</li>
+            <li class="fg">↔ 急性肝障害と合わない！</li>
+          </ul>
+        </section>
+        <section>
+          <h2>最終的に急性A型肝炎と診断</h2>
+          <p><em>振り返ると...</em></p>
+          <ul class="list-unstyled md-mb-20">
+            <li>異型リンパ球が40%まで上昇</li>
+            <li>➡ <em>急性A型肝炎</em>ではmax20%が普通。ステロイド投与の影響？</li>
+          </ul>
+          <ul class="list-unstyled md-mb-20">
+            <li>肝逸脱酵素が3日間以上上昇傾向</li>
+            <li>➡ <em>急性A型肝炎</em>では肝逸脱酵素がpeekの頃に受診することが多い</li>
+          </ul>
+          <ul class="list-unstyled md-mb-20">
+            <li>本例は54歳男性</li>
+            <li>➡ <em>急性A型肝炎</em>では好発年齢が上昇しつつある</li>
+          </ul>
+          <ul class="list-unstyled md-mb-20">
+            <li>病理でinterface hepatitis</li>
+            <li>➡ <em>急性A型肝炎</em>ではinterface hepatitis様の所見あり</li>
+          </ul>
+        </section>
+        <section>
+          <h2>結語</h2>
+          <p><em>高熱とCRP上昇を伴って発症し当初鑑別に苦慮した<br>A型急性肝炎の一例を経験した</em></p>
+        </section>
+        <section>
+          <h1>ご清聴有難うございました。</h1>
         </section>
         <section>
            <h2>結語</h2>
@@ -986,12 +1090,6 @@ HAV単独感染でも伝染性単核球症様の経過をたどる貴重な症�
 
         </section>
         <section>
-          <h1>ご清聴有難うございました。</h1>
-        </section>
-        <section>
-          <h2> </h2>
-        </section>
-        <section>
           <h2>参考文献</h2>
           <ul>
             <li>Increase of atypical lymphocytes expressing CD4+/CD45RO+ in an infectious <br>mononucleosis-like syndrome associated with hepatitis A virus infection<br>Hidehiro Watanabe et.al J Infect Chemother (2009) 15:187–190 </li>
@@ -1010,6 +1108,32 @@ HAV単独感染でも伝染性単核球症様の経過をたどる貴重な症�
             <li>この症例でもCMV, EBVは既感染パターン</li>
             <li>以前にペニシリンアレルギーが出ているが,IMになっていた？</li>
           </ul>
+        </section>
+        <section>
+          <h2>本症例の特徴</h2>
+          <div class="row"> 
+            <div class="col-xs-8">
+              <ul class="list">
+                <li>54歳男性</li>
+                <li>急性肝障害(入院後もT/Aが上昇を続けた)</li>
+                <li class="fg-1 background-red">高熱とCRP高値(6〜7 mg/dl)が<em>1週間</em>持続</li>
+                <li class="fg-1 background-red">異型リンパ球が<em>40%</em>まで上昇</li>
+                <li class="fg-2 background-blue">sIL2R 1490, フェリチン〜と上昇</li>
+                <li class="fg-2 background-blue">血小板が9万→7万に3日間で減少</li>
+                <li>病理でinterface hepatitisあり</li>
+              </ul>
+            </div>
+            <div class="col-xs-4">
+              <p><em>鑑別</em></p>
+              <ul>
+                <li class="fg-1 highlight-red">HPS/Lymphoma</li>
+                <li class="fg-2 highlight-blue">伝染性単核球症</li>
+                <li>アルコール性</li>
+                <li>薬剤性</li>
+                <li>急性肝炎様自己免疫性肝炎</li>
+              </ul>
+            </div>
+          </div>
         </section>
         <section>
           <h2>HPS/HLH診断基準（2009年のHLH-2004改訂案）</h2>
@@ -1044,6 +1168,22 @@ HAV単独感染でも伝染性単核球症様の経過をたどる貴重な症�
                 <li>低フィブリノゲン血症</li>
                 <li>低ナトリウム血症</li>
               </ul>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>高齢発症のA型肝炎が増えてきている</h2>
+          <div class="row">
+            <div class="col-xs-7"><img class="plain img-rounded" src="https://s3-ap-northeast-1.amazonaws.com/presentation-src/AHV_epi2011.png">
+              <div class="arrow-down"></div><img class="plain img-rounded" src="https://s3-ap-northeast-1.amazonaws.com/presentation-src/AHV_epi2016.png">
+            </div>
+            <div class="col-xs-5">
+              <div class="text-center">以前は若年者が多い病気</div>
+              <div class="arrow-down"></div>
+              <div class="text-center">衛生状態の改善</div>
+              <div class="arrow-down"></div>
+              <div class="text-center">高齢発症が増加</div><br>
+              <p class="strong md-ml-40 md-pl-40">高齢発症の方が重篤</p>
             </div>
           </div>
         </section>
