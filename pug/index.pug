@@ -7,12 +7,14 @@ html
     link(rel='stylesheet', href='css/theme/mytheme.css')
     link(rel='stylesheet', href='lib/css/zenburn.css')
     link(rel='stylesheet', href='bower_components/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='bower_components/mermaid/dist/mermaid.css')
     script(src='bower_components/highcharts/highcharts.js')
     script(src='bower_components/highcharts/highcharts-more.js')
     script(src='bower_components/highcharts/modules/drilldown.js')
     script(src='bower_components/jquery/dist/jquery.min.js')
     script(src='bower_components/underscore/underscore-min.js')
     script(src='bower_components/animejs/anime.min.js')
+    script(src='bower_components/mermaid/dist/mermaid.min.js')
     script(src='js/myscript.js')
     script.
       var link = document.createElement( 'link' );
@@ -33,7 +35,7 @@ html
       Reveal.initialize({
         controls: false,
         history: true,
-        viewDistance: 100,
+        viewDistance: 2,
         transition: 'none',
         menu:{
           openButton: false

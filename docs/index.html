@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="css/theme/mytheme.css">
     <link rel="stylesheet" href="lib/css/zenburn.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/mermaid/dist/mermaid.css">
     <script src="bower_components/highcharts/highcharts.js"></script>
     <script src="bower_components/highcharts/highcharts-more.js"></script>
     <script src="bower_components/highcharts/modules/drilldown.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore-min.js"></script>
     <script src="bower_components/animejs/anime.min.js"></script>
+    <script src="bower_components/mermaid/dist/mermaid.min.js"></script>
     <script src="js/myscript.js"></script>
     <script>
       var link = document.createElement( 'link' );
@@ -25,151 +27,155 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section>
-          <h1>高熱とCRP上昇を伴って発症し当初鑑別に苦慮したA型急性<br>肝炎の一例</h1>
-          <h4>東京逓信病院 消化器内科　*同血液内科  **同病理科</h4>
-          <p>平川雄亮、北村和貴子、古谷建悟、加藤知爾<br>大久保政雄、小林克也、関川憲一郎、光井 洋、橋本直明<br>*水地大輔、**岸田由起子、**田村浩一</p>
-        </section>
-        <section>
-          <h3>日本内科学会 関東地方会<br>発表者のCOI開示</h3>
-          <div class="text-center">演題発表に関連し、発表者らに開示すべき<br>COI関係にある企業などはありません。</div>
-        </section>
-        <section>
-          <h2>はじめに</h2>
-          <p><em>診断に苦慮したのは、入院後<strong>「最初の一週間」</strong>です</em></p>
-          <p><em>理由は...</em></p>
-          <ul class="list">
-            <li>肝逸脱酵素が<em>3日間以上</em>上昇傾向</li>
-            <li>高熱とCRP高値(6〜7 mg/dl)が<em>1週間</em>持続</li>
-            <li>異型リンパ球が<em>40%</em>まで上昇</li>
-            <li><em>sIL2R・フェリチン</em>が共に高値</li>
-            <li>血小板が9万→7万に3日間で減少</li>
-            <li>病理で<em>interface hepatitis</em>(慢性肝炎で典型的)の所見あり</li>
-          </ul>
-        </section>
-        <section>
-          <h2>症例：54歳、男性</h2>
-          <dl> 
-            <dt>主訴   </dt>
-            <dd>全身倦怠感、発熱  </dd>
-          </dl>
-          <dl> 
-            <dt>現病歴  </dt>
-            <dd>入院4日前より全身倦怠感を自覚し、38.4℃の発熱を認めた。   </dd>
-            <dd>安静臥床で経過観察したが、発熱が持続し、   </dd>
-            <dd>入院前日には40℃まで上昇したため、前医を受診。    </dd>
-            <dd>高度肝機能障害、胆道系酵素上昇と炎症反応上昇あり、    </dd>
-            <dd>翌日に当科紹介。同日当科入院。(第1病日)</dd>
-          </dl>
-        </section>
-        <section class="indent">
-          <h2>症例: 54歳、男性</h2>
-          <dl class="dl-horizontal">
-            <dt>既往歴</dt>
-            <dd>特記事項なし   </dd>
-          </dl>
-          <dl class="dl-horizontal">
-            <dt>内服歴</dt>
-            <dd>なし   </dd>
-          </dl>
-          <dl class="dl-horizontal">
-            <dt>アレルギー</dt>
-            <dd>drug: ペニシリンでアナフィラキシーショック(幼少期)  </dd>
-            <dd>food: なし、喘息：なし</dd>
-          </dl>
-          <dl class="dl-horizontal">
-            <dt>家族歴</dt>
-            <dd>B・C型肝炎の家族歴なし、その他特記事項なし    </dd>
-          </dl>
-          <dl class="dl-horizontal">
-            <dt>生活歴</dt>
-            <dd>飲酒： ワインボトル1/2本+ウイスキー水割り1-2杯/日  </dd>
-            <dd>喫煙： なし  </dd>
-            <dd>摂取歴： 直近で生魚、猪、鹿、豚肉等の摂取なし  </dd>
-            <dd>性交歴： 不特定多数との性交なし  </dd>
-            <dd>輸血歴：なし　　</dd>
-            <dd>海外渡航歴：なし  </dd>
-          </dl>
-        </section>
         <section> 
+          <h1>腎硬化症による末期腎不全に多発同静脈血栓症を合併し、感染を繰り返し死亡した1例</h1><br>
+          <h4>東京逓信病院　腎臓内科  *病理科</h4>
+          <p>平川雄亮、東原崇明、松村実美子、宇仁理恵、高野秀樹  <br>*岸田由起子，*田村浩一</p>
+        </section>
+        <section>
+          <h2>症例： 69歳男性</h2>
+          <dl class="dl-horizontal"> 
+            <dt>主訴 </dt>
+            <dd>腎機能低下  </dd>
+          </dl>
+          <dl class="dl-horizontal"> 
+            <dt>現病歴 </dt>
+            <dd>以前よりAfを指摘されていたが、両側視床出血によりADL全介助状態となり、抗凝固療法は中止していた。転科13日前より傾眠傾向が出現し、SpO2低下を伴うようになり、往診医の紹介で、当院救急外来受診され、精査の結果肺炎を契機とした慢性心不全増悪の診断で、9日前に循環器内科入院となった。入院同日より抗生剤加療と共に、利尿剤ラシックスによる除水療法を開始し心不全は改善傾向にあったが、腎機能は入院時sCr 1.17 mg/dlより急速に増悪し、転科時にはsCr 5.63mg/dlまで増悪した。(FENa 1.8%, FEUN 42%, NAG, β2MG高値であり、腎性腎不全を疑い、)精査加療目的に当科転科となった。(第1病日)</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>症例： 69歳男性</h2>
+          <dl class="dl-horizontal"> 
+            <dt>既往歴   </dt>
+            <dd>高血圧、50歳頃: Af(バイアスピリン内服), 慢性膀胱炎, 55歳: 右視床出血, </dd>
+            <dd>60歳: 左視床出血(胃瘻造設)</dd>
+          </dl>
+          <dl class="dl-horizontal"> 
+            <dt>家族歴  </dt>
+            <dd>詳細不明</dd>
+          </dl>
+          <dl class="dl-horizontal"> 
+            <dt>アレルギー  </dt>
+            <dd>food：(-), drug：(-)</dd>
+          </dl>
+          <dl class="dl-horizontal"> 
+            <dt>生活歴 </dt>
+            <dd>飲酒:詳細不明, 喫煙:詳細不明</dd>
+          </dl>
+          <dl class="dl-horizontal"> 
+            <dt>内服歴   </dt>
+            <dd>エナラプリル5mg2T2X, フェロジピン5mg2T2X</dd>
+            <dd>ラックビー2g2X, ジゴキシン0.25mg1T1X</dd>
+            <dd>フロセミド20mg1T1X, ファモチジン20mg1T1X</dd>
+            <dd>ロスバスタチン2.5mg1T1X</dd>
+          </dl>
+        </section>
+        <section>
           <h2>入院時現症</h2>
           <dl class="dl-horizontal">
-            <dt>全身</dt>
-            <dd>JCS-0, 身長 185 cm, 体重 71.90 kg, BMI 21.0 kg/㎡  </dd>
+            <dt>全身 </dt>
+            <dd>JCS-0, 発語不能だがジェスチャーにより意思疎通可</dd>
+            <dd>身長 166.0 cm, 体重 54.60 kg, BMI 19.8 kg/㎡  </dd>
           </dl>
           <dl class="dl-horizontal">
-            <dt>Vital</dt>
-            <dd><strong>BT 39.1 ℃</strong>, PR 92 bpm, BP 110/80 mmHg, </dd>
-            <dd>SpO2 96 %</dd>
-          </dl>
+            <dt>Vital  </dt>
+            <dd>BT 36.5 ℃, PR 90 bpm, BP 152/103 mmHg, </dd>
+            <dd>SpO2 98 %(酸素1L/分)  </dd>
+          </dl><br>
           <dl class="dl-horizontal">
-            <dt>頭頸部</dt>
+            <dt>頭頸部   </dt>
             <dd>眼瞼結膜貧血なし, 眼球結膜黄染なし, </dd>
-            <dd><strong>頸部・鎖骨上・腋窩リンパ節腫脹あり, </strong></dd>
-            <dd>咽頭発赤なし, 口腔内白苔なし   </dd>
+            <dd>頸部リンパ節腫脹なし</dd>
           </dl>
           <dl class="dl-horizontal">
-            <dt>胸部</dt>
-            <dd>肺野・心音異常なし  </dd>
+            <dt>心音</dt>
+            <dd>Ⅰ➡Ⅱ➡Ⅲ(-)Ⅳ(-), no murmur</dd>
+            <dt>呼吸音</dt>
+            <dd>両側でcorase crackle聴取</dd>
           </dl>
           <dl class="dl-horizontal">
-            <dt>腹部</dt>
-            <dd>平坦/軟, 圧痛なし, 腸蠕動音正常, 脾臓は触知せず  </dd>
+            <dt>腹部 </dt>
+            <dd>平坦/軟, 圧痛なし, 腸蠕動音正常  </dd>
           </dl>
           <dl class="dl-horizontal">
             <dt>四肢</dt>
-            <dd>下腿浮腫なし, 末梢冷感なし, 足背動脈触知可  </dd>
+            <dd>下腿浮腫なし、足背動脈触知可</dd>
           </dl>
         </section>
         <section>
-          <h2>検査結果</h2>
+          <h2>入院時検査所見</h2>
           <div class="row">
             <div class="col-xs-4">
-              <table class="table table-condensed" style="margin-top:-10px;font-size: 140%">
+              <table class="table table-condensed" style="margin-top:-12px;font-size:120%">
                 <tr>
-                  <td><em>血算</em></td>
+                  <td><em>尿検査</em></td>
                   <td></td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td>WBC</td>
-                  <td>3800</td>
-                  <td>/μl</td>
-                </tr>
-                <tr>
-                  <td>Hb</td>
-                  <td>15</td>
-                  <td>g /dl</td>
-                </tr>
-                <tr>
-                  <td>Hct</td>
-                  <td>43.7</td>
-                  <td>%</td>
-                </tr>
-                <tr class="blue">
-                  <td>Plt</td>
-                  <td>9.2</td>
-                  <td>万/μl</td>
-                </tr>
-                <tr>
-                  <td><em>凝固</em></td>
-                  <td></td>
+                  <td>PH</td>
+                  <td>5.5</td>
                   <td></td>
                 </tr>
-                <tr class="blue">
-                  <td>PT</td>
-                  <td>65.5</td>
-                  <td>%</td>
+                <tr>
+                  <td>比重</td>
+                  <td>1.017</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>ブドウ糖</td>
+                  <td>(-)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>白血球</td>
+                  <td>+1</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>亜硝酸塩</td>
+                  <td>(-)</td>
+                  <td></td>
                 </tr>
                 <tr class="red">
-                  <td>D-Dimer</td>
-                  <td>2.5</td>
-                  <td>μg/ml</td>
+                  <td>蛋白</td>
+                  <td>10</td>
+                  <td>mg/dl</td>
+                </tr>
+                <tr>
+                  <td>Na</td>
+                  <td>40.8</td>
+                  <td>mEq/l</td>
+                </tr>
+                <tr>
+                  <td>Cre</td>
+                  <td>81.1</td>
+                  <td>mg/dl</td>
+                </tr>
+                <tr>
+                  <td>TP/Cre</td>
+                  <td>4.15</td>
+                  <td>g/g・Cre</td>
+                </tr>
+                <tr>
+                  <td>BUN</td>
+                  <td>513</td>
+                  <td>mg/dl</td>
+                </tr>
+                <tr class="red">
+                  <td>NAG</td>
+                  <td>38.2</td>
+                  <td>Ｕ/l</td>
+                </tr>
+                <tr class="red">
+                  <td>β2MG</td>
+                  <td>5683</td>
+                  <td>ng/ml</td>
                 </tr>
               </table>
             </div>
             <div class="col-xs-4">
-              <table class="table table-condensed" style="margin-top:-10px;font-size: 140%">
+              <table class="table table-condensed" style="margin-top:-12px;font-size:120%">
                 <tr>
                   <td><em>生化学</em></td>
                   <td></td>
@@ -177,176 +183,351 @@
                 </tr>
                 <tr>
                   <td>Na</td>
-                  <td>132.9</td>
+                  <td>147.2</td>
                   <td>mEq/l</td>
                 </tr>
                 <tr>
                   <td>K</td>
-                  <td>4.2</td>
+                  <td>3.5</td>
                   <td>mEq/</td>
                 </tr>
                 <tr>
                   <td>Cl</td>
-                  <td>95.6</td>
+                  <td>103.9</td>
                   <td>mEq/</td>
                 </tr>
-                <tr class="red">
+                <tr>
+                  <td>Ca</td>
+                  <td>8.6</td>
+                  <td>mg/dl</td>
+                </tr>
+                <tr>
+                  <td>P</td>
+                  <td>4.6</td>
+                  <td>mg/dl</td>
+                </tr>
+                <tr class="blue">
                   <td>ALP</td>
-                  <td>741</td>
+                  <td>85</td>
                   <td>IU/l</td>
                 </tr>
-                <tr class="red">
+                <tr>
                   <td>AST</td>
-                  <td>718</td>
+                  <td>24</td>
                   <td>IU/l</td>
                 </tr>
-                <tr class="red">
+                <tr>
                   <td>ALT</td>
-                  <td>422</td>
+                  <td>22</td>
                   <td>IU/l</td>
                 </tr>
                 <tr>
                   <td>T.Bill</td>
-                  <td>0.7</td>
+                  <td>0.4</td>
                   <td>mg/dl</td>
                 </tr>
                 <tr>
-                  <td>D.Bil</td>
-                  <td>0.3</td>
-                  <td>mg/dl</td>
-                </tr>
-                <tr class="red">
                   <td>γ-GTP</td>
-                  <td>354</td>
+                  <td>43</td>
                   <td>IU/l</td>
                 </tr>
                 <tr class="red">
                   <td>LDH</td>
-                  <td>652</td>
+                  <td>261</td>
                   <td>IU/l</td>
                 </tr>
-                <tr>
+                <tr class="blue">
                   <td>Alb</td>
-                  <td>3.9</td>
+                  <td>2.8</td>
                   <td>g/dl</td>
                 </tr>
-                <tr>
+                <tr class="red">
                   <td>BUN</td>
-                  <td>15.8</td>
+                  <td>68.5</td>
                   <td>mg/dl</td>
                 </tr>
-                <tr>
+                <tr class="red">
                   <td>Cre</td>
-                  <td>1.04</td>
+                  <td>4.79</td>
                   <td>mg/dl</td>
                 </tr>
                 <tr>
                   <td>UA</td>
-                  <td>4.1</td>
+                  <td>7.3</td>
                   <td>mg/dl</td>
+                </tr>
+                <tr class="blue">
+                  <td>CK</td>
+                  <td>37</td>
+                  <td>IU/L</td>
                 </tr>
               </table>
             </div>
             <div class="col-xs-4">
-              <table class="table table-condensed" style="margin-top:-10px;font-size: 140%">
+              <table class="table table-condensed" style="margin-top:-12px;font-size:120%">
                 <tr>
-                  <td><em>免疫</em></td>
+                  <td><em>血算</em></td>
                   <td></td>
                   <td></td>
+                </tr>
+                <tr>
+                  <td>WBC</td>
+                  <td>7400</td>
+                  <td>/μl</td>
+                </tr>
+                <tr class="blue">
+                  <td>Hb</td>
+                  <td>12.9</td>
+                  <td>g /dl</td>
+                </tr>
+                <tr>
+                  <td>Hct</td>
+                  <td>40.4</td>
+                  <td>%</td>
+                </tr>
+                <tr>
+                  <td>Plt</td>
+                  <td>226</td>
+                  <td>万/μl</td>
+                </tr>
+                <tr>
+                  <td><em>血清</em></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>TSH</td>
+                  <td>2.15</td>
+                  <td>μU/ml</td>
+                </tr>
+                <tr>
+                  <td>FT3</td>
+                  <td>2.6</td>
+                  <td>pg/ml</td>
+                </tr>
+                <tr>
+                  <td>FT4</td>
+                  <td>1.19</td>
+                  <td>ng/dl</td>
+                </tr>
+                <tr class="red">
+                  <td>iPTH</td>
+                  <td>174</td>
+                  <td>pg/ml</td>
+                </tr>
+                <tr class="red">
+                  <td>BNP</td>
+                  <td>2662</td>
+                  <td>pg/ml</td>
                 </tr>
                 <tr class="red">
                   <td>CRP</td>
-                  <td>6.43</td>
-                  <td>mg/dl</td>
-                </tr>
-                <tr class="blue">
-                  <td>IgA</td>
-                  <td>97</td>
+                  <td>0.36</td>
                   <td>mg/dl</td>
                 </tr>
                 <tr>
-                  <td>IgG</td>
-                  <td>1214</td>
-                  <td>mg/dl</td>
-                </tr>
-                <tr>
-                  <td>ET</td>
-                  <td><0.8</td>
+                  <td><em>凝固</em></td>
                   <td></td>
-                </tr>
-                <tr class="red">
-                  <td>PCT</td>
-                  <td>0.56</td>
-                  <td>ng/ml</td>
-                </tr>
-                <tr>
-                  <td>AMA</td>
-                  <td>2.1</td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td>ANA</td>
-                  <td>(-)</td>
-                  <td></td>
-                </tr>
-                <tr class="red">
-                  <td>sIL-2R</td>
-                  <td>1490</td>
-                  <td></td>
+                  <td>PT</td>
+                  <td>74.5</td>
+                  <td>%</td>
                 </tr>
                 <tr>
-                  <td>CA19-9</td>
-                  <td>11.6</td>
-                  <td>U/ml</td>
-                </tr>
-                <tr>
-                  <td>CEA</td>
-                  <td>0.6</td>
-                  <td>ng/ml</td>
+                  <td>APTT</td>
+                  <td>36.7</td>
+                  <td>s</td>
                 </tr>
               </table>
             </div>
           </div>
         </section>
         <section>
-          <section data-background-color="#000000" data-background-video="../src/acuteHepatitisA_0605_2.mp4" controls="controls">
-            <p class="bg-caption">造影CT 門脈相</p>
+          <h2>入院時検査所見</h2>
+          <dl class="dl-horizontal">
+            <dt>心電図</dt>
+            <dd>HR 76/min, Af , NAD, no ST-T change</dd><br>
+          </dl>
+          <dl class="dl-horizontal">
+            <dt>CXR</dt>
+            <dd>CTR 54 %, CPA 左dull, 肺野clear</dd>
+          </dl>
+        </section>
+        <section>
+          <section data-background-color="#000000" data-background-video="../src/TIN_CT.mp4" controls="controls">
+            <p class="caption_white md-ml-20">腹部骨盤単純CT</p>
           </section>
           <section data-background-color="#000000">
             <video width="1280" height="650" controls="controls" data-autoplay>
-              <source src="../src/acuteHepatitisA_0605_2.mp4" type="video/mp4">
+              <source src="../src/TIN_CT.mp4" type="video/mp4">
             </video>
           </section>
         </section>
         <section>
-          <h2>臨床経過</h2>
-          <div class="row">
-            <div class="col-xs-8">
-              <div class="md-tm-0" id="container1" style="width:auto; height:600px"></div>
-            </div>
-            <div class="col-xs-4 md-pl-40">
-              <p><em>鑑別</em></p>
-              <ul>
-                <li>肝炎ウイルス</li>
-                <li>伝染性単核球症</li>
-                <li>自己免疫性</li>
-                <li>薬剤性</li>
-                <li>アルコール性</li>
-                <li>脂肪肝</li>
-                <li>うっ血性</li>
-                <li class="fg-4 gray">Lymphoma/HPS</li>
-              </ul>
-              <div class="invisible-counter fg-1"></div>
-              <div class="invisible-counter fg-2"></div>
-              <div class="invisible-counter fg-5"></div>
-              <div class="invisible-counter fg-6"></div>
-              <div class="invisible-counter fg-8"></div>
-              <div class="invisible-counter fg-9"></div>
-            </div>
-          </div>
+          <h2>画像検査</h2>
+        </section>
+        <section style="position:relative">
+          <h2>臨床経過 -CRPと抗生剤の推移-</h2>
+          <div id="container1" style="width:auto; height:700px"></div>
           <script>
-            $(document).ready(()=> { 
+            $(()=> { 
+              Highcharts.seriesTypes.columnrange.prototype.drawDataLabels = Highcharts.seriesTypes.column.prototype.drawDataLabels;
+            
               var myChart = Highcharts.chart('container1', {
+                  chart: {
+                    zoomType: 'x'
+                  },
+                  title: {
+                    text: ''
+                  },
+                  tooltip:{
+                    enabled: false
+                  },
+                  legend:{
+                    symbolPadding: 15,
+                    symbolRadius: 24,
+                    useHTML: true,  
+                    itemStyle:{
+                      "fontSize": "30px", 
+                      "fontWeight": "bold"
+                    }
+                  },
+                  yAxis:[ {
+                    title: {
+                      text: ''
+                    },
+                    labels:{
+                      y: 7
+                    },
+                    tickAmount: 6
+                  }, {
+                      offset:60,
+                      labels: {
+                          enabled: false,
+                          style: {
+                              color: '#525151',
+                              font: '10px',
+                              fontWeight: 'bold',
+                          }
+                         /* formatter: function() {
+                              if (tasks[this.value]) {
+                                  return tasks[this.value].name;
+                              }
+                          }*/
+                      },
+                      startOnTick: false,
+                      endOnTick: false,
+                      TickWidth:0,
+                      gridLineWidth:0,
+                      title: {
+                          text: ''
+                      },
+                      minPadding: 0.2,
+                      maxPadding: 0.2
+                  }],
+                  plotOptions: {
+                    series: {
+                      fillOpacity: 0.3,
+                      zoneAxis: 'x',
+                      lineWidth: 5,
+                      marker: {
+                        radius: 7
+                      }
+                    }
+                  },
+                  xAxis: {
+                    type: 'linear',
+                    allowDecimals: false,
+                    tickPixelInterval:120,
+                    title: {
+                      text: '入院後日数'
+                    },
+                    labels: {
+                      formatter: function() {
+                        return this.value+1;
+                      },
+                      y:30
+                    },
+                    plotBands: [{
+                      color: '#ddd', // Color value
+                      className: '', // Style of the plot line. Default to solid
+                      from: -259.5, // Value of where the line will appear
+                      to: -258.5,
+                      label:{
+                        text: "<div class='gray-balloon' style='font-size:90% !important; top: -50px;'>エスメプラゾール開始</div>",
+                        useHTML:true
+                      }}
+                    ]
+                  }, 
+                  series: data_source.concat(gantt_source)
+              });
+              var counter = 0;
+              var series = myChart.series;
+              var reset =()=> _.each(series,(data)=>{
+                  data.setVisible(false, false);
+                  data.update({ showInLegend: false}, false);
+                }
+              );
+              var hide_chart = ()=>_.each(series,(data)=>{
+                if(data.name != "task"){
+                  console.log(data.name)
+                  data.setVisible(false, false);
+                  data.update({ showInLegend: false}, false);
+                }
+              });
+              
+              var show_series=(list)=>{
+                list.map((i)=>{
+                  series[i].show();
+                  series[i].update({ showInLegend: true }, false);
+                  }
+                )
+              }
+              var show_series_only=(list)=>{
+                hide_chart();
+                list.map((i)=>{
+                  series[i].show();
+                  series[i].update({ showInLegend: true }, false);
+                  }
+                );
+                myChart.redraw();
+              }
+              Reveal.addEventListener( 'fragmentshown', function( event ) {
+                counter++;
+                render(counter);
+              });
+              Reveal.addEventListener( 'fragmenthidden', function( event ) {
+                counter--;
+                render(counter);
+              });
+              Reveal.addEventListener( 'slidechanged', function( event ) {
+                 counter = 0;
+                 render(counter);
+              });
+              var render = (counter) =>{
+                switch(counter){
+                  case 0:
+                    show_series_only([0]);
+                    break;
+                  default: break; 
+                }
+              }
+              render(counter);
+            }); 
+            
+            
+            
+          </script>
+        </section>
+        <section>
+          <div id="container2" style="width:auto; height:500px"></div>
+          <div id="container2_" style="width:auto; height:500px"></div>
+          <script>
+            $(()=> { 
+              Highcharts.seriesTypes.columnrange.prototype.drawDataLabels = Highcharts.seriesTypes.column.prototype.drawDataLabels;
+              var myChart = Highcharts.chart('container2', {
                   chart: {
                     type: 'area',
                     zoomType: 'x'
@@ -368,8 +549,7 @@
                   },
                   yAxis: {
                     title: {
-                      text: '酵素活性',
-                      offset:80
+                      text: ''
                     },
                     labels:{
                       y: 7
@@ -390,128 +570,27 @@
                     type: 'linear',
                     allowDecimals: false,
                     tickPixelInterval:120,
-                    labels:{
-                      y:30,
-                      formatter: function() {
-                        return this.value+1;
-                      }
-                    },
                     title: {
                       text: '入院後日数'
+                    },
+                    labels: {
+                      formatter: function() {
+                        return this.value+1;
+                      },
+                      y:30
                     },
                     plotBands: [{
-                      color: '#ccc', // Color value
-                      className: 'fg-3', // Style of the plot line. Default to solid
-                      from: 1.9, // Value of where the line will appear
-                      to: 2.1,
-                      zIndex:1, // Width of the line  
+                      color: '#ddd', // Color value
+                      className: '', // Style of the plot line. Default to solid
+                      from: -259.5, // Value of where the line will appear
+                      to: -258.5,
                       label:{
-                        text: "<em class='fg-3 balloon'>骨髄穿刺</em>",
-                        useHTML:true
-                      }},{
-                      color: '#ccc', // Color value
-                      className: 'fg-10', // Style of the plot line. Default to solid
-                      from: 4.9, // Value of where the line will appear
-                      to: 5.1, // Width of the line  
-                      zIndex:2,
-                      label:{
-                        text: "<em class='fg-10 balloon'>肝生検</em>",
-                        useHTML:true
-                      }},{
-                      color: '#eee', // Color value
-                      className: 'fg-7', // Style of the plot line. Default to solid
-                      from: 1.9, // Value of where the line will appear
-                      to: 4.9,
-                      zIndex:0,
-                      label:{
-                        text: "<em class='fg-7 gray-balloon'>m-PSL 250mg</em>",
+                        text: "<div class='gray-balloon' style='font-size:90% !important; top: -50px;'>エスメプラゾール開始</div>",
                         useHTML:true
                       }}
                     ]
-                  },
-                  series: [
-                    {
-                      name:"AST(IU/L)",
-                      marker: {
-                        enabled: true,
-                        radius: 3
-                      },
-                      data: [[0,718], [1,1488], [1.33,1831], [2,2140], [2.33,2407], [3,2130], [4,2050], [4.33,1350], [5,1237], [6,1196], [8,549], [12,251], [16,93], [20,65], [43,79], [71,33], [162,21]]
-                    },
-                    {
-                      name:"ALT(IU/L)",
-                      marker: {
-                        enabled: true,
-                        radius: 3
-                      },
-                      data: [[0,422], [1,952], [1.33,1313], [2,1765], [2.33,2084], [3,2430], [4,3860], [4.33,2930], [5,2620], [6,2310], [8,1610], [12,817], [16,357], [20,182], [43,130], [71,60], [162,16]]
-                    },{
-                      name:"LDH(IU/L)",
-                      marker: {
-                        enabled: true,
-                        radius: 3
-                      },
-                      data: [[0,652], [1,1164], [1.33,1341], [2,1447], [2.33,1530], [3,1461], [4,890], [4.33,559], [5,570], [6,521], [8,261], [12,161], [16,136], [20,142], [43,167], [71,133], [162,133]]
-                    },
-                    {
-                      name:"γ-GTP(IU/L)",
-                      marker: {
-                        enabled: true,
-                        radius: 3
-                      },
-                      data: [[0,354],[1,455],[1.33,512],[2,525],[2.33,542],[3,646],[4,544],[4.33,493],[5,509],[6,453],[8,511],[12,460],[16,342],[20,253],[43,105],[71,64],[162,42]]
-                    },
-                    {
-                      name:"ALP(IU/L)",
-                      marker: {
-                        enabled: true,
-                        radius: 3
-                      },
-                      data: [[0,741], [1,815], [1.33,905], [2,941], [2.33,1018], [3,1131], [4,1110], [4.33,855], [5,901], [6,720], [8,758], [12,794], [16,701], [20,629], [43,320], [71,246], [162,211]]
-                    }, {
-                      name:"T.Bil(mg/dl)",
-                      marker: {
-                        enabled: true,
-                        radius: 3
-                      },
-                      data: [[0,0.7], [1,0.9], [1.33,1], [2,1.2], [2.33,1.6], [3,2.7], [4,2.9], [4.33,2.8], [5,3.1], [6,3.6], [8,4.9], [12,2.4], [16,1.9], [20,1.3], [43,0.9], [71,0.6], [162,0.5]]
-                    },{
-                      name:"D.Bil(mg/dl)",
-                      marker: {
-                        enabled: true,
-                        radius: 3
-                      },
-                      data: [[0,0.3], [1,0.4], [1.33,0.6], [2,0.8], [2.33,1.2], [3,2.1], [4,2.4], [4.33,2.3], [5,2.5], [6,2.9], [8,4.1], [12,1.8], [16,1.2], [20,0.9], [43,0.5], [71,0.3], [162,0.1]]
-                    },{
-                      name:"CRP(mg/dl)",
-                      marker: {
-                        enabled: true,
-                        radius: 3
-                      },
-                      data: [[0,6.43], [1,6.7], [1.33,7.08], [2,6.41], [2.33,5.96], [3,6.47], [4,3.55], [4.33,2.69], [5,2.07], [6,1.3], [8,0.86], [12,0.59], [16,0.31], [20,0.27], [43,0.09], [71,0.07], [162,0.06]]
-                    },{
-                      name:"WBC(10^3)",
-                      marker: {
-                        enabled: true,
-                        radius: 3
-                      },
-                      data: [[0,3.8],[1,2.3],[1.33,2.2],[2,2.8],[2.33,2.8],[3,1.7],[4,7.2],[4.33,7.7],[5,11.8],[6,9.5],[8,5.8],[12,4.2],[16,3],[20,3.2],[43,4.9],[71,3.7],[162,3.9]]
-                    },{
-                      name:"PT%",
-                      marker: {
-                        enabled: true,
-                        radius: 3
-                      },
-                      data: [[1,73.4], [1.33,65.5], [2,67.7], [2.33,61.4], [3,76.5], [4,88.4], [4.33,93], [5,98.7], [6,95.3], [8,98.7], [12,93.7], [16,89], [20,92.1], [43,101.2]]
-                    },{
-                      name:"血小板(10^2)",
-                      data: [[0,920], [1,800], [1.33,760], [2,700], [2.33,680], [3,900], [4,1240], [4.33,1310], [5,1390], [6,1400], [8,1710], [12,1290], [16,1210], [20,1370], [43,1300], [71,1470], [162,1500]]
-                    },
-                    {
-                      name:"異型リンパ球(%)",
-                      data: [[0,1], [2,3], [2.33,1], [5,40], [6,27], [8,20], [12,10]]
-                    }                                           
-                  ]
+                  }, 
+                  series: data_source
               });
               var counter = 0;
               var series = myChart.series;
@@ -551,661 +630,513 @@
               var render = (counter) =>{
                 switch(counter){
                   case 0:
-                    show_series_only([0,1,2]); 
-                    myChart.xAxis[0].setExtremes(0, 7);
+                    show_series_only([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]); 
                     break;
-                  case 1:
-                    show_series_only([3,4]); break;
-                  case 2:
-                    show_series_only([10]); break;
+                  case 4:
+                    myChart.xAxis[0].setExtremes(0, 18); 
+                    break;
                   case 5:
-                    show_series_only([9]); break;
-                  case 6:
-                    show_series_only([7,8]); break;
-                  case 8:
-                    show_series_only([0,1,2]); break;
-                  case 9:
-                    show_series_only([3,4]); break;                        
+                    show_series_only([1,2]); 
+                    break;
                   default: break; 
                 }
               }
+              render(counter);
             }); 
-            
-            
           </script>
-        </section>
-        <section data-background-image="../src/AHV_histo1.png" data-background-repeat="repeat"></section>
-        <section>
-          <h2>生検同日にウイルス血清検査が帰着</h2>
-          <div class="row">
-            <div class="col-xs-6">
-              <table class="table table-condensed" style="margin-top:-10px;font-size: 140%">
-                <tr>
-                  <td><em>ウイルス血清検査</em></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>CMV-IgG</td>
-                  <td class="red">80</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>CMV-IgM</td>
-                  <td class="red">< 4</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>EBV-IgG</td>
-                  <td>< 10</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>EBV-IgM</td>
-                  <td>< 10</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>EBV-EBNA</td>
-                  <td>20</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>HBsAb</td>
-                  <td>0.2</td>
-                  <td>mIU/ml</td>
-                </tr>
-                <tr>
-                  <td>HBeAb</td>
-                  <td>33</td>
-                  <td>%</td>
-                </tr>
-                <tr>
-                  <td>HBeAg</td>
-                  <td>0.1</td>
-                  <td>COI</td>
-                </tr>
-                <tr>
-                  <td>IgMHBcAb</td>
-                  <td>0.2</td>
-                  <td>COI</td>
-                </tr>
-                <tr>
-                  <td>HBcAb</td>
-                  <td>0.2</td>
-                  <td>COI</td>
-                </tr>
-                <tr>
-                  <td>HBVDNA</td>
-                  <td>(ー）</td>
-                  <td></td>
-                </tr>
-                <tr class="warning fg-1 grow">
-                  <td>IgMHA</td>
-                  <td class="red">2.34</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>HCVAbEIA</td>
-                  <td>0.1</td>
-                  <td>COI</td>
-                </tr>
-                <tr>
-                  <td>IgAHEVAb</td>
-                  <td>(ー)</td>
-                  <td> </td>
-                </tr>
-              </table>
-            </div>
-            <div class="col-xs-6 md-pl-40">
-              <p class="md-ml-40 fg-2"><em>診断</em></p><br>
-              <h3 class="fg-3">急性A型肝炎</h3>
-            </div>
-          </div>
-        </section>
-        <section>
-          <h2>その後の臨床経過</h2>
-          <div class="row">
-            <div class="col-xs-12">
-              <div class="md-tm-0" id="container4" style="width:auto; height:600px"></div>
-              <div class="invisible-counter fg-2"></div>
-            </div>
-          </div>
           <script>
-            $(document).ready(()=> { 
-              var myChart = Highcharts.chart('container4', {
-                  chart: {
-                    type: 'area',
-                    zoomType: 'x'
-                  },
-                  title: {
-                    text: ''
-                  },
-                  tooltip:{
-                    enabled: false
-                  },
-                  legend:{
-                    symbolPadding: 15,
-                    symbolRadius: 24,
-                    useHTML: true,  
-                    itemStyle:{
-                      "fontSize": "30px", 
-                      "fontWeight": "bold"
-                    }
-                  },
-                  yAxis: {
-                    title: {
-                      text: '酵素活性',
-                      offset:80
-                    },
-                    labels:{
-                      y: 7
-                    },
-                    tickAmount: 6
-                  },
-                  plotOptions: {
-                    series: {
-                      fillOpacity: 0,
-                      zoneAxis: 'x',
-                      lineWidth: 5,
-                      marker: {
-                        radius: 7
-                      }
-                    }
-                  },
-                  xAxis: {
-                    type: 'linear',
-                    allowDecimals: false,
-                    tickPixelInterval:150,
-                    labels:{
-                      y:30,
-                      formatter: function() {
-                        return this.value+1;
-                      }
-                    },
-                    title: {
-                      text: '入院後日数'
-                    },
-                    plotBands: [
-                    //- {
-                    //-   color: '#ccc', // Color value
-                    //-   from: 1.9, // Value of where the line will appear
-                    //-   to: 2.1,
-                    //-   zIndex:1, // Width of the line  
-                    //-   label:{
-                    //-     text: "<div class='balloon'>骨髄穿刺</div>",
-                    //-     useHTML:true
-                    //-   }},{
-                    //-   color: '#ccc', // Color value
-                    //-   from: 4.9, // Value of where the line will appear
-                    //-   to: 5.1, // Width of the line  
-                    //-   zIndex:2,
-                    //-   label:{
-                    //-     text: "<div class='balloon'>肝生検</div>",
-                    //-     useHTML:true
-                    //-   }},
-                      {
-                      color: '#eee', // Color value
-                      from: 1.9, // Value of where the line will appear
-                      to: 4.9,
-                      zIndex:0,
-                      label:{
-                        text: "<div class='gray-balloon'>m-PSL 250mg</div>",
-                        useHTML:true
-                      }},{
-                      color:{    
-                        linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
-                        stops: [
-                            [0, '#ddd'],
-                            [1, '#fff']
-                      ]}, // Color value
-                      className: 'fg-1 gradient-band', // Style of the plot line. Default to solid
-                      from: 5.1, // Value of where the line will appear
-                      to: 7,
-                      label:{
-                        text: "<div class='fg-1 gray-balloon'>速やかに中止</div>",
-                        useHTML:true
-                      } // Width of the line  
+            $(function () {
+                  // Define tasks
+                  var tasks = [{
+                      name:'ABPC/SBT',
+                      intervals: [{
+                          from: -8,
+                          to: -5,
+                          label: 'ABPC/SBT'
                       },{
-                      color: '#ccc', // Color value
-                      className: 'fg-2', // Style of the plot line. Default to solid
-                      from: 19.9, // Value of where the line will appear
-                      to: 20.1, // Width of the line  
-                      zIndex:2,
-                      label:{
-                        text: "<em class='fg-2 balloon'>退院</em>",
-                        useHTML:true
-                      }}
-                    ]
-                  },
-                  series: [
-                    {
-                      name:"AST(IU/L)",
-                      marker: {
-                        enabled: true,
-                        radius: 3
-                      },
-                      data: [[0,718], [1,1488], [1.33,1831], [2,2140], [2.33,2407], [3,2130], [4,2050], [4.33,1350], [5,1237], [6,1196], [8,549], [12,251], [16,93], [20,65], [43,79], [71,33], [162,21]]
-                    },
-                    {
-                      name:"ALT(IU/L)",
-                      marker: {
-                        enabled: true,
-                        radius: 3
-                      },
-                      data: [[0,422], [1,952], [1.33,1313], [2,1765], [2.33,2084], [3,2430], [4,3860], [4.33,2930], [5,2620], [6,2310], [8,1610], [12,817], [16,357], [20,182], [43,130], [71,60], [162,16]]
-                    },{
-                      name:"LDH(IU/L)",
-                      marker: {
-                        enabled: true,
-                        radius: 3
-                      },
-                      data: [[0,652], [1,1164], [1.33,1341], [2,1447], [2.33,1530], [3,1461], [4,890], [4.33,559], [5,570], [6,521], [8,261], [12,161], [16,136], [20,142], [43,167], [71,133], [162,133]]
-                    },
-                    {
-                      name:"γ-GTP(IU/L)",
-                      marker: {
-                        enabled: true,
-                        radius: 3
-                      },
-                      data: [[0,354],[1,455],[1.33,512],[2,525],[2.33,542],[3,646],[4,544],[4.33,493],[5,509],[6,453],[8,511],[12,460],[16,342],[20,253],[43,105],[71,64],[162,42]]
-                    },
-                    {
-                      name:"ALP(IU/L)",
-                      marker: {
-                        enabled: true,
-                        radius: 3
-                      },
-                      data: [[0,741], [1,815], [1.33,905], [2,941], [2.33,1018], [3,1131], [4,1110], [4.33,855], [5,901], [6,720], [8,758], [12,794], [16,701], [20,629], [43,320], [71,246], [162,211]]
-                    }, {
-                      name:"T.Bil(mg/dl)",
-                      marker: {
-                        enabled: true,
-                        radius: 3
-                      },
-                      data: [[0,0.7], [1,0.9], [1.33,1], [2,1.2], [2.33,1.6], [3,2.7], [4,2.9], [4.33,2.8], [5,3.1], [6,3.6], [8,4.9], [12,2.4], [16,1.9], [20,1.3], [43,0.9], [71,0.6], [162,0.5]]
-                    },{
-                      name:"D.Bil(mg/dl)",
-                      marker: {
-                        enabled: true,
-                        radius: 3
-                      },
-                      data: [[0,0.3], [1,0.4], [1.33,0.6], [2,0.8], [2.33,1.2], [3,2.1], [4,2.4], [4.33,2.3], [5,2.5], [6,2.9], [8,4.1], [12,1.8], [16,1.2], [20,0.9], [43,0.5], [71,0.3], [162,0.1]]
-                    },{
-                      name:"CRP(mg/dl)",
-                      marker: {
-                        enabled: true,
-                        radius: 3
-                      },
-                      data: [[0,6.43], [1,6.7], [1.33,7.08], [2,6.41], [2.33,5.96], [3,6.47], [4,3.55], [4.33,2.69], [5,2.07], [6,1.3], [8,0.86], [12,0.59], [16,0.31], [20,0.27], [43,0.09], [71,0.07], [162,0.06]]
-                    },{
-                      name:"WBC(10^3)",
-                      marker: {
-                        enabled: true,
-                        radius: 3
-                      },
-                      data: [[0,3.8],[1,2.3],[1.33,2.2],[2,2.8],[2.33,2.8],[3,1.7],[4,7.2],[4.33,7.7],[5,11.8],[6,9.5],[8,5.8],[12,4.2],[16,3],[20,3.2],[43,4.9],[71,3.7],[162,3.9]]
-                    },{
-                      name:"PT%",
-                      marker: {
-                        enabled: true,
-                        radius: 3
-                      },
-                      data: [[1,73.4], [1.33,65.5], [2,67.7], [2.33,61.4], [3,76.5], [4,88.4], [4.33,93], [5,98.7], [6,95.3], [8,98.7], [12,93.7], [16,89], [20,92.1], [43,101.2]]
-                    },{
-                      name:"血小板(10^2)",
-                      data: [[0,920], [1,800], [1.33,760], [2,700], [2.33,680], [3,900], [4,1240], [4.33,1310], [5,1390], [6,1400], [8,1710], [12,1290], [16,1210], [20,1370], [43,1300], [71,1470], [162,1500]]
-                    },
-                    {
-                      name:"異型リンパ球(%)",
-                      data: [[0,1], [2,3], [2.33,1], [5,40], [6,27], [8,20], [12,10]]
-                    },{
-                      name:"IgM-HA抗体",
-                      data: [[1,2.34], [8,7.76], [16,6.16], [20,5.77], [43,3.74]]
-                    }                                                   
-                  ]
-              });
-              var counter = 0;
-              var series = myChart.series;
-              var reset =()=> _.each(series,(data)=>{
-                  data.setVisible(false, false);
-                  data.update({ showInLegend: false}, false);
-                }
-              );
-              var show_series=(list)=>{
-                list.map((i)=>{
-                  series[i].show();
-                  series[i].update({ showInLegend: true }, false);
-                  }
-                )
-              }
-              var show_series_only=(list)=>{
-                reset();
-                list.map((i)=>{
-                  series[i].show();
-                  series[i].update({ showInLegend: true }, false);
-                  }
-                );
-                myChart.redraw();
-              }
-              Reveal.addEventListener( 'fragmentshown', function( event ) {
-                counter++;
-                render(counter);
-              });
-              Reveal.addEventListener( 'fragmenthidden', function( event ) {
-                counter--;
-                render(counter);
-              });
-              Reveal.addEventListener( 'slidechanged', function( event ) {
-                 counter = 0;
-                 render(counter);
-              });
-              var render = (counter) =>{
-                switch(counter){
-                  case 0:
-                    show_series_only([0,1,2]); 
-                    myChart.xAxis[0].setExtremes(0, 21);
-                    break;                   
-                  default: break; 
-                }
-              }
-            }); 
+                          from: 60,
+                          to: 61,
+                          label: 'ABPC/SBT'}]
+                      }, {
+                      name:'PIPC/TAZ',
+                      intervals: [{
+                          from: -4,
+                          to: 0,
+                          label: 'PIPC/TAZ'
+                        },{
+                          from: 11,
+                          to: 13,
+                          label: 'PIPC/TAZ'
+                        },{
+                          from: 62,
+                          to: 73,
+                          label: 'PIPC/TAZ'}]
+                      },{
+                        name:'VCM',
+                        intervals: [{
+                            from: 40,
+                            to: 40,
+                            label: 'VCM'
+                        },{
+                            from: 64,
+                            to: 64,
+                            label: 'VCM'
+                        },{
+                            from: 144,
+                            to: 190,
+                            label: 'VCM'
+                        }]
+                      },{
+                        name:'SBT/CPZ',
+                        intervals: [{
+                            from: 137,
+                            to: 141,
+                            label: 'SBT/CPZ'
+                        }]
+                      },{
+                        name:'DLPM',
+                        intervals: [{
+                            from: 141,
+                            to: 185,
+                            label: 'DLPM'
+                        }]
+                      },{
+                        name:'CLDM',
+                        intervals: [{
+                            from: 17,
+                            to: 25,
+                            label: 'CLDM'
+                        }]
+                      },{
+                        name:'MEPM',
+                        intervals: [{
+                            from: 25,
+                            to: 43,
+                            label: 'MEPM'
+                        },{
+                            from: 102,
+                            to: 115,
+                            label: 'MEPM'
+                        }]
+                      }, {
+                        name:'LVFX',
+                        intervals: [{
+                            from: 13,
+                            to: 23,
+                            label: 'LVFX'
+                        },{
+                            from: 74,
+                            to: 86,
+                            label: 'LVFX'
+                        },{
+                            from: 98,
+                            to: 100,
+                            label: 'LVFX'}]
+                      },{
+                        name:'GCV',
+                        intervals: [{
+                            from: 190,
+                            to: 193,
+                            label: 'GCV'
+                        }]
+                      },{
+                        name:'L-AMB',
+                        intervals: [{
+                            from: 183,
+                            to: 192,
+                            label: 'L-AMB'
+                        }]
+                      },{
+                        name:'MCFG',
+                        intervals: [{
+                            from: 130,
+                            to: 162,
+                            label: 'MCFG'
+                        },{
+                            from: 176,
+                            to: 182,
+                            label: 'MCFG'}]
+                  }];
+                  // re-structure the tasks into line seriesvar series = [];
+                  var series = [];
+                  $.each(tasks.reverse(), function(i, task) {
+                      var item = {
+                          name: task.name,
+                          data: []
+                      };
+                      $.each(task.intervals, function(j, interval) {
+                          item.data.push({
+                              x: interval.from,
+                              y: i,
+                              label: interval.label,
+                              from: interval.from,
+                              to: interval.to
+                          }, {
+                              x: interval.to,
+                              y: i,
+                              from: interval.from,
+                              to: interval.to
+                          });
+                          
+                          // add a null value between intervals
+                          if (task.intervals[j + 1]) {
+                              item.data.push(
+                                  [(interval.to + task.intervals[j + 1].from) / 2, null]
+                              );
+                          }
             
+                      });
             
+                      series.push(item);
+                  });
             
-          </script>
-        </section>
-        <section data-state="animation">
-          <h2 id="move">なぜ診断に苦慮したか</h2>
-          <ul class="list-unstyled"> 
-            <li id="move1">1. 異型リンパ球が<em>40%</em>まで上昇</li>
-            <li id="move2">2. 高熱とCRP高値(6〜7 mg/dl)が<em>1週間</em>持続</li>
-            <li id="move3">3. sIL-2R、フェリチンの上昇</li>
-            <li id="move4">4. 血小板が7万まで減少</li>
-            <li id="move5" style="margin-left:5px">5. 54歳男性</li>
-            <li id="move6" style="margin-left:5px">6. 病理でinterface hepatitis</li>
-          </ul>
-          <div class="invisible-counter fg"></div>
-          <script>
-            $(document).ready(()=>{
-              Reveal.addEventListener( "animation", function( event ) {
-                Reveal.addEventListener( 'fragmentshown', function( event ) {
-                  anime({
-                    targets: '#move',
-                    translateY: '-149px',
-                    duration: '1000',
-                    easing: 'easeInOutQuad'
-                  });
-                  anime({
-                    targets: '#move1',
-                    translateY: '-90px',
-                    duration: '1000',
-                    easing: 'easeInOutQuad'
-                  });
-                  anime({
-                    targets: '#move2',
-                    translateY: '-90px',
-                    duration: '1000',
-                    easing: 'easeInOutQuad'
-                  });
-                  anime({
-                    targets: '#move3',
-                    translateY: '-11px',
-                    duration: '1000',
-                    easing: 'easeInOutQuad'
-                  });
-                  anime({
-                    targets: '#move4',
-                    translateY: '-11px',
-                    duration: '1000',
-                    easing: 'easeInOutQuad'
-                  });
-                  anime({
-                    targets: '#move5',
-                    translateY: '186px',
-                    duration: '1000',
-                    easing: 'easeInOutQuad'
-                  });
-                  anime({
-                    targets: '#move6',
-                    translateY: '186px',
-                    duration: '1000',
-                    easing: 'easeInOutQuad'
-                  });                                      
-                  done = true;
-                });
-              });
+                  // create the chart
+                  var chart = new Highcharts.Chart({
+                      chart: {
+                          renderTo: 'container2_'
+                      },
             
-            })
+                      title: {
+                          text: ''
+                      },
+            
+                      xAxis: {
+                          type: 'linear',
+                          labels:{
+                            enabled:false
+                          },
+                          TickWidth:0,
+                          gridLineWidth: 0,
+                          lineWidth: 0,
+                          minorTickWidth: 0,
+                          minorGridLineWidth: 0,
+                          tickLength: 0
+                      },
+            
+                      yAxis: {
+                          offset:60,
+                          categories: ['MCFG','L-AMB','GCV','LVFX','MEPM','CLDM','DLPM','SBT/CPZ','VCM','PIPC/TAZ','ABPC/SBT'],
+                          labels: {
+                              enabled: false,
+                              style: {
+                                  color: '#525151',
+                                  font: '10px',
+                                  fontWeight: 'bold',
+                              }
+                             /* formatter: function() {
+                                  if (tasks[this.value]) {
+                                      return tasks[this.value].name;
+                                  }
+                              }*/
+                          },
+                          startOnTick: false,
+                          endOnTick: false,
+                          TickWidth:0,
+                          gridLineWidth:0,
+                          title: {
+                              text: ''
+                          },
+                          minPadding: 0.2,
+                          maxPadding: 0.2
+                          
+                      },
+            
+                      legend: {
+                          enabled: false
+                      },
+            
+                      plotOptions: {
+                          line: {
+                              lineWidth: 10,
+                              marker: {
+                                  enabled: false
+                              },
+                              dataLabels: {
+                                  enabled: true,
+                                  align: 'center',
+                                  y:10,
+                                  formatter: function() {
+                                      return this.point.options && this.point.options.label;
+                                  }
+                              }
+                          }
+                      },
+            
+                      series: series
+            
+                  });      
+               });    
             
           </script>
         </section>
         <section>
-          <h2>なぜ診断に苦慮したか</h2>
-          <p class="fg"><em>伝染性単核球症？</em></p>
-          <ul class="list-unstyled"> 
-            <li>1. 異型リンパ球が<em>40%</em>まで上昇</li>
-            <li>2. 高熱とCRP高値(6〜7 mg/dl)が<em>1週間</em>持続</li>
-          </ul>
-          <p class="fg"><em>HPS/Lymphomaか？</em></p>
+          <h2>プロブレムリスト</h2>
           <ul class="list-unstyled">
-            <li>3. sIL-2R、フェリチンの上昇</li>
-            <li>4. 血小板が7万まで減少</li>
-          </ul>
-          <p class="fg"><em>伝染性単核球症とHPSの合併？ </em>➡ ステロイド開始</p>
-          <p class="fg"><em>急性肝炎様自己免疫性肝炎？ </em>➡ 肝生検</p>
-          <p class="fg"><em>矛盾点</em></p>
-          <ul class="list-inline list-unstyled">
-            <li>5. 54歳男性</li>
-            <li class="fg">↔ 伝染性単核球症と矛盾</li>
-          </ul>
-          <ul class="list-inline list-unstyled">
-            <li>6. 病理でinterface hepatitis</li>
-            <li class="fg">↔ 急性肝障害と合わない！</li>
-          </ul>
-        </section>
-        <section>
-          <h2>最終的に急性A型肝炎と診断</h2>
-          <p><em>振り返ると...</em></p>
-          <ul class="list-unstyled md-mb-20">
-            <li>異型リンパ球が40%まで上昇</li>
-            <li>➡ <em>急性A型肝炎</em>ではmax20%が普通。ステロイド投与の影響？</li>
-          </ul>
-          <ul class="list-unstyled md-mb-20">
-            <li>肝逸脱酵素が3日間以上上昇傾向</li>
-            <li>➡ <em>急性A型肝炎</em>では肝逸脱酵素がpeekの頃に受診することが多い</li>
-          </ul>
-          <ul class="list-unstyled md-mb-20">
-            <li>本例は54歳男性</li>
-            <li>➡ <em>急性A型肝炎</em>では好発年齢が上昇しつつある</li>
-          </ul>
-          <ul class="list-unstyled md-mb-20">
-            <li>病理でinterface hepatitis</li>
-            <li>➡ <em>急性A型肝炎</em>ではinterface hepatitis様の所見あり</li>
+            <li>#1 CHF(HFrEF, ICM s/o)</li>
+            <li>#1-1 Af, #1-2 OMI</li>
+            <li>#2 末期腎不全(腎硬化症+PIPC/TAZによる間質性腎炎s/o)/透析導入</li>
+            <li>#2-1 腎性貧血, #2-2 CKD-MBD</li>
+            <li>#3 感染症</li>
+            <li>#3-1 肺炎/膿胸, #3-1-1 胸腔ドレナージ/気胸</li>
+            <li>#3-2 CD腸炎, #3-2-1 大腸多発潰瘍</li>
+            <li>#3-3 真菌感染症</li>
+            <li>#4 出血性十二指腸潰瘍</li>
+            <li>#5 右PCA領域出血性脳梗塞</li>
+            <li>#6 両側視床出血後</li>
+            <li>#7 多発同静脈血栓症(左肺動脈、左心耳、右房内、右下腿深部静脈)</li>
+            <li>#8 アルドステロン症</li>
           </ul>
         </section>
         <section>
-          <h2>結語</h2>
-          <p><em>高熱とCRP上昇を伴って発症し当初鑑別に苦慮した<br>A型急性肝炎の一例を経験した</em></p>
+          <h2>病態のフローチャート</h2><img class="plain img-rounded" src="../src/flowchart.png">
         </section>
         <section>
-          <h1>ご清聴有難うございました。</h1>
-        </section>
-        <section>
-           <h2>結語</h2>
-<ul>
-<li>今回、伝染性単核球症様の急性A型肝炎を経験した。</li>
-<li>衛生状態の改善で、抗体を持っていない<strong>高齢発症例が増加</strong>している。</li>
-<li><strong>高齢発症は重篤化・非典型的な症状を呈する場合が多く</strong>、<br>
-注意を要すると考え、症例報告とする。</li>
-</ul>
-
-        </section>
-        <section>
-          <h2>伝染性単核球症様の急性A型肝炎</h2>
-          <div class="row">
-            <div class="col-xs-6"><img class="plain img-rounded" src="../src/AHV_study.png" style="width:100%"><small>CD4+-CD45RO+/CD4+ ↑</small></div>
-            <div class="col-xs-6">
-              <table class="table table-condensed table-striped md-mt-40 fg-1">
-                <tr>
-                  <td></td>
-                  <td>IM様A型肝炎</td>
-                  <td>EBV感染</td>
-                </tr>
-                <tr>
-                  <td>CD4/CD8</td>
-                  <td>1.23</td>
-                  <td>ほとんど1以下</td>
-                </tr>
-                <tr>
-                  <td>機序</td>
-                  <td><strong>memory B cellの活性化          </strong></td>
-                  <td>感染Bリンパ球増殖<br>➡CTLの活性化</td>
-                </tr>
-              </table>
-              <div class="arrow-down md-mt-20 fg-2"></div>
-              <ul class="fg-3">
-                <li>成因はEBVによるIMとは異なる</li>
-                <li>高齢発症のA型肝炎はIM様の経過をたどる場合もまれではない</li>
-                <li>高齢発症重篤化の一因</li>
-              </ul>
-            </div>
-          </div>
-          <p class="reference">Increase of atypical lymphocytes expressing CD4+/CD45RO+ in an infectious mononucleosis-like syndrome associated with hepatitis A virus infection Hidehiro Watanabe et.al J Infect Chemother (2009) 15:187–190 </p>
-        </section>
-        <section>
-          <h2>検査</h2><img class="plain img-rounded" src="../src/HAV_time_course.png">
-          <ul>
-            <li class="fragment">肝逸脱酵素(AST,ALT),ALP,LDHなどが上昇</li>
-            <li class="fragment">異型リンパ球 < 20%</li>
+          <h2>病理解剖で明らかにしたいこと</h2>
+          <ul class="list-unstyled">
+            <li>1. 心機能低下の原因(冠動脈の状態・Afの原因)</li>
+            <li>2. 大腸多発潰瘍/慢性下痢の原因</li>
+            <li>3. 多発動静脈血栓症の分布と原因</li>
+            <li>4. 真菌感染のfocus</li>
+            <li>5. 直接死因c</li>
+            <li>+α 腎機能低下の原因</li>
           </ul>
         </section>
-        <section><h2>結語</h2>
-<ul>
-<li>今回,血小板減少と炎症反応の上昇及び異型リンパ球増多を伴った<br>
-急性A型肝炎を経験した</li>
-<li>本症例ではウイルス血清検査ではCMV, EBV感染は否定的であり,<br>
-HAV単独感染でも伝染性単核球症様の経過をたどる貴重な症例を経験した</li>
-</ul>
-
-        </section>
-        <section>
-          <h2>参考文献</h2>
-          <ul>
-            <li>Increase of atypical lymphocytes expressing CD4+/CD45RO+ in an infectious <br>mononucleosis-like syndrome associated with hepatitis A virus infection<br>Hidehiro Watanabe et.al J Infect Chemother (2009) 15:187–190 </li>
-          </ul>
-        </section>
-        <section>
-          <h2>補遺：病歴</h2>
-          <ul>
-            <li>発症日の昼にランチと共にワイングラス2杯程度の飲酒量</li>
-          </ul>
-        </section>
-        <section>
-          <h2>気になるところ</h2>
-          <ul>
-            <li>大人になるほどA型肝炎が重篤化するのはactivated memory cellが惹起されやすくなっている？</li>
-            <li>この症例でもCMV, EBVは既感染パターン</li>
-            <li>以前にペニシリンアレルギーが出ているが,IMになっていた？</li>
-          </ul>
-        </section>
-        <section>
-          <h2>本症例の特徴</h2>
-          <div class="row"> 
-            <div class="col-xs-8">
-              <ul class="list">
-                <li>54歳男性</li>
-                <li>急性肝障害(入院後もT/Aが上昇を続けた)</li>
-                <li class="fg-1 background-red">高熱とCRP高値(6〜7 mg/dl)が<em>1週間</em>持続</li>
-                <li class="fg-1 background-red">異型リンパ球が<em>40%</em>まで上昇</li>
-                <li class="fg-2 background-blue">sIL2R 1490, フェリチン〜と上昇</li>
-                <li class="fg-2 background-blue">血小板が9万→7万に3日間で減少</li>
-                <li>病理でinterface hepatitisあり</li>
-              </ul>
-            </div>
-            <div class="col-xs-4">
-              <p><em>鑑別</em></p>
-              <ul>
-                <li class="fg-1 highlight-red">HPS/Lymphoma</li>
-                <li class="fg-2 highlight-blue">伝染性単核球症</li>
-                <li>アルコール性</li>
-                <li>薬剤性</li>
-                <li>急性肝炎様自己免疫性肝炎</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <section>
-          <h2>HPS/HLH診断基準（2009年のHLH-2004改訂案）</h2>
-          <p>以下のいずれかを満たせばHPS/HLHと診断される。</p>
-          <ul>
-            <li>HPS/HLHまたはXLPの分子診断が得られる。</li>
-            <li>Aの4項目中3項目以上,Bの4項目中1項目以上を満たす。C項目はHPS/HLH診断を支持する。</li>
-          </ul>
-          <div class="row">
-            <div class="col-xs-4">
-              <p><em> A項目</em></p>
-              <ul> 
-                <li>発熱</li>
-                <li>脾腫</li>
-                <li>2系統以上の血球減少</li>
-                <li>肝炎様所見</li>
-              </ul>
-            </div>
-            <div class="col-xs-4">
-              <p><em> B項目</em></p>
-              <ul>
-                <li>血球貪食像</li>
-                <li>フェリチン上昇</li>
-                <li>可溶性IL-2R上昇</li>
-                <li>NK細胞活性の低下または消失</li>
-              </ul>
-            </div>
-            <div class="col-xs-4">
-              <p><em> C項目</em></p>
-              <ul>
-                <li>高トリグリセライド血症</li>
-                <li>低フィブリノゲン血症</li>
-                <li>低ナトリウム血症</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <section>
-          <h2>高齢発症のA型肝炎が増えてきている</h2>
-          <div class="row">
-            <div class="col-xs-7"><img class="plain img-rounded" src="../src/AHV_epi2011.png">
-              <div class="arrow-down"></div><img class="plain img-rounded" src="../src/AHV_epi2016.png">
-            </div>
-            <div class="col-xs-5">
-              <div class="text-center">以前は若年者が多い病気</div>
-              <div class="arrow-down"></div>
-              <div class="text-center">衛生状態の改善</div>
-              <div class="arrow-down"></div>
-              <div class="text-center">高齢発症が増加</div><br>
-              <p class="strong md-ml-40 md-pl-40">高齢発症の方が重篤</p>
-            </div>
-          </div>
-        </section>
-        <section>
-          <h2>Todo</h2>
-          <ul>
-            <li>em をindent</li>
-            <li>リンパ球の割合</li>
-            <li>肝機能の評価,劇症化になってなかったか</li>
-            <li>IgM-HAの推移</li>
-            <li>table: font-size 上げる, stripe, 一色にする</li>
-            <li>Hbs, HCVを検査結果に書く</li>
-          </ul>
-        </section>
-        <section>
-          <h2>症状</h2>
-          <div class="row">
-            <div class="col-xs-4 fragment"><img class="plain img-rounded" src="../src/fever.png" style="width:250px"></div>
-            <div class="col-xs-4 fragment"><img class="plain img-rounded" src="../src/fatigue.png" style="width:200px"></div>
-            <div class="col-xs-4 fragment"><img class="plain img-rounded" src="../src/vomitting.png" style="width:250px"></div>
-          </div>
-        </section>
+        <script>
+          var data_source=
+            [
+              {
+                type:"area",
+                name:"CRP",
+                data: [[-8,1.74], [-7,2.39], [-5,2.62], [-3,2.45], [-1,1.11], [0,0.84], [1,0.68], [4,0.36], [6,0.56], [8,2.18], [11,4.43], [13,4.53], [15,2.58], [16,1.81], [18,0.98], [20,0.65], [22,1.13], [23,2.15], [25,3.08], [27,4.27], [29,3.07], [32,1.18], [34,0.64], [36,0.44], [39,0.3], [41,0.22], [43,0.19], [46,0.2], [47,0.35], [48,1.21], [49,1.75], [50,1.13], [53,0.35], [53,0.36], [55,0.31], [57,0.27], [60,4.14], [62,2.25], [64,4.2], [67,2.3], [69,1.29], [71,0.85], [74,6.81], [76,5.93], [78,3.67], [81,3.06], [83,3.08], [85,3.62], [88,5.85], [90,4.3], [92,3.56], [95,2.54], [97,1.67], [98,1.67], [99,6.82], [102,2.35], [104,1.16], [106,1.41], [109,1.28], [111,1.43], [113,1.46], [116,2.74], [118,3.03], [120,4.14], [123,7.95], [125,7.21], [127,8.13], [130,13.51], [132,6.55], [133,5.3], [134,4.89], [135,5.04], [137,5.64], [139,6.09], [141,7.67], [144,8.86], [145,8.4], [146,7.12], [147,6.51], [148,4.87], [151,1.88], [153,1.26], [155,1.13], [158,2.7], [160,4.76], [162,3.78], [165,1.69], [167,1.28], [168,1.67], [169,2.02], [172,3.62], [174,5.08], [176,5.98], [179,5.6], [181,5.11], [183,6.19], [186,6.04], [188,8.17], [190,12.23], [193,6.77], [193,5.68]]
+              },{
+                type:"area",
+                name:"sCr",
+                data: [[-8,2.21], [-7,2.46], [-5,3.77], [-3,3.98], [-1,4.69], [0,5.24], [1,5.63], [4,4.79], [6,4.16], [8,3.99], [11,4.63], [13,5.58], [15,6.16], [16,6.67], [18,6.69], [20,5.93], [22,5.41], [23,5.37], [25,4.8], [27,5.02], [27,3.09], [29,4.37], [29,2.06], [32,1.94], [32,4.33], [34,3.93], [36,4.37], [36,2.05], [39,1.88], [39,4.65], [41,4.7], [43,4.79], [46,2.36], [46,3.69], [47,3.1], [48,3.28], [48,3.21], [49,3.63], [50,2.13], [50,3.82], [53,4.04], [53,2.15], [55,3.71], [57,4.66], [60,2.73], [60,5.19], [62,5.02], [64,6.96], [67,4.22], [67,6.9], [69,6.96], [71,7.17], [74,8.46], [76,8.17], [78,6], [81,2.92], [81,5.51], [83,4.82], [85,4.17], [88,2.33], [88,5.31], [90,4.18], [92,4.9], [95,4.09], [95,2.28], [97,3.75], [98,2.95], [99,3.44], [102,2.02], [102,3.82], [104,3.47], [106,3.34], [109,3.42], [109,1.61], [111,3.02], [113,2.69], [116,3.36], [116,1.69], [118,3.44], [120,3.36], [123,1.67], [123,3.82], [125,3.29], [127,3.6], [130,1.76], [130,3.98], [132,2.97], [133,2.2], [134,2.48], [135,2.13], [137,1.4], [137,2.82], [139,2.75], [141,2.65], [144,3.44], [144,1.18], [145,3.25], [146,3.52], [147,3.75], [148,3.96], [151,3.83], [151,2], [153,3.61], [155,4.53], [158,3.71], [160,2.6], [160,4.12], [162,3.72], [165,3.86], [165,1.72], [167,3.41], [168,3.3], [169,3.57], [172,1.87], [172,3.34], [174,2.9], [176,3.64], [179,2.27], [179,3.27], [181,3.12], [183,3.56], [186,3.32], [186,1.85], [188,2.8], [190,3.27], [193,1.25], [193,1.25], [193,2.99]]
+              },{
+                type:"area",
+                name:"BUN",
+                data: [[-8,64.3],[-7,62.8],[-5,71.9],[-3,74],[-1,81.4],[0,81.4],[1,81.6],[4,68.5],[6,64.5],[8,70.6],[11,93.5],[13,113.9],[15,122.6],[16,133.3],[18,143.2],[20,144],[22,143.4],[23,143.1],[25,133.9],[27,137.7],[27,79.7],[29,106.8],[29,43.1],[32,34],[32,85.8],[34,66.1],[36,76.1],[36,31.8],[39,23.3],[39,64.7],[41,55.3],[43,64.1],[46,36.2],[46,64.1],[47,48.8],[48,60.2],[48,60.8],[49,69.2],[50,77.9],[50,40.3],[53,86.8],[53,42.4],[55,70],[57,85.2],[60,45.8],[60,99.9],[62,82.5],[64,111],[67,58.3],[67,102.8],[69,91.4],[71,79.7],[74,82.6],[76,97.7],[78,74.8],[81,31.1],[81,66.2],[83,61.3],[85,45.1],[88,20.7],[88,52.4],[90,54.2],[92,73],[95,32.9],[95,65.4],[97,60.6],[98,40.7],[99,54.8],[102,26.4],[102,60.3],[104,53.3],[106,42.9],[109,45.1],[109,19.1],[111,41],[113,34.9],[116,37.5],[116,16.8],[118,41.3],[120,44.3],[123,21.9],[123,58.6],[125,48.8],[127,61.5],[130,29.2],[130,72.3],[132,64.7],[133,45.7],[134,49.1],[135,45.9],[137,22.3],[137,50.8],[139,38.7],[141,31.2],[144,38.9],[144,9.7],[145,35],[146,38.1],[147,39.7],[148,43.5],[151,36.5],[151,16.5],[153,29.7],[155,34.4],[158,26.2],[160,19.2],[160,33],[162,30.3],[165,32.1],[165,11.8],[167,25],[168,22.9],[169,26.3],[172,12.4],[172,26.1],[174,26.4],[176,36.1],[179,24.1],[179,36.5],[181,34.2],[183,41.2],[186,36.3],[186,17.2],[188,29.2],[190,35],[193,10.8],[193,10.8],[193,30.9]]
+              }, {
+                type:"area",
+                name:"WBC",
+                data: [[-8,8.3], [-7,6.2], [-5,9.1], [-3,8.2], [-1,7.5], [0,6.5], [1,7.4], [1,7.4], [4,7.1], [6,9.2], [8,7.2], [11,7.2], [13,5.1], [15,6.4], [16,6.1], [18,6.6], [20,5.1], [22,5.9], [23,6.6], [25,6.2], [27,4.8], [29,5.3], [32,6.6], [34,5.3], [36,6.4], [39,5.3], [41,5.6], [43,3.5], [46,1.5], [46,1.5], [47,1.3], [48,2.2], [49,4.9], [50,6.1], [53,6.4], [55,6.1], [57,6.8], [60,9.1], [62,7.2], [64,8.7], [67,6.7], [69,8.4], [71,7.4], [74,20.8], [76,11.8], [78,5.6], [81,4.1], [83,5.5], [85,5.1], [88,3.9], [90,3.2], [92,3.5], [95,3.5], [97,3.6], [98,5.4], [99,5.8], [102,5.2], [104,3.9], [106,3.4], [109,4.5], [111,4], [113,4.1], [116,3.9], [118,3.3], [120,3.1], [123,3.5], [125,3.6], [127,6.5], [130,11.3], [132,8.3], [133,9.2], [134,6.9], [135,5.9], [137,7.9], [139,6.2], [141,5.4], [144,7.2], [145,5.6], [145,15.1], [146,4.4], [147,4.7], [148,4], [151,5], [153,8], [155,7], [158,5.6], [160,5.2], [162,7.6], [165,8.8], [167,8], [168,9.6], [169,10.3], [172,4.7], [174,3.7], [176,3.4], [179,3.7], [181,4.7], [183,5.5], [186,6.3], [188,7.3], [190,11.5], [193,9], [193,8.8]]
+              }, {
+                type:"area",
+                name:"D-dimer",
+                data: [[-8,0.8], [0,1.6], [15,0.9], [85,1.3], [106,4.2], [109,4.5], [120,5.6], [125,6.7], [127,3.9], [130,8.3], [139,7.7], [146,21.7], [158,12.8], [167,10.2], [179,14.9]]
+              }, {
+                type:"area",
+                name:"FDP",
+                data: [[-8,5.1], [0,7.1], [15,5.6], [85,5.1], [106,7.1], [109,9.7], [120,9.7], [125,10.4], [127,7.7], [130,11.6], [132,12.6], [135,19.4], [137,14.4], [139,11.6], [145,15.3], [146,23.1], [153,59.6], [158,29.2], [162,17.8], [167,26.7], [172,17.3], [174,17.6], [179,16.8], [188,14.2], [190,13.6], [193,17]]
+              }, {
+                type:"area",
+                name:"Alb",
+                data: [[-8,2.8], [-7,3], [-5,3.1], [-3,3.2], [-1,3.2], [0,3.1], [1,3.1], [4,2.8], [6,2.9], [8,2.8], [11,3], [13,2.7], [15,3], [16,3], [18,3], [20,3.3], [22,3], [23,3.2], [25,3], [27,3], [27,3], [29,2.9], [29,3.1], [32,2.8], [32,2.9], [34,2.9], [36,3], [36,3.3], [39,2.9], [39,2.9], [41,2.8], [43,2.8], [46,2.8], [46,2.6], [47,2.7], [48,2.8], [48,3], [49,2.8], [50,2.7], [50,3], [53,2.5], [53,2.8], [55,2.7], [57,2.9], [60,2.8], [60,3], [62,2.9], [64,2.7], [67,3], [67,2.6], [69,2.7], [71,3], [74,2.8], [76,2.3], [78,2.5], [81,2.9], [81,2.2], [83,2.2], [85,2.2], [88,2.3], [88,2.3], [90,2.1], [92,2.2], [95,2.2], [95,2.6], [97,2.2], [98,2.4], [99,2.1], [102,2.7], [102,2.1], [104,2.1], [106,2.1], [109,1.9], [109,2.3], [111,1.9], [113,2], [116,1.8], [116,2.1], [118,1.9], [120,2.1], [123,2.1], [123,1.8], [125,1.9], [127,1.9], [130,2], [130,1.7], [132,1.5], [134,1.6], [137,2.5], [137,1.7], [139,1.8], [141,1.6], [144,1.7], [144,2.7], [145,1.3], [145,1.8], [146,1.8], [148,1.9], [151,1.6], [151,2], [153,1.7], [155,1.9], [158,1.7], [160,2.8], [160,1.8], [162,2.1], [165,2.4], [165,2.1], [167,2.1], [169,2], [172,2.6], [172,1.9], [174,1.9], [176,1.9], [179,2.5], [179,1.8], [181,1.9], [183,2], [186,2], [186,2.3], [188,1.9], [190,1.8], [193,2.3], [193,2.3], [193,1.9]]
+              }, {
+                type:"area",
+                name:"βD",
+                data: [[64,5.3], [127,395], [141,714], [151,246], [160,146], [167,126], [174,126], [181,199], [188,76.8]]
+              }, {
+                type:"area",
+                name:"カンジダ抗原",
+                data: [[34,2],[64,16],[127,8],[141,8],[151,16],[167,8],[174,8],[181,8],[188,8]]
+              },{
+                type:"area",
+                name:"PCT",
+                data: [[127,0.79],[141,2.81],[151,1.74],[160,11.3],[167,5.9],[174,2.67],[181,2.33],[188,3.38]]
+              }, {
+                type:"area",
+                name:"Hb",
+                data: [[-8,11.4], [-7,11.4], [-5,12.5], [-3,12.6], [-1,13.1], [0,12.8], [1,12.9], [1,13], [4,12.1], [6,11.5], [8,11.2], [11,11.7], [13,10.9], [15,11.1], [16,10.9], [18,10.8], [20,11.5], [22,10.3], [23,11.2], [25,11.6], [27,10.3], [29,10.5], [32,10.9], [34,11], [36,10.9], [39,10.4], [41,10.2], [43,10.4], [46,9.8], [46,9.9], [47,10.6], [48,10.1], [49,10.9], [50,10.5], [53,9.9], [55,10.1], [57,10.2], [60,9.7], [62,9.5], [64,9.5], [67,9.1], [69,9.4], [71,10], [74,10.7], [76,8.5], [78,8.9], [81,9], [83,9.4], [85,9], [88,9.4], [90,9.1], [92,8.9], [95,8.5], [97,8.5], [98,9.6], [99,8.3], [102,8.2], [104,7.9], [106,8.8], [109,8.4], [111,8.3], [113,8.4], [116,8.4], [118,8.2], [120,8.9], [123,9.1], [125,9.5], [127,9.4], [130,9.4], [132,7.1], [133,7.6], [134,7.6], [135,8.5], [137,8.8], [139,8.6], [141,8.4], [144,9.5], [145,9.3], [146,8.8], [147,10.5], [148,8.4], [151,10.2], [153,10.7], [155,10.4], [158,10.3], [160,9.7], [162,9.9], [165,10.2], [167,10.3], [168,10.2], [169,10.2], [172,10.2], [174,10.1], [176,10.1], [179,9.9], [181,9.9], [183,10], [186,9.5], [188,8.9], [190,8.9], [193,9.9], [193,8.9]]
+              }, {
+                type:"area",
+                name:"PLT",
+                data: [[-8,262], [-7,279], [-5,289], [-3,268], [-1,246], [0,233], [1,226], [1,229], [4,211], [6,215], [8,227], [11,258], [13,107], [15,142], [16,144], [18,130], [20,140], [22,139], [23,151], [25,168], [27,175], [29,197], [32,239], [34,230], [36,245], [39,203], [41,167], [43,168], [46,185], [46,182], [47,175], [48,196], [49,227], [50,234], [53,267], [55,228], [57,236], [60,252], [62,281], [64,273], [67,276], [69,317], [71,360], [74,357], [76,260], [78,235], [81,162], [83,145], [85,112], [88,138], [90,121], [92,141], [95,138], [97,189], [98,194], [99,139], [102,201], [104,173], [106,160], [109,151], [111,161], [113,154], [116,152], [118,144], [120,149], [123,181], [125,166], [127,139], [130,112], [132,93], [133,71], [134,86], [135,100], [137,131], [139,147], [141,146], [144,163], [145,109], [146,128], [147,101], [148,105], [151,75], [153,76], [155,53], [158,47], [160,64], [162,64], [165,48], [167,49], [168,45], [169,48], [172,53], [174,54], [176,51], [179,58], [181,63], [183,60], [186,42], [188,40], [190,36], [193,44], [193,43]]
+              }, {
+                type:"area",
+                name:"PT%",
+                data: [[-8,76.9],[-7,78.1],[-3,52.9],[-1,60.4],[0,54.2],[1,74.5],[4,80.7],[15,59.5],[85,72.2],[106,47.6],[109,46.1],[120,60.5],[125,52.9],[127,62.3],[130,56.4],[132,54.1],[132,70.1],[133,82.4],[135,71.1],[137,70.1],[139,84.9],[145,93.2],[146,96.4],[151,75.4],[153,73.2],[155,76.5],[158,74.3],[162,71.2],[167,73.2],[172,68.2],[174,84.9],[176,80],[179,77.6],[181,77.6],[183,71.2],[186,64.1],[188,68],[190,65.1],[193,59.6]]
+              }, {
+                type:"area",
+                name:"APTT",
+                data: [[-8,32.4],[-7,34.5],[-3,36.1],[-1,36.9],[0,43.2],[1,36.7],[4,34.8],[15,36],[85,43.8],[106,53.5],[109,54.1],[120,49.4],[125,57.2],[127,55.4],[130,65.1],[132,183.3],[132,56.4],[133,50.5],[135,50.9],[137,116.6],[139,46.9],[145,45.6],[146,46.7],[151,52],[153,55.4],[155,56.1],[158,68.1],[162,82.5],[167,61.5],[172,98.5],[174,56.8],[176,83.5],[179,87.3],[181,60],[183,122.5],[186,93.6],[188,69.6],[190,73.9],[193,79.5]]
+              }, {
+                type:"area",
+                name:"Fib",
+                data: [[-8,341.5],[4,226.3],[85,308.4],[120,179.1],[125,115],[127,143.4],[130,224.1],[132,228.6],[133,240.4],[135,212.1],[137,250.8],[139,271.5],[145,230.9],[146,182.9],[151,115.1],[153,78.1],[155,71.2],[158,79.8],[162,82.8],[167,69.6],[172,118.1],[174,145.2],[176,131],[179,164],[181,187.2],[188,194.9],[190,210.5],[193,126.3]]
+              }, {
+                type:"area",
+                name:"HANP",
+                data: [[27,191],[57,304],[71,280],[99,627],[151,548],[186,45.2]]
+              }, {
+                type:"area",
+                name:"K",
+                data: [[-8,4.1],[-7,4.2],[-5,4.5],[-3,4.2],[-1,3.3],[0,3.2],[1,3.5],[4,4],[6,4.1],[8,3.9],[11,5.2],[13,4],[15,3.7],[16,3.9],[18,3.8],[20,3.2],[22,2.8],[23,2.7],[24,2.9],[25,3.3],[27,3.2],[27,3.5],[29,3.2],[29,2.7],[32,3],[32,3],[34,3.4],[36,3.4],[36,3.3],[39,2.8],[39,3.3],[41,3.1],[43,3.3],[46,3.1],[46,3.1],[47,3.1],[48,3.3],[48,3.4],[49,3.8],[50,4],[50,2.8],[53,3.4],[53,3.4],[55,4],[57,3.3],[60,4.3],[60,3],[62,3.3],[64,4.2],[67,3.7],[67,4.6],[69,4],[71,3.7],[74,2.8],[76,3.9],[78,4],[81,3.4],[81,3.7],[83,3.8],[85,3.7],[88,3.4],[88,4.1],[90,3.9],[92,4],[95,3.8],[95,3.9],[97,3.9],[98,4.1],[99,4.1],[102,3.9],[102,4.6],[104,4.4],[106,4.8],[109,4.4],[109,3.5],[111,4.4],[113,5],[116,3.7],[116,4.9],[118,3.9],[120,3.2],[123,3.1],[123,3.8],[125,3.2],[127,3.2],[130,3],[130,3.9],[132,5.2],[133,3.6],[134,3],[135,2.5],[137,3],[137,3.1],[139,2.9],[141,4],[144,4],[144,2.8],[145,3.6],[146,3.6],[147,3.8],[148,4.3],[151,5.1],[151,4.6],[153,5.4],[155,2.9],[158,3],[160,3.2],[160,4.9],[162,4.6],[165,3.2],[165,5.2],[167,5.1],[168,5.5],[169,5.2],[172,4.2],[172,5.3],[174,4.6],[176,4.4],[179,3.3],[179,3],[181,3.4],[183,3.5],[186,3],[186,3.4],[188,2.8],[190,3.6],[193,4.6],[193,3.4],[193,4.6]]
+              }, {
+                type:"area",
+                name:"P",
+                data: [[-8,4],[4,4.6],[6,4.7],[8,5.1],[23,5.7],[25,5.8],[27,5.3],[27,3.1],[29,5.1],[29,2.3],[32,2.2],[32,4.9],[34,4.9],[36,5.1],[36,2.2],[39,2],[39,5.2],[41,4.8],[43,5.3],[46,2.6],[46,4.1],[47,3.1],[48,3.1],[50,1.9],[57,3.9],[60,2.6],[67,2.7],[69,5.1],[71,5.8],[74,6.9],[76,6.9],[78,5],[81,2.4],[81,4.6],[83,5.1],[85,3.9],[88,2],[88,4.9],[90,4.1],[92,4.9],[95,3.4],[95,1.7],[97,3],[99,2.5],[102,1.3],[102,2.5],[104,3],[106,2.8],[109,3.8],[109,1.8],[111,3.4],[113,3],[116,3.5],[116,1.6],[118,3.8],[120,3.7],[123,3.1],[123,1.6],[125,3.2],[127,3.9],[130,3.8],[130,1.7],[132,1.5],[134,0.6],[135,0.5],[137,0.6],[137,0.5],[139,0.6],[141,0.7],[144,1.6],[144,0.8],[146,1.3],[151,0.6],[151,0.9],[153,1.8],[155,3.8],[158,4],[160,3.7],[160,3],[162,4],[165,1.7],[165,3.8],[167,2.5],[169,2.5],[172,2.1],[172,2.1],[174,2.1],[176,2.5],[179,1.5],[179,1.6],[181,1.2],[183,2],[186,1.2],[186,1.5],[188,2],[190,3.2],[193,2.6],[193,2.6],[193,2.6]]
+              }, {
+                type:"area",
+                name:"バンコマイシン",
+                data: [[47,7.7],[67,18.8],[146,15.4],[153,19.7],[159,18.8],[165,18],[174,16.3],[183,11.7],[190,11.9]]
+              }
+            ]
+          var tasks = [{
+              name:'ABPC/SBT',
+              intervals: [{
+                  from: -8,
+                  to: -4,
+                  label: 'ABPC/SBT'
+              },{
+                  from: 60,
+                  to: 62,
+                  label: 'ABPC/SBT'}]
+              }, {
+              name:'PIPC/TAZ',
+              intervals: [{
+                  from: -4,
+                  to: 0,
+                  label: 'PIPC/TAZ'
+                },{
+                  from: 11,
+                  to: 13,
+                  label: 'PIPC/TAZ'
+                },{
+                  from: 62,
+                  to: 73,
+                  label: 'PIPC/TAZ'}]
+              },{
+                name:'VCM',
+                intervals: [{
+                    from: 40,
+                    to: 80,
+                    label: 'VCM'
+                },{
+                    from: 144,
+                    to: 190,
+                    label: 'VCM'
+                }]
+              },{
+                name:'SBT/CPZ',
+                intervals: [{
+                    from: 137,
+                    to: 141,
+                    label: 'SBT/CPZ'
+                }]
+              },{
+                name:'DLPM',
+                intervals: [{
+                    from: 141,
+                    to: 185,
+                    label: 'DLPM'
+                }]
+              },{
+                name:'CLDM',
+                intervals: [{
+                    from: 17,
+                    to: 25,
+                    label: 'CLDM'
+                }]
+              },{
+                name:'MEPM',
+                intervals: [{
+                    from: 25,
+                    to: 43,
+                    label: 'MEPM'
+                },{
+                    from: 102,
+                    to: 115,
+                    label: 'MEPM'
+                }]
+              }, {
+                name:'LVFX',
+                intervals: [{
+                    from: 13,
+                    to: 23,
+                    label: 'LVFX'
+                },{
+                    from: 74,
+                    to: 86,
+                    label: 'LVFX'
+                },{
+                    from: 98,
+                    to: 101,
+                    label: 'LVFX'}]
+              },{
+                name:'GCV',
+                intervals: [{
+                    from: 190,
+                    to: 193,
+                    label: 'GCV'
+                }]
+              },{
+                name:'L-AMB',
+                intervals: [{
+                    from: 183,
+                    to: 192,
+                    label: 'L-AMB'
+                }]
+              },{
+                name:'MCFG',
+                intervals: [{
+                    from: 130,
+                    to: 162,
+                    label: 'MCFG'
+                },{
+                    from: 176,
+                    to: 182,
+                    label: 'MCFG'}]
+          }];
+          // re-structure the tasks into line seriesvar series = [];
+          var gantt_source = [];
+          $.each(tasks.reverse(), function(i, task) {
+              var item = {
+                  //- name: task.name,
+                  name:"task",
+                  data: [], 
+                  lineWidth: 40,
+                  marker: {
+                    enabled:false
+                  },
+                  linecap:"square",
+                  dataLabels: {
+                      enabled: true,
+                      align: 'center',
+                      y:20,
+                      formatter: function() {
+                          return this.point.options && this.point.options.label;
+                      }
+                  },
+                  yAxis:1,
+                  showInLegend: false
+              };
+              $.each(task.intervals, function(j, interval) {
+                  item.data.push({
+                      x: interval.from,
+                      y: i+1,
+                      label: interval.label,
+                      from: interval.from,
+                      to: interval.to
+                  }, {
+                      x: interval.to,
+                      y: i+1,
+                      from: interval.from,
+                      to: interval.to
+                  });
+                  
+                  // add a null value between intervals
+                  if (task.intervals[j + 1]) {
+                      item.data.push(
+                          [(interval.to + task.intervals[j + 1].from) / 2, null]
+                      );
+                  }
+          
+              });
+          
+              gantt_source.push(item);
+          });    
+        </script>
       </div>
     </div>
     <script src="lib/js/head.min.js"></script>
@@ -1215,7 +1146,7 @@ HAV単独感染でも伝染性単核球症様の経過をたどる貴重な症�
       Reveal.initialize({
         controls: false,
         history: true,
-        viewDistance: 100,
+        viewDistance: 2,
         transition: 'none',
         menu:{
           openButton: false

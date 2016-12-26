@@ -31,13 +31,13 @@ section
   h2 症例： 76歳女性
   dl.dl-horizontal 
     dt 既往歴   
-    dd 高血圧症, 萎縮性胃炎, 脂質異常症, 脳梗塞(75際)  
+    dd 高血圧症, 萎縮性胃炎, 脂質異常症, 脳梗塞(75歳)  
   dl.dl-horizontal 
     dt 家族歴  
     dd 父：脳動脈瘤破裂  
   dl.dl-horizontal 
     dt アレルギー  
-    dd food：(-), drug：ロキソニン   
+    dd food：(-), drug：不明  
   dl.dl-horizontal 
     dt 生活歴 
     dd 飲酒:機会飲酒, 喫煙:なし  
@@ -53,7 +53,8 @@ section
     dd JCS-0, 身長 150.5 cm, 体重 56.9 kg, BMI 25.2 kg/㎡  
   dl.dl-horizontal
     dt Vital  
-    dd BT 36.8 ℃, PR 73 bpm, BP 148/85 mmHg, SpO2 98 %  
+    dd BT 36.8 ℃, PR 73 bpm, BP 148/85 mmHg, 
+    dd SpO2 98 %  
   br
   dl.dl-horizontal
     dt 頭頸部   
@@ -124,7 +125,7 @@ section
         tr.red
           td NAG
           td 20.6
-          td
+          td Ｕ/l
         tr
           td 
             em 血算
@@ -155,11 +156,11 @@ section
         tr
           td K
           td 3.9
-          td mEq/
+          td mEq/l
         tr
           td Cl
           td 106.8
-          td mEq/
+          td mEq/l
         tr
           td Ca
           td 8.4
@@ -274,7 +275,7 @@ section
         tr
           td アミロイドA蛋白
           td 4.3
-          td
+          td μg/ml
 
 section
   h2 入院時検査所見
@@ -396,7 +397,7 @@ section
               from: -259.5, // Value of where the line will appear
               to: -258.5,
               label:{
-                text: "<div class='gray-balloon'>PPI開始</div>",
+                text: "<div class='gray-balloon' style='font-size:90% !important; top: -50px;'>エスメプラゾール開始</div>",
                 useHTML:true
               }},{
               color: '#ddd', // Color value
@@ -404,7 +405,7 @@ section
               from: -196.5, // Value of where the line will appear
               to: -195.5,
               label:{
-                text: "<div class='gray-balloon'>クレストール開始</div>",
+                text: "<div class='gray-balloon'style='font-size:90% !important'>ロスバスタチン開始</div>",
                 useHTML:true
               }},{
               color: '#ddd', // Color value
@@ -412,7 +413,7 @@ section
               from: -27.5, // Value of where the line will appear
               to: -26.5,
               label:{
-                text: "<div class='gray-balloon'>アムロジピン開始</div>",
+                text: "<div class='gray-balloon'style='font-size:90% !important'>アムロジピン開始</div>",
                 useHTML:true
               }},{
               color: '#ddd', // Color value
@@ -517,8 +518,7 @@ section
   .row
     .col-xs-8
       #container2(style="width:auto; height:600px;")
-      .pull-left#btn2(style="position: relative;cursor: pointer;") >>
-    .col-xs-4.md-pl-20.small-font
+    .col-xs-4.small-font
       p
         em DLST  
         br
@@ -532,7 +532,9 @@ section
         | SI 
         strong 170
       .arrow-down.fragment
-      h3.small.fragment 薬剤性急性間質性腎炎  
+      h3.small.fragment 薬剤性
+        br
+        | 急性間質性腎炎  
 
         //- li CT：両腎・腎盂尿管に異常なし
         //- li US・MRI：両側腎動脈の狭窄なし
@@ -611,27 +613,27 @@ section
                 useHTML:true
               }},{
               color: '#ccc', // Color value
-              className: 'fg-20', // Style of the plot line. Default to solid
+              className: 'fg-10', // Style of the plot line. Default to solid
               from: 30, // Value of where the line will appear
               to: 32, // Width of the line  
               label:{
-                text: "<div class='fg-20 gray-balloon'>mPSL 500mg</div>",
+                text: "<div class='fg-10 gray-balloon'>mPSL 500mg</div>",
                 useHTML:true
               }},{
               color: '#eee', // Color value
-              className: 'fg-30', // Style of the plot line. Default to solid
+              className: 'fg-10', // Style of the plot line. Default to solid
               from: 32, // Value of where the line will appear
               to: 41, // Width of the line  
               label:{
-                text: "<div class='fg-30 balloon'>PSL 20mg</div>",
+                text: "<div class='fg-10 balloon'>PSL 20mg</div>",
                 useHTML:true
               }},{
               color: '#ccc', // Color value
-              className: 'fg-40', // Style of the plot line. Default to solid
+              className: 'fg-20', // Style of the plot line. Default to solid
               from: 37.9, // Value of where the line will appear
               to: 38.1, // Width of the line  
               label:{
-                text: "<div class='fg-40 balloon'>退院</div>",
+                text: "<div class='fg-20 balloon'>退院</div>",
                 useHTML:true
               }}
             ]
@@ -684,28 +686,8 @@ section
       })
     }); 
 
-
 section
-  h1 薬剤性急性間質性腎炎
-
-section
-  h2 急性間質性腎炎(AIN)の症状・所見
-  ul
-    li 多くは無症状であり、血尿・蛋白尿も軽度
-      br
-      small (肉眼的血尿 5%、ネフローゼ症候群 < 1%であり、一方で、血尿・蛋白尿を認める患者の腎生検で1%程度)
-    li 古典的三徴(発疹、発熱、および好酸球増加)は一般的ではない
-      br
-      small 発疹: 15％, 発熱: 27％, 好酸球増加症: 23％, 三徴が揃う: 10％
-    li NSAIDやPPIは、特に古典的三徴との関連性が低い
-    li 原因薬剤の内服からAINの発症までの期間はばらつきがある
-      br
-      small 数週間から数ヶ月で発症する以外に、すでに感作されている場合は3〜5日間で発症することもある
-  p.reference Neilson EG. Pathogenesis and therapy of interstitial nephritis. Kidney Int 1989; 35:1257.
-  p.reference Ten RM, Torres VE, Milliner DS, et al. Acute interstitial nephritis: immunologic and clinical aspects. Mayo Clin Proc 1988; 63:921.
-
-section
-  h2 急性間質性腎炎(AIN)の病因
+  h2 急性間質性腎炎の病因
   .row
     .col-xs-12
       #container3(style='height: 500px;min-width: 410px; margin: 0 auto')
@@ -823,22 +805,56 @@ section
       });
     });
 
+section
+  h2 薬剤性急性間質性腎炎
+  .row 
+    .col-xs-6
+      p: em 薬剤性急性間質性腎炎
+      ul(style="font-size: 2.5rem !important")
+        li 血尿・蛋白尿は軽度
+        li PPIは古典的三徴(発疹、発熱、好酸球増加)との関連性は低い
+        li スタチンでは横紋筋融解の機序が多い
+        li 原因薬剤の内服から発症まで
+          br
+          | ばらつきがある(3日間~数ヶ月間)
+        li 原因薬剤の中止にて腎機能が改善する
+    .col-xs-6
+      p: em 本症例
+      ul(style="font-size: 2.5rem !important")
+        li.fg 血尿認めず、蛋白尿軽度
+        li.fg 症状は浮腫のみ、横紋筋融解認めず
+        li.fg エソメプラゾールとロスバスタチンがDLST陽性であった
+        li.fg 内服開始から増悪まで <br>
+          | エスメプラゾール: 6ヶ月 <br>
+          | ロスバスタチン: 4ヶ月
+        li.fg 両薬剤中止し、ステロイド併用にて<br>腎機能改善した
 
+  p.reference Neilson EG. Pathogenesis and therapy of interstitial nephritis. Kidney Int 1989; 35:1257.
+  p.reference Ten RM, Torres VE, Milliner DS, et al. Acute interstitial nephritis: immunologic and clinical aspects. Mayo Clin Proc 1988; 63:921.
 
 section
-  h2 急性間質性腎炎(AIN)の検査
+  :markdown-it
+    ## 結語
+    * 今回、PPIまたはスタチンが原因と思われる急性間質性腎炎の症例を経験した。
+    * 本症例では薬剤中止及びステロイド投与にて腎機能は改善した。
+    * 最近はPPIと薬剤性間質性腎炎との関連性についての報告も見られるようになってきた。
+    * 一方でスタチンによる間質性腎炎は稀である。
+    * 両者とも使用頻度の高い薬剤であり、注意を要すると考え、症例報告とさせて頂く。
+
+section
+  h1 ご清聴有難うございました
+
+section
+  h2 本症例のまとめ
   ul
-    li 尿検査では尿中白血球、白血球円柱を認め、赤血球円柱は稀
-    li 尿中好酸球>1%は有用な所見(感度 40%, 特異度 72%)
-    li 急性尿細管壊死と急性間質性腎炎の鑑別にGaシンチが有用
-    li 確定診断は腎生検で行われる
-    li 腎生検だけでは薬剤性と診断できない
-  p: em 病理所見
-  ul
-    li 腎臓間質へびまん性, 局所性の浸潤パターンを取る
-    li T-cell, Monocyte, Plasma cell, Eosinophilが混在
-    li 薬剤性AINではGranulomaを形成することもある
-  p.reference.md-mt-40 Corwin HL, Korbet SM, Schwartz MM. Clinical correlates of eosinophiluria. Arch Intern Med 1985; 145:1097.
+    li 腎生検にて急性間質性腎炎と診断
+    li 横紋筋融解は認めない
+    li エソメプラゾールとロスバスタチンがDLSTで陽性であった
+    li 感染症や膠原病は否定的
+    li 両薬剤を速やかに中止、ステロイド併用し、腎機能は改善した
+    li ロバスタチンは用量依存的に急性腎障害での入院率が増加する
+    li 高用量のロスバスタチンでは稀ではあるが、横紋筋融解を伴わない尿細管壊死が報告されている。
+  p.reference Renal Tubular Toxicity Associated With Rosuvastatin Therapy Frank L. Ward, MB, BCh, BAO j.ajkd.2016.08.037
 
 
 
@@ -878,25 +894,42 @@ section
   p.reference.md-mt-40 Raissian Y, Nasr SH, Larsen CP, et al. Diagnosis of IgG4-related tubulointerstitial nephritis. J Am Soc Nephrol 2011; 22:1343.
 
 section
-  :markdown-it
-    ## 結語
-    * 今回、PPIまたはスタチンが原因と思われる急性糸球体腎炎の症例を経験した。
-    * 本症例では薬剤中止及びステロイド投与にて腎機能は改善した。
-    * 最近はPPIと薬剤性間質性腎炎との関連性についての報告も見られるようになってきた。
-    * 一方でスタチンによる間質性腎炎は稀である。
-    * 両者とも使用頻度の高い薬剤であり、注意を要すると考え、症例報告とさせて頂く。
-
-section
-  h1 ご清聴有難うございました
-
-
-section
   h2 todo
   ul
     li 現病歴：内服薬を始めたこと
     li 入院前経過：内服期間(スタチン、クレストール)
     li 今回の考察
 
+section
+  h2 急性間質性腎炎(AIN)の検査
+  ul
+    li ➡ 一般的に薬剤性AINは原因薬剤の内服から発症までばらつきがある
+      br
+      | <em>数週間から数ヶ月</em>で発症することもあれば、すでに感作されている場合は<em>3〜5日間</em>で発症することもある
+    li スタチンによる薬剤性急性腎障害の多くは横紋筋融解が原因であるが、横紋筋融解を伴わない例も報告されている
+    li 一般的にどの薬剤もアレルギー機序にて被疑薬となりうる
+
+    li 多くは無症状であり、血尿・蛋白尿も軽度
+      br
+      small (肉眼的血尿 5%、ネフローゼ症候群 < 1%であり、一方で、血尿・蛋白尿を認める患者の腎生検で1%程度)
+    li 古典的三徴(発疹、発熱、および好酸球増加)は一般的ではない
+      br
+      small 発疹: 15％, 発熱: 27％, 好酸球増加症: 23％, 三徴が揃う: 10％
+    li NSAIDやPPIは、特に古典的三徴との関連性が低い
+
+    li 急性尿細管壊死と急性間質性腎炎の鑑別にGaシンチが有用
+    li 確定診断は腎生検で行われる
+    li 急性間質性腎炎の原因の多くは薬剤性のため、被疑薬を速やかに中止する。
+  ul
+
+
+    li 腎生検だけでは薬剤性と診断できない
+  p: em 病理所見
+  ul
+    li 腎臓間質へびまん性, 局所性の浸潤パターンを取る
+    li T-cell, Monocyte, Plasma cell, Eosinophilが混在
+    li 薬剤性AINではGranulomaを形成することもある
+  p.reference.md-mt-40 Corwin HL, Korbet SM, Schwartz MM. Clinical correlates of eosinophiluria. Arch Intern Med 1985; 145:1097.
 //- section
 //-   h2 入院後経過
 //-   .row
