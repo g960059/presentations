@@ -57,7 +57,7 @@ section
     dt 心音
     dd Ⅰ➡Ⅱ➡Ⅲ(-)Ⅳ(-), no murmur
     dt 呼吸音
-    dd 両側でcorase crackle聴取
+    dd: strong 両側でcorase crackle聴取
   dl.dl-horizontal
     dt 腹部 
     dd 平坦/軟, 圧痛なし, 腸蠕動音正常  
@@ -68,7 +68,7 @@ section
   h2 入院時検査所見
   .row
     .col-xs-4
-      table.table.table-condensed(style="margin-top:-12px;font-size:120%;")
+      table.table.table-condensed(style="margin-top:-25px;font-size:110%;")
         tr
           td: em 尿検査
           td
@@ -121,8 +121,29 @@ section
           td β2MG
           td 5683
           td ng/ml
+        tr
+          td ﾛｳ様円柱     
+          td 5-19/100
+        tr
+          td 脂肪円柱
+          td 1-4/100L
+        tr
+          td 上皮円柱
+          td 1-4/100L
+        tr
+          td: em 凝固
+          td
+          td
+        tr
+          td PT
+          td 74.5
+          td %
+        tr
+          td APTT
+          td 36.7
+          td s
     .col-xs-4
-      table.table.table-condensed(style="margin-top:-12px;font-size:120%;")
+      table.table.table-condensed(style="margin-top:-25px;font-size:110%;")
         tr
           td: em 生化学
           td
@@ -193,7 +214,7 @@ section
           td IU/L
 
     .col-xs-4
-      table.table.table-condensed(style="margin-top:-12px;font-size:120%;")
+      table.table.table-condensed(style="margin-top:-25px;font-size:110%;")
         tr
           td: em 血算
           td
@@ -243,43 +264,89 @@ section
           td 0.36
           td mg/dl
         tr
-          td: em 凝固
-          td
-          td
+          td RA
+          td  8
+          td IU/mL
         tr
-          td PT
-          td 74.5
-          td %
+          td ASO
+          td 177
+          td IU/mL
         tr
-          td APTT
-          td 36.7
-          td s
-
-
-section
-  h2 入院時検査所見
-  dl.dl-horizontal
-    dt 心電図
-    dd HR 76/min, Af , NAD, no ST-T change
-    br
-  dl.dl-horizontal
-    dt CXR
-    dd CTR 54 %, CPA 左dull, 肺野clear
-
-section
-  section(data-background-color='#000000' data-background-video=src+"/TIN_CT.mp4" controls='controls')
-    p.caption_white.md-ml-20 腹部骨盤単純CT
-  section(data-background-color='#000000')
-    video(width='1280', height='650', controls='controls' data-autoplay)
-      source(src=src+'/TIN_CT.mp4', type='video/mp4')
+          td IgA
+          td 268
+          td mg/dL
+        tr
+          td IgG
+          td 1102
+          td  mg/dL
+        tr
+          td IgM
+          td 43
+          td  mg/dL
+        tr
+          td IgE
+          td 11
+          td  IU/mL
+        tr
+          td C3c
+          td 79
+          td  mg/dL
+        tr
+          td C4
+          td  36
+          td  mg/dL
+        tr
+          td 血清補体価
+          td 38.8
+          td mg/dl
+        tr
+          td ANA 
+          td (-) 
+        tr
+          td dsDNA-IgG 
+          td (-) 
+        tr
+          td MPO ANCA  
+          td (-) 
+        tr
+          td PR-3 ANCA   
+          td (-) 
+        tr
+          td GBM Ab  
+          td (-) 
+        tr
+          td アミロイドA蛋白  
+          td 4.3 
 
 section
   h2 画像検査
-  
+  .row
+    .col-xs-6
+      p 
+        em 心電図  
+        br
+        | HR 76/min, Af rhythm, NAD,
+        br
+        | no ST-T change
+      img.plain.img-rounded(src=src+'/CPC_ECG.jpg'　)
+    .col-xs-6
+      p
+        em CXR 
+        small (↑はサンプルです。後で入れ替えます)
+        br
+        | CTR 54 %, CPA 左dull, 肺野clear
+      img.plain.img-rounded(src=src+'/CXR_sample.gif')
 
-section(style="position:relative")
+section
+  section(data-background-color='#000000' data-background-video=src+"/CPC_CT_0120.mp4" controls='controls')
+    p.caption_white.md-ml-20 入院時胸部単純CT
+  section(data-background-color='#000000')
+    video(width='1280', height='650', controls='controls' data-autoplay)
+      source(src=src+'/CPC_CT_0120.mp4', type='video/mp4')
+
+section
   h2 臨床経過 -CRPと抗生剤の推移-
-  #container1(style="width:auto; height:700px;")
+  #container1(style="width:auto; height:620px;")
 
   script.
     $(()=> { 
@@ -363,10 +430,26 @@ section(style="position:relative")
             plotBands: [{
               color: '#ddd', // Color value
               className: '', // Style of the plot line. Default to solid
-              from: -259.5, // Value of where the line will appear
-              to: -258.5,
+              from: 143.5, // Value of where the line will appear
+              to: 144.5,
               label:{
-                text: "<div class='gray-balloon' style='font-size:90% !important; top: -50px;'>エスメプラゾール開始</div>",
+                text: "<div class='gray-balloon' style='top:0px;''>CT</div>",
+                useHTML:true
+              }},{
+              color: '#c3efff', // Color value
+              className: '', // Style of the plot line. Default to solid
+              from: 146.5, // Value of where the line will appear
+              to: 160.5,
+              label:{
+                text: "<div class='balloon'>胸腔ドレーン留置</div>",
+                useHTML:true
+              }},{
+              color: '#c3efff', // Color value
+              className: '', // Style of the plot line. Default to solid
+              from: 168, // Value of where the line will appear
+              to: 193,
+              label:{
+                text: "",
                 useHTML:true
               }}
             ]
@@ -382,7 +465,6 @@ section(style="position:relative")
       );
       var hide_chart = ()=>_.each(series,(data)=>{
         if(data.name != "task"){
-          console.log(data.name)
           data.setVisible(false, false);
           data.update({ showInLegend: false}, false);
         }
@@ -427,17 +509,24 @@ section(style="position:relative")
       render(counter);
     }); 
 
+section
+  section(data-background-color='#000000' data-background-video=src+"/CPC_CT_0620.mp4" controls='controls')
+    p.caption_white.md-ml-20 第144病日 胸部CT
+  section(data-background-color='#000000')
+    video(width='1280', height='650', controls='controls' data-autoplay)
+      source(src=src+'/CPC_CT_0620.mp4', type='video/mp4')
 
 
 section
-  #container2(style="width:auto; height:500px;")
-  #container2_(style="width:auto; height:500px;")
+  h2 臨床経過 -腎機能増悪と透析導入-
+  #container3(style="width:auto; height:650px;")
+  .invisible-counter.fg-1
   script.
     $(()=> { 
       Highcharts.seriesTypes.columnrange.prototype.drawDataLabels = Highcharts.seriesTypes.column.prototype.drawDataLabels;
-      var myChart = Highcharts.chart('container2', {
+
+      var myChart = Highcharts.chart('container3', {
           chart: {
-            type: 'area',
             zoomType: 'x'
           },
           title: {
@@ -447,6 +536,12 @@ section
             enabled: false
           },
           legend:{
+            align: 'left',
+            verticalAlign: 'top',
+            x: 100,
+            y: -10,
+            layout:"vertical",
+            floating: true,
             symbolPadding: 15,
             symbolRadius: 24,
             useHTML: true,  
@@ -455,7 +550,7 @@ section
               "fontWeight": "bold"
             }
           },
-          yAxis: {
+          yAxis:[ {
             title: {
               text: ''
             },
@@ -463,7 +558,31 @@ section
               y: 7
             },
             tickAmount: 6
-          },
+          }, {
+              offset:60,
+              labels: {
+                  enabled: false,
+                  style: {
+                      color: '#525151',
+                      font: '10px',
+                      fontWeight: 'bold',
+                  }
+                 /* formatter: function() {
+                      if (tasks[this.value]) {
+                          return tasks[this.value].name;
+                      }
+                  }*/
+              },
+              startOnTick: false,
+              endOnTick: false,
+              TickWidth:0,
+              gridLineWidth:0,
+              title: {
+                  text: ''
+              },
+              minPadding: 0.2,
+              maxPadding: 0.2
+          }],
           plotOptions: {
             series: {
               fillOpacity: 0,
@@ -483,22 +602,46 @@ section
             },
             labels: {
               formatter: function() {
-                return this.value+1;
+                return this.value;
               },
               y:30
             },
             plotBands: [{
               color: '#ddd', // Color value
               className: '', // Style of the plot line. Default to solid
-              from: -259.5, // Value of where the line will appear
-              to: -258.5,
+              from: 26.5, // Value of where the line will appear
+              to: 27.5,
               label:{
-                text: "<div class='gray-balloon' style='font-size:90% !important; top: -50px;'>エスメプラゾール開始</div>",
+                text: "<div class='gray-balloon'>初回透析</div>",
+                useHTML:true
+              }},{
+              color: '#ddd', // Color value
+              className: '', // Style of the plot line. Default to solid
+              from: 60.5, // Value of where the line will appear
+              to: 61.5,
+              label:{
+                text: "<div class='gray-balloon'>動脈表在化</div>",
+                useHTML:true
+              }},{
+              color: '#ddd', // Color value
+              className: '', // Style of the plot line. Default to solid
+              from: 130.5, // Value of where the line will appear
+              to: 131.5,
+              label:{
+                text: "<div class='gray-balloon'>バスカテ挿入</div>",
+                useHTML:true
+              }},{
+              color: '#ddd', // Color value
+              className: '', // Style of the plot line. Default to solid
+              from: 157.5, // Value of where the line will appear
+              to: 158.5,
+              label:{
+                text: "<div class='balloon'>永久カテ留置</div>",
                 useHTML:true
               }}
             ]
           }, 
-          series: data_source
+          series: data_source.concat(gantt_source)
       });
       var counter = 0;
       var series = myChart.series;
@@ -507,6 +650,17 @@ section
           data.update({ showInLegend: false}, false);
         }
       );
+      var hide_chart = ()=>_.each(series,(data)=>{
+        if(data.name != "task"){
+          data.setVisible(false, false);
+          data.update({ showInLegend: false}, false);
+        }
+      });
+      var hide_task = ()=>_.each(series,(data)=>{
+        if(data.name == "task"){
+          data.setVisible(false, false);
+        }
+      });
       var show_series=(list)=>{
         list.map((i)=>{
           series[i].show();
@@ -515,10 +669,18 @@ section
         )
       }
       var show_series_only=(list)=>{
-        reset();
+        hide_chart();
         list.map((i)=>{
           series[i].show();
           series[i].update({ showInLegend: true }, false);
+          }
+        );
+        myChart.redraw();
+      }
+      var show_task_only=(list)=>{
+        hide_task();
+        list.map((i)=>{
+          series[series.length-i-1].show();
           }
         );
         myChart.redraw();
@@ -538,324 +700,316 @@ section
       var render = (counter) =>{
         switch(counter){
           case 0:
-            show_series_only([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]); 
+            show_series_only([1,2,3]);
+            show_task_only([1]);
+            myChart.xAxis[0].setExtremes(-8, 40); 
             break;
-          case 4:
-            myChart.xAxis[0].setExtremes(0, 18); 
-            break;
-          case 5:
-            show_series_only([1,2]); 
+          case 1:
+            myChart.xAxis[0].setExtremes(-8, 193); 
+            show_series_only([1]);
+            hide_task();
             break;
           default: break; 
         }
       }
       render(counter);
     }); 
+
+section
+  h2 臨床経過 -慢性下痢・薬剤関連性腸炎-
+  #container4(style="width:auto; height:650px;")
+
   script.
-    $(function () {
-          // Define tasks
-          var tasks = [{
-              name:'ABPC/SBT',
-              intervals: [{
-                  from: -8,
-                  to: -5,
-                  label: 'ABPC/SBT'
-              },{
-                  from: 60,
-                  to: 61,
-                  label: 'ABPC/SBT'}]
-              }, {
-              name:'PIPC/TAZ',
-              intervals: [{
-                  from: -4,
-                  to: 0,
-                  label: 'PIPC/TAZ'
-                },{
-                  from: 11,
-                  to: 13,
-                  label: 'PIPC/TAZ'
-                },{
-                  from: 62,
-                  to: 73,
-                  label: 'PIPC/TAZ'}]
-              },{
-                name:'VCM',
-                intervals: [{
-                    from: 40,
-                    to: 40,
-                    label: 'VCM'
-                },{
-                    from: 64,
-                    to: 64,
-                    label: 'VCM'
-                },{
-                    from: 144,
-                    to: 190,
-                    label: 'VCM'
-                }]
-              },{
-                name:'SBT/CPZ',
-                intervals: [{
-                    from: 137,
-                    to: 141,
-                    label: 'SBT/CPZ'
-                }]
-              },{
-                name:'DLPM',
-                intervals: [{
-                    from: 141,
-                    to: 185,
-                    label: 'DLPM'
-                }]
-              },{
-                name:'CLDM',
-                intervals: [{
-                    from: 17,
-                    to: 25,
-                    label: 'CLDM'
-                }]
-              },{
-                name:'MEPM',
-                intervals: [{
-                    from: 25,
-                    to: 43,
-                    label: 'MEPM'
-                },{
-                    from: 102,
-                    to: 115,
-                    label: 'MEPM'
-                }]
-              }, {
-                name:'LVFX',
-                intervals: [{
-                    from: 13,
-                    to: 23,
-                    label: 'LVFX'
-                },{
-                    from: 74,
-                    to: 86,
-                    label: 'LVFX'
-                },{
-                    from: 98,
-                    to: 100,
-                    label: 'LVFX'}]
-              },{
-                name:'GCV',
-                intervals: [{
-                    from: 190,
-                    to: 193,
-                    label: 'GCV'
-                }]
-              },{
-                name:'L-AMB',
-                intervals: [{
-                    from: 183,
-                    to: 192,
-                    label: 'L-AMB'
-                }]
-              },{
-                name:'MCFG',
-                intervals: [{
-                    from: 130,
-                    to: 162,
-                    label: 'MCFG'
-                },{
-                    from: 176,
-                    to: 182,
-                    label: 'MCFG'}]
-          }];
-          // re-structure the tasks into line seriesvar series = [];
-          var series = [];
-          $.each(tasks.reverse(), function(i, task) {
-              var item = {
-                  name: task.name,
-                  data: []
-              };
-              $.each(task.intervals, function(j, interval) {
-                  item.data.push({
-                      x: interval.from,
-                      y: i,
-                      label: interval.label,
-                      from: interval.from,
-                      to: interval.to
-                  }, {
-                      x: interval.to,
-                      y: i,
-                      from: interval.from,
-                      to: interval.to
-                  });
-                  
-                  // add a null value between intervals
-                  if (task.intervals[j + 1]) {
-                      item.data.push(
-                          [(interval.to + task.intervals[j + 1].from) / 2, null]
-                      );
+    $(()=> { 
+      Highcharts.seriesTypes.columnrange.prototype.drawDataLabels = Highcharts.seriesTypes.column.prototype.drawDataLabels;
+
+      var myChart = Highcharts.chart('container4', {
+          chart: {
+            zoomType: 'x'
+          },
+          title: {
+            text: ''
+          },
+          tooltip:{
+            enabled: false
+          },
+          legend:{
+            align: 'left',
+            verticalAlign: 'top',
+            x: 100,
+            y: -10,
+            layout:"vertical",
+            floating: true,
+            symbolPadding: 15,
+            symbolRadius: 24,
+            useHTML: true,  
+            itemStyle:{
+              "fontSize": "30px", 
+              "fontWeight": "bold"
+            }
+          },
+          yAxis:[ {
+            title: {
+              text: ''
+            },
+            labels:{
+              y: 7
+            },
+            tickAmount: 6
+          }, {
+              offset:60,
+              labels: {
+                  enabled: false,
+                  style: {
+                      color: '#525151',
+                      font: '10px',
+                      fontWeight: 'bold',
                   }
-
-              });
-
-              series.push(item);
-          });
-
-          // create the chart
-          var chart = new Highcharts.Chart({
-              chart: {
-                  renderTo: 'container2_'
+                 /* formatter: function() {
+                      if (tasks[this.value]) {
+                          return tasks[this.value].name;
+                      }
+                  }*/
               },
-
+              startOnTick: false,
+              endOnTick: false,
+              TickWidth:0,
+              gridLineWidth:0,
               title: {
                   text: ''
               },
-
-              xAxis: {
-                  type: 'linear',
-                  labels:{
-                    enabled:false
-                  },
-                  TickWidth:0,
-                  gridLineWidth: 0,
-                  lineWidth: 0,
-                  minorTickWidth: 0,
-                  minorGridLineWidth: 0,
-                  tickLength: 0
+              minPadding: 0.2,
+              maxPadding: 0.2
+          }],
+          plotOptions: {
+            series: {
+              fillOpacity: 0,
+              zoneAxis: 'x',
+              lineWidth: 5,
+              marker: {
+                radius: 7
+              }
+            }
+          },
+          xAxis: {
+            type: 'linear',
+            allowDecimals: false,
+            tickPixelInterval:120,
+            title: {
+              text: '入院後日数'
+            },
+            labels: {
+              formatter: function() {
+                return this.value;
               },
+              y:30
+            },
+            plotBands: [{
+              color: '#ddd', // Color value
+              className: '', // Style of the plot line. Default to solid
+              from: 69.5, // Value of where the line will appear
+              to: 70.5,
+              label:{
+                text: "<div class='gray-balloon'>GDH陽性</div>",
+                useHTML:true
+              }},{
+              color: '#ddd', // Color value
+              className: '', // Style of the plot line. Default to solid
+              from: 122.5, // Value of where the line will appear
+              to: 123.5,
+              label:{
+                text: "<div class='gray-balloon'>MRSA陽性</div>",
+                useHTML:true
+              }},{
+              color: '#c3efff', // Color value
+              className: 'fg-1', // Style of the plot line. Default to solid
+              from: 125.5, // Value of where the line will appear
+              to: 126.5,
+              label:{
+                text: "<div class='fg-1 balloon'>CS</div>",
+                useHTML:true
+              }}
+            ]
+          }, 
+          series: data_source.concat(gantt_source2)
+      });
+      var counter = 0;
+      var series = myChart.series;
+      var reset =()=> _.each(series,(data)=>{
+          data.setVisible(false, false);
+          data.update({ showInLegend: false}, false);
+        }
+      );
+      var hide_chart = ()=>_.each(series,(data)=>{
+        if(data.name != "task"){
+          data.setVisible(false, false);
+          data.update({ showInLegend: false}, false);
+        }
+      });
+      var hide_task = ()=>_.each(series,(data)=>{
+        if(data.name == "task"){
+          data.setVisible(false, false);
+        }
+      });
+      var show_series=(list)=>{
+        list.map((i)=>{
+          series[i].show();
+          series[i].update({ showInLegend: true }, false);
+          }
+        )
+      }
+      var show_series_only=(list)=>{
+        hide_chart();
+        list.map((i)=>{
+          series[i].show();
+          series[i].update({ showInLegend: true }, false);
+          }
+        );
+        myChart.redraw();
+      }
+      var show_task_only=(list)=>{
+        hide_task();
+        list.map((i)=>{
+          series[series.length-i-1].show();
+          }
+        );
+        myChart.redraw();
+      }
+      Reveal.addEventListener( 'fragmentshown', function( event ) {
+        counter++;
+        render(counter);
+      });
+      Reveal.addEventListener( 'fragmenthidden', function( event ) {
+        counter--;
+        render(counter);
+      });
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+         counter = 0;
+         render(counter);
+      });
+      var render = (counter) =>{
+        switch(counter){
+          case 0:
+            show_series_only([0]);
+            break;
+          default: break; 
+        }
+      }
+      render(counter);
+    }); 
 
-              yAxis: {
-                  offset:60,
-                  categories: ['MCFG','L-AMB','GCV','LVFX','MEPM','CLDM','DLPM','SBT/CPZ','VCM','PIPC/TAZ','ABPC/SBT'],
-                  labels: {
-                      enabled: false,
-                      style: {
-                          color: '#525151',
-                          font: '10px',
-                          fontWeight: 'bold',
-                      }
-                     /* formatter: function() {
-                          if (tasks[this.value]) {
-                              return tasks[this.value].name;
-                          }
-                      }*/
-                  },
-                  startOnTick: false,
-                  endOnTick: false,
-                  TickWidth:0,
-                  gridLineWidth:0,
-                  title: {
-                      text: ''
-                  },
-                  minPadding: 0.2,
-                  maxPadding: 0.2
-                  
-              },
+section(data-background-image=src+"/CPC_CS_summary.jpg")
 
-              legend: {
-                  enabled: false
-              },
 
-              plotOptions: {
-                  line: {
-                      lineWidth: 10,
-                      marker: {
-                          enabled: false
-                      },
-                      dataLabels: {
-                          enabled: true,
-                          align: 'center',
-                          y:10,
-                          formatter: function() {
-                              return this.point.options && this.point.options.label;
-                          }
-                      }
-                  }
-              },
-
-              series: series
-
-          });      
-       });    
 
 section
   h2 プロブレムリスト
-  ul.list-unstyled
-    li #1 CHF(HFrEF, ICM s/o)
+  ul.list-unstyled.indent
+    li: em #1 CHF(HFrEF, ICM s/o)
     li #1-1 Af, #1-2 OMI
-    li #2 末期腎不全(腎硬化症+PIPC/TAZによる間質性腎炎s/o)/透析導入
+    li: em #2 末期腎不全(腎硬化症+PIPC/TAZによる間質性腎炎s/o)/透析導入
     li #2-1 腎性貧血, #2-2 CKD-MBD
-    li #3 感染症
+    li: em #3 感染症
     li #3-1 肺炎/膿胸, #3-1-1 胸腔ドレナージ/気胸
-    li #3-2 CD腸炎, #3-2-1 大腸多発潰瘍
-    li #3-3 真菌感染症
-    li #4 出血性十二指腸潰瘍
-    li #5 右PCA領域出血性脳梗塞
-    li #6 両側視床出血後
-    li #7 多発同静脈血栓症(左肺動脈、左心耳、右房内、右下腿深部静脈)
-    li #8 アルドステロン症
+    li #3-2 サイトメガロウイルス感染症
+    li #3-3 慢性下痢症 #3-3-1 抗菌薬関連性腸炎 #3-3-2大腸多発潰瘍)
+    li #3-4 真菌感染症
+    li: em #4 出血性十二指腸潰瘍
+    li: em #5 右PCA領域出血性脳梗塞
+    li: em #6 多発同静脈血栓症(左肺動脈、左心耳、右房内、右下腿深部静脈)
 
 section
   h2 病態のフローチャート
-  img.plain.img-rounded(src=src+'/flowchart.png'　)
-  //- .mermaid.
+  .row
+    .col-xs-8
+    .col-xs-4
+      .red(style="display:inline-block;") ●
+      | 病態
+      .blue(style="display:inline-block;")  ●
+      | 推察  
+  img.plain.img-rounded(src=src+'/CPC_flowchart_pre.png' style="width:120%;height: 400px;"　)
+  //- span.mermaid.
   //-   graph TD;
-  //-     A(血栓素因) --> K(多発血栓症)
-  //-     B(高血圧) --> D
-  //-     B --> G(CKD)
-  //-     B --> J(IHD)
-  //-     J --> U
-  //-     A-->J
-  //-     A --> D
-  //-     G -->I
-  //-     H(ゾシンによる薬剤性間質性腎炎) --> I(末期腎不全)
-  //-     I --> M
-  //-     I --> S(貧血)
-  //-     S-->U
-  //-     Q --> T(誤嚥性肺炎)
-  //-     T--> Z(膿胸)
-  //-     Z--胸腔ドレナージ-->W(気胸)
-  //-     W-->a1(呼吸不全)
-  //-     a1-->F
-  //-     K-->s1(脳梗塞/脳出血)
-  //-     s1-->a1
-  //-     T --> S
-  //-     E --> S
-  //-     I --> a2(易感染性)
-  //-     a2 --> d1(CMV感染)
-  //-     a2 --> T
-  //-     a2 --> Z
-  //-     a2 --> P
-  //-     C(心房細動) -- アスピリン内服 --> D(両側視床出血)
-  //-     D --> Q(ADL低下)
-  //-     Q --> X(Alb低下)
-  //-     X --> Y(胸水貯留)
-  //-     G --> Y
-  //-     C --> Y
-  //-     Q --> R(胃瘻造設)
-  //-     R --> E(消化管出血)
-  //-     E --> U
-  //-     U --> F(死亡)
-  //-     L(腹腔動脈動脈瘤/解離)-->U(血圧低下)
-  //-     K --> s2(虚血性大腸炎)
-  //-     s2 --> P(下痢) 
-  //-     P --> I
-  //-     P--> M
-  //-     V(アルドステロン症)--> M
-  //-     M(電解質異常) --> N(不整脈) 
-  //-     N --> F
+  //-     a1(HTN)
+  //-     a2(CHF)
+  //-     a3(Af)
+  //-     a4(OMI)
+  //-     a5(CKD/末期腎不全/透析)
+  //-     b1(易感染性)
+  //-     a6(肺炎/膿胸)
+  //-     a7(胸腔ドレナージ/気胸)
+  //-     a8(サイトメガロウイルス感染症)
+  //-     a10(抗菌薬関連性腸炎)
+  //-     a11(大腸多発潰瘍)
+  //-     a12(真菌感染症)
+  //-     a13(出血性十二指腸潰瘍)
+  //-     a14(右PCA領域脳梗塞)
+  //-     a15(多発同静脈血栓症)
+  //-     a16(両側視床出血)
+  //-     a17(貧血)
+  //-     a18(薬剤性間質性腎炎)
+  //-     a19(ADL低下)
 
-  //-     classDef nodeStyle font-size:50;
-  //-     class A,B nodeStyle;
- 
-  //- script.
-  //-   $(()=>{ 
-  //-     var config = {
-  //-         startOnLoad:true,
-  //-         flowchart:{
-  //-                 useMaxWidth:true,
-  //-                 htmlLabels:true
-  //-         }
-  //-     };
-  //-     mermaid.initialize(config);
-  //-   })
+  //-     s1(心筋虚血)
+  //-     s2(肺塞栓)
+  //-     s3(循環血漿量低下)
 
+  //-     d1(炎症性腸疾患)
+  //-     c1(血圧低下)
+  //-     F(死亡)
+
+  //-     a1 --> a3
+  //-     a1 --> a5
+  //-     a1 --> a16
+  //-     a1 --> a4
+  //-     a18-->  a5
+  //-     a5 --> b1
+  //-     a5 --> a17
+
+  //-     b1 --> a6
+  //-     b1 --> a8
+  //-     b1 --> a10
+  //-     b1 --> a12
+
+  //-     a3 --> a14
+  //-     a3 --> a2
+  //-     a6 --> a7
+
+  //-     a16 --> a19
+  //-     a19 --> a13
+  //-     a19 --> a6
+
+  //-     a11 -.-> s3
+  //-     a13 -.-> s3
+  //-     a15 -.-> s2
+  //-     a4 -.-> s1
+  //-     a5 -.-> s3
+  //-     s1 -.-> c1
+  //-     s2 -.-> c1
+  //-     s3 -.-> c1
+  //-     c1 --> F
+
+  //-     d1==>a11
+  //-     d1==>a15
+
+  //-     class F diag-f-Class;
+  //-     class s1,s2,s3,c1 diag-s-Class;
+  //-     class a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,b1 diag-a-Class;
+  //-     class d1 diag-d-Class;
+
+  script.
+    $(()=>{ 
+      var config = {
+          startOnLoad:true,
+          flowchart:{
+                  useMaxWidth:true,
+                  htmlLabels:true
+          }
+      };
+      mermaid.initialize(config);
+    })
+
+  
 section
   h2 病理解剖で明らかにしたいこと
   ul.list-unstyled
@@ -863,8 +1017,485 @@ section
     li 2. 大腸多発潰瘍/慢性下痢の原因
     li 3. 多発動静脈血栓症の分布と原因
     li 4. 真菌感染のfocus
-    li 5. 直接死因c
-    li +α 腎機能低下の原因
+    li 5. 直接死因
+
+section
+  h2 病態フローチャート(修正後)
+  .row
+    .col-xs-6
+    .col-xs-6
+      .red(style="display:inline-block;") ●
+      | 病態
+      .blue(style="display:inline-block;")  ●
+      | 推察 
+      .green(style="display:inline-block;") ●
+      | 病理で判明 
+  img.plain.img-rounded(src=src+'/CPC_flowchart_post.png' style="width:120%;height: 325px;"　)
+section
+  h2 IBDの病態
+  .row
+    .col-xs-6
+      img.plain.img-rounded(src=src+'/CPC_UC_physiology.png')
+    .col-xs-6
+      p
+        em 通常の場合 <br>
+        | 食物や常在細菌叢などに対しては<br>
+        | CD4+T細胞, 抑制系T細胞等により<br>
+        | 免疫反応が抑制(免疫寛容)
+      p
+        em 炎症性腸疾患の場合<br>
+        | 遺伝的要因や環境的要因<br>
+        | CD4+T細胞が惹起されやすい状態<br>
+      .arrow-down
+      p 免疫寛容の破綻し、<br>
+        | 慢性的に炎症反応が持続
+  p.reference
+    | Ulcerative colitis, The Lancet Seminars; The Lancet Core Clinical Collection Ingrid Ordás et al.
+    br
+    | Harrison's Principles of Internal Medicine, D.L.Kasper, A.S.Fauci, S.L.Hauser, et al
+
+section
+  h2 IBDと血栓症 ①腸管外合併症
+  table.table.table-condensed.table-boaderd(style="font-size:150%;")
+    tr
+      td
+      td: em 炎症性腸疾患
+      td: em 潰瘍性大腸炎
+      td: em Crohn病
+    tr
+      td 関節炎
+      td 20-30
+      td 5-10
+      td 10-20
+    tr
+      td 原発性硬化性胆管炎
+      td
+      td 3
+      td
+    tr
+      td 壊死性膿皮症
+      td 0.5-2
+      td
+      td
+    tr
+      td ぶどう膜炎
+      td 0.5-3
+      td
+      td
+    tr
+      td 結節性紅斑
+      td
+      td 2-4
+      td 15
+    tr
+      td 口腔潰瘍
+      td
+      td 10
+      td
+    tr
+      td 骨粗鬆症
+      td 15
+      td
+      td
+    tr
+      td 胆石症
+      td
+      td
+      td 25
+    tr
+      td 急性膵炎
+      td 1-1.5
+      td
+      td
+    tr.warning.fg-1
+      td DVT/PE
+      td 1-8
+      td 1
+      td
+    tr
+      td 喘息
+      td
+      td 50-70
+      td
+  p.reference World J Gastroenterol. 2006 Aug 14:12(30):4819-31
+section
+  h2 考察：IBDと血栓症
+  ul
+    li IBD全体の約1/3に腸管外合併症
+    li 潰瘍性大腸炎の15%, Crohn病の37%
+    li 中でも血栓症は生命予後に関わる
+    li IBD患者のDVT発症率は1-8%
+    li IBD患者のDVT/PE発症リスクは健常者の3倍
+    li 病理的には40%に達するという報告あり 
+    li 寛解期にも有意に血栓症発症リスク上昇
+  p.reference Thrombosis in inflammatory bowel diseases: what’s the link?, Thrombosis Journal 2015, 13:14  Martina Giannotta et al.
+
+section
+  h2 考察：IBDと血栓症
+  ul
+    li 血栓症の好発部位 (小血管-大血管まで分布)
+    li PE, 下肢DVT, 小脳, 肝臓, 門脈 etc.
+    li DVT/PEの診断・治療は国際ガイドライン準拠
+    li 入院自体でVTE発症リスクが8倍
+    li ➡ IBD患者が入院では血栓症の予防が特に重要
+  p.reference Thrombosis in inflammatory bowel diseases: what’s the link?, Thrombosis Journal 2015, 13:14  Martina Giannotta et al.
+
+section
+  h2 結語
+  ul
+    li 今回, 腎硬化症による末期腎不全に慢性下痢・多発同静脈血栓症を合併し、感染を繰り返し死亡した一例を経験した
+    li 直接死因は判然としないが、慢性下痢・多発同静脈血栓症は病理解剖から炎症性腸疾患の可能性が示唆された
+    li 末期腎不全で易感染性であったこと、両側視床出血後の誤嚥性肺炎をきたしやすい状態であったことから、抗菌薬を頻回に用いる必要があったことで、CD腸炎やMRSA腸炎も合併し、下部内視鏡からはNOMIも疑わせる所見であったため、入院中に診断に至ることができなかった。
+    li 炎症性腸疾患において血栓症は致死的な合併症で稀ではない
+    li 原因不明の慢性下痢及び血栓傾向があれば、早期から疑うことが大事である
+
+section
+  h1 補足スライド
+
+//- section
+//-   #container__(style="width:auto; height:700px;")
+//-   #container2_(style="width:auto; height:500px;")
+//-   script.
+//-     $(()=> { 
+//-       Highcharts.seriesTypes.columnrange.prototype.drawDataLabels = Highcharts.seriesTypes.column.prototype.drawDataLabels;
+//-       var myChart = Highcharts.chart('container__', {
+//-           chart: {
+//-             type: 'area',
+//-             zoomType: 'x'
+//-           },
+//-           title: {
+//-             text: ''
+//-           },
+//-           tooltip:{
+//-             enabled: false
+//-           },
+//-           legend:{
+//-             symbolPadding: 15,
+//-             symbolRadius: 24,
+//-             useHTML: true,  
+//-             itemStyle:{
+//-               "fontSize": "30px", 
+//-               "fontWeight": "bold"
+//-             }
+//-           },
+//-           yAxis: {
+//-             title: {
+//-               text: ''
+//-             },
+//-             labels:{
+//-               y: 7
+//-             },
+//-             tickAmount: 6
+//-           },
+//-           plotOptions: {
+//-             series: {
+//-               fillOpacity: 0,
+//-               zoneAxis: 'x',
+//-               lineWidth: 5,
+//-               marker: {
+//-                 radius: 7
+//-               }
+//-             }
+//-           },
+//-           xAxis: {
+//-             type: 'linear',
+//-             allowDecimals: false,
+//-             tickPixelInterval:120,
+//-             title: {
+//-               text: '入院後日数'
+//-             },
+//-             labels: {
+//-               formatter: function() {
+//-                 return this.value+1;
+//-               },
+//-               y:30
+//-             },
+//-             plotBands: [{
+//-               color: '#ddd', // Color value
+//-               className: '', // Style of the plot line. Default to solid
+//-               from: -259.5, // Value of where the line will appear
+//-               to: -258.5,
+//-               label:{
+//-                 text: "<div class='gray-balloon' style='font-size:90% !important; top: -50px;'>エスメプラゾール開始</div>",
+//-                 useHTML:true
+//-               }}
+//-             ]
+//-           }, 
+//-           series: data_source
+//-       });
+//-       var counter = 0;
+//-       var series = myChart.series;
+//-       var reset =()=> _.each(series,(data)=>{
+//-           data.setVisible(false, false);
+//-           data.update({ showInLegend: false}, false);
+//-         }
+//-       );
+//-       var show_series=(list)=>{
+//-         list.map((i)=>{
+//-           series[i].show();
+//-           series[i].update({ showInLegend: true }, false);
+//-           }
+//-         )
+//-       }
+//-       var show_series_only=(list)=>{
+//-         reset();
+//-         list.map((i)=>{
+//-           series[i].show();
+//-           series[i].update({ showInLegend: true }, false);
+//-           }
+//-         );
+//-         myChart.redraw();
+//-       }
+//-       Reveal.addEventListener( 'fragmentshown', function( event ) {
+//-         counter++;
+//-         render(counter);
+//-       });
+//-       Reveal.addEventListener( 'fragmenthidden', function( event ) {
+//-         counter--;
+//-         render(counter);
+//-       });
+//-       Reveal.addEventListener( 'slidechanged', function( event ) {
+//-          counter = 0;
+//-          render(counter);
+//-       });
+//-       var render = (counter) =>{
+//-         switch(counter){
+//-           case 0:
+//-             show_series_only([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]); 
+//-             break;
+//-           case 4:
+//-             myChart.xAxis[0].setExtremes(0, 18); 
+//-             break;
+//-           case 5:
+//-             show_series_only([1,2]); 
+//-             break;
+//-           default: break; 
+//-         }
+//-       }
+//-       render(counter);
+//-     }); 
+//-   script.
+//-     $(function () {
+//-           // Define tasks
+//-           var tasks = [{
+//-               name:'ABPC/SBT',
+//-               intervals: [{
+//-                   from: -8,
+//-                   to: -5,
+//-                   label: 'ABPC/SBT'
+//-               },{
+//-                   from: 60,
+//-                   to: 61,
+//-                   label: 'ABPC/SBT'}]
+//-               }, {
+//-               name:'PIPC/TAZ',
+//-               intervals: [{
+//-                   from: -4,
+//-                   to: 0,
+//-                   label: 'PIPC/TAZ'
+//-                 },{
+//-                   from: 11,
+//-                   to: 13,
+//-                   label: 'PIPC/TAZ'
+//-                 },{
+//-                   from: 62,
+//-                   to: 73,
+//-                   label: 'PIPC/TAZ'}]
+//-               },{
+//-                 name:'VCM',
+//-                 intervals: [{
+//-                     from: 40,
+//-                     to: 40,
+//-                     label: 'VCM'
+//-                 },{
+//-                     from: 64,
+//-                     to: 64,
+//-                     label: 'VCM'
+//-                 },{
+//-                     from: 144,
+//-                     to: 190,
+//-                     label: 'VCM'
+//-                 }]
+//-               },{
+//-                 name:'SBT/CPZ',
+//-                 intervals: [{
+//-                     from: 137,
+//-                     to: 141,
+//-                     label: 'SBT/CPZ'
+//-                 }]
+//-               },{
+//-                 name:'DLPM',
+//-                 intervals: [{
+//-                     from: 141,
+//-                     to: 185,
+//-                     label: 'DLPM'
+//-                 }]
+//-               },{
+//-                 name:'CLDM',
+//-                 intervals: [{
+//-                     from: 17,
+//-                     to: 25,
+//-                     label: 'CLDM'
+//-                 }]
+//-               },{
+//-                 name:'MEPM',
+//-                 intervals: [{
+//-                     from: 25,
+//-                     to: 43,
+//-                     label: 'MEPM'
+//-                 },{
+//-                     from: 102,
+//-                     to: 115,
+//-                     label: 'MEPM'
+//-                 }]
+//-               }, {
+//-                 name:'LVFX',
+//-                 intervals: [{
+//-                     from: 13,
+//-                     to: 25,
+//-                     label: 'LVFX'
+//-                 },{
+//-                     from: 74,
+//-                     to: 86,
+//-                     label: 'LVFX'
+//-                 },{
+//-                     from: 98,
+//-                     to: 100,
+//-                     label: 'LVFX'}]
+//-               },{
+//-                 name:'GCV',
+//-                 intervals: [{
+//-                     from: 190,
+//-                     to: 193,
+//-                     label: 'GCV'
+//-                 }]
+//-               },{
+//-                 name:'L-AMB',
+//-                 intervals: [{
+//-                     from: 183,
+//-                     to: 192,
+//-                     label: 'L-AMB'
+//-                 }]
+//-               },{
+//-                 name:'MCFG',
+//-                 intervals: [{
+//-                     from: 130,
+//-                     to: 162,
+//-                     label: 'MCFG'
+//-                 },{
+//-                     from: 176,
+//-                     to: 182,
+//-                     label: 'MCFG'}]
+//-           }];
+//-           // re-structure the tasks into line seriesvar series = [];
+//-           var series = [];
+//-           $.each(tasks.reverse(), function(i, task) {
+//-               var item = {
+//-                   name: task.name,
+//-                   data: []
+//-               };
+//-               $.each(task.intervals, function(j, interval) {
+//-                   item.data.push({
+//-                       x: interval.from,
+//-                       y: i,
+//-                       label: interval.label,
+//-                       from: interval.from,
+//-                       to: interval.to
+//-                   }, {
+//-                       x: interval.to,
+//-                       y: i,
+//-                       from: interval.from,
+//-                       to: interval.to
+//-                   });
+                  
+//-                   // add a null value between intervals
+//-                   if (task.intervals[j + 1]) {
+//-                       item.data.push(
+//-                           [(interval.to + task.intervals[j + 1].from) / 2, null]
+//-                       );
+//-                   }
+
+//-               });
+
+//-               series.push(item);
+//-           });
+
+//-           // create the chart
+//-           var chart = new Highcharts.Chart({
+//-               chart: {
+//-                   renderTo: 'container2_'
+//-               },
+
+//-               title: {
+//-                   text: ''
+//-               },
+
+//-               xAxis: {
+//-                   type: 'linear',
+//-                   labels:{
+//-                     enabled:false
+//-                   },
+//-                   TickWidth:0,
+//-                   gridLineWidth: 0,
+//-                   lineWidth: 0,
+//-                   minorTickWidth: 0,
+//-                   minorGridLineWidth: 0,
+//-                   tickLength: 0
+//-               },
+
+//-               yAxis: {
+//-                   offset:60,
+//-                   categories: ['MCFG','L-AMB','GCV','LVFX','MEPM','CLDM','DLPM','SBT/CPZ','VCM','PIPC/TAZ','ABPC/SBT'],
+//-                   labels: {
+//-                       enabled: false,
+//-                       style: {
+//-                           color: '#525151',
+//-                           font: '10px',
+//-                           fontWeight: 'bold',
+//-                       }
+//-                      /* formatter: function() {
+//-                           if (tasks[this.value]) {
+//-                               return tasks[this.value].name;
+//-                           }
+//-                       }*/
+//-                   },
+//-                   startOnTick: false,
+//-                   endOnTick: false,
+//-                   TickWidth:0,
+//-                   gridLineWidth:0,
+//-                   title: {
+//-                       text: ''
+//-                   },
+//-                   minPadding: 0.2,
+//-                   maxPadding: 0.2
+                  
+//-               },
+
+//-               legend: {
+//-                   enabled: false
+//-               },
+
+//-               plotOptions: {
+//-                   line: {
+//-                       lineWidth: 10,
+//-                       marker: {
+//-                           enabled: false
+//-                       },
+//-                       dataLabels: {
+//-                           enabled: true,
+//-                           align: 'center',
+//-                           y:10,
+//-                           formatter: function() {
+//-                               return this.point.options && this.point.options.label;
+//-                           }
+//-                       }
+//-                   }
+//-               },
+
+//-               series: series
+
+//-           });      
+//-        });    
 
 
 script.
@@ -878,6 +1509,14 @@ script.
         type:"area",
         name:"sCr",
         data: [[-8,2.21], [-7,2.46], [-5,3.77], [-3,3.98], [-1,4.69], [0,5.24], [1,5.63], [4,4.79], [6,4.16], [8,3.99], [11,4.63], [13,5.58], [15,6.16], [16,6.67], [18,6.69], [20,5.93], [22,5.41], [23,5.37], [25,4.8], [27,5.02], [27,3.09], [29,4.37], [29,2.06], [32,1.94], [32,4.33], [34,3.93], [36,4.37], [36,2.05], [39,1.88], [39,4.65], [41,4.7], [43,4.79], [46,2.36], [46,3.69], [47,3.1], [48,3.28], [48,3.21], [49,3.63], [50,2.13], [50,3.82], [53,4.04], [53,2.15], [55,3.71], [57,4.66], [60,2.73], [60,5.19], [62,5.02], [64,6.96], [67,4.22], [67,6.9], [69,6.96], [71,7.17], [74,8.46], [76,8.17], [78,6], [81,2.92], [81,5.51], [83,4.82], [85,4.17], [88,2.33], [88,5.31], [90,4.18], [92,4.9], [95,4.09], [95,2.28], [97,3.75], [98,2.95], [99,3.44], [102,2.02], [102,3.82], [104,3.47], [106,3.34], [109,3.42], [109,1.61], [111,3.02], [113,2.69], [116,3.36], [116,1.69], [118,3.44], [120,3.36], [123,1.67], [123,3.82], [125,3.29], [127,3.6], [130,1.76], [130,3.98], [132,2.97], [133,2.2], [134,2.48], [135,2.13], [137,1.4], [137,2.82], [139,2.75], [141,2.65], [144,3.44], [144,1.18], [145,3.25], [146,3.52], [147,3.75], [148,3.96], [151,3.83], [151,2], [153,3.61], [155,4.53], [158,3.71], [160,2.6], [160,4.12], [162,3.72], [165,3.86], [165,1.72], [167,3.41], [168,3.3], [169,3.57], [172,1.87], [172,3.34], [174,2.9], [176,3.64], [179,2.27], [179,3.27], [181,3.12], [183,3.56], [186,3.32], [186,1.85], [188,2.8], [190,3.27], [193,1.25], [193,1.25], [193,2.99]]
+      }, {
+        type:"area",
+        name:"β2MG(x10^4) ",
+        data: [[0,5.2945],[4,0.5683],[6,0.1733],[8,0.0466],[11,0.0075],[13,1.7830],[15,0.6871],[18,0.0148],[20,0.0148],[22,0.0304]]
+      }, {
+        type:"area",
+        name:"NAG(x10)",
+        data: [[0,1.62],[4,3.82],[6,3.46],[8,2.21],[11,4.45],[13,.53],[15,2.34],[18,1.38],[20,.69],[22,.84]]
       },{
         type:"area",
         name:"BUN",
@@ -959,13 +1598,20 @@ script.
           to: 62,
           label: 'ABPC/SBT'}]
       }, {
+      name:'CAZ',
+      intervals: [{
+          from: 190,
+          to: 192,
+          label: 'CAZ'
+        }]
+      }, {
       name:'PIPC/TAZ',
       intervals: [{
           from: -4,
           to: 0,
           label: 'PIPC/TAZ'
         },{
-          from: 11,
+          from: 10,
           to: 13,
           label: 'PIPC/TAZ'
         },{
@@ -976,10 +1622,14 @@ script.
         name:'VCM',
         intervals: [{
             from: 40,
-            to: 80,
+            to: 47,
             label: 'VCM'
         },{
-            from: 144,
+            from: 73,
+            to: 91,
+            label: 'VCM'
+        },{
+            from: 130,
             to: 190,
             label: 'VCM'
         }]
@@ -1030,6 +1680,16 @@ script.
             to: 101,
             label: 'LVFX'}]
       },{
+        name:'MNZ',
+        intervals: [{
+            from: 70,
+            to: 73,
+            label: 'MNZ'
+        },{
+            from: 88,
+            to: 111,
+            label: 'MNZ'}]
+      },{
         name:'GCV',
         intervals: [{
             from: 190,
@@ -1054,6 +1714,17 @@ script.
             to: 182,
             label: 'MCFG'}]
   }];
+  var tasks2 = [{
+    name:'下痢',
+    intervals: [{
+        from: 24,
+        to: 118,
+        label: '下痢'
+    },{
+        from: 132,
+        to: 194,
+        label: '下痢'}]
+    }];
   // re-structure the tasks into line seriesvar series = [];
   var gantt_source = [];
   $.each(tasks.reverse(), function(i, task) {
@@ -1102,3 +1773,50 @@ script.
 
       gantt_source.push(item);
   });    
+  var gantt_source2 = [];
+  $.each(tasks2.reverse(), function(i, task) {
+      var item = {
+          //- name: task.name,
+          name:"task",
+          data: [], 
+          lineWidth: 40,
+          marker: {
+            enabled:false
+          },
+          linecap:"square",
+          dataLabels: {
+              enabled: true,
+              align: 'center',
+              y:20,
+              formatter: function() {
+                  return this.point.options && this.point.options.label;
+              }
+          },
+          yAxis:1,
+          showInLegend: false
+      };
+      $.each(task.intervals, function(j, interval) {
+          item.data.push({
+              x: interval.from,
+              y: i+1,
+              label: interval.label,
+              from: interval.from,
+              to: interval.to
+          }, {
+              x: interval.to,
+              y: i+1,
+              from: interval.from,
+              to: interval.to
+          });
+          
+          // add a null value between intervals
+          if (task.intervals[j + 1]) {
+              item.data.push(
+                  [(interval.to + task.intervals[j + 1].from) / 2, null]
+              );
+          }
+
+      });
+
+      gantt_source2.push(item);
+  });  

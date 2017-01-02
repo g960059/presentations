@@ -76,15 +76,15 @@ body {
 
 .gray-balloon {
     position: relative;
-    padding: 9px !important;
-    background-color: #aaa;
+    padding: 8px !important;
+    background-color: #999;
     color: white !important;
-    box-sizing: border-box; 
-    text-align: center;
-    top: -40px;
+    top: -50px;
     z-index: 100;
-    font-size: 17px !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
 }
+
 .gray-balloon:before {
   content: "";
   position: absolute;
@@ -93,11 +93,40 @@ body {
   margin-left: -10px;
   width: 0;
   height: 0;
-  border-top: 14px solid #aaa;
+  border-top: 14px solid #999;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
 }
 
+.simple_balloon{
+    background: #fff;
+    position: relative;
+    font-size: 17px !important;
+    top: -50px;
+    padding: 8px !important;
+    border: 1px solid #000 !important;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.simple_balloon:before {
+    content: "";
+    display: inline-block;
+    border: 10px solid transparent;
+    border-top-color: #000;
+    position: absolute;
+    left: 40%;
+    bottom: -20px;
+}
+.simple_balloon:after {
+    content: "";
+    display: inline-block;
+    border: 11px solid transparent;
+    border-top-color: #fff !important;
+    position: absolute;
+    left: 39%;
+    bottom: -20px;
+}
 
 /*********************************************
  * 強調
@@ -108,6 +137,10 @@ body {
 }
 .blue{
   color: #0084B5;
+  font-weight: bold !important;
+}
+.green{
+  color:#6FB162;
   font-weight: bold !important;
 }
 section .strong{
@@ -331,6 +364,12 @@ section p.reference:first-of-type{
 .reveal section.indent p em:first-child{
   margin-left: -1em;
 }
+.reveal section ul.indent li br+em{
+  margin-left: -1em;
+}
+.reveal section ul.indent li em:first-child{
+  margin-left: -1em;
+}
 
 .reveal section.has-dark-background .bg-caption {
     color: #dedede;
@@ -358,6 +397,36 @@ section p.reference:first-of-type{
     font-size: 150%;
 }*/
 /*Highcharts*/
+
+/*.reveal .diagram-display {
+  padding: 0;
+  margin: 0;
+  min-height: 700px;
+  min-width:100%;
+  height:auto;
+}*/
+.diag-a-Class rect {
+  stroke: #C56950 !important;
+  stroke-width: 4px !important;
+  fill: white !important;
+}
+.diag-s-Class rect {
+  stroke: #0084B5 !important;
+  stroke-width: 4px !important;
+  fill: white !important;
+}
+.diag-f-Class rect {
+  stroke: #000000 !important;
+  stroke-width: 4px !important;
+  fill: white !important;
+}
+.diag-d-Class rect{
+  stroke: #6FB162 !important;
+  stroke-width: 4px !important;
+  fill: white !important;
+}
+
+
 .highcharts-container{
   overflow: visible !important;
 }
@@ -390,6 +459,11 @@ g.highcharts-button.highcharts-drillup-button{
 g.highcharts-series path.highcharts-area.fragment.visible {
     visibility: inherit;
 }
+
+g.highcharts-series.highcharts-line-series {
+    opacity: 0.7;
+}
+
 /* Ensure certain elements are never larger than the slide itself */
 .reveal img,
 .reveal video,
