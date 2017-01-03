@@ -1,10 +1,14 @@
 section 
   h1 腎硬化症による末期腎不全に多発同静脈血栓症を合併し、感染を繰り返し死亡した1例
-  br
-  h4 東京逓信病院　腎臓内科  *病理科
-  p 平川雄亮、東原崇明、松村実美子、宇仁理恵、高野秀樹  
-    br
-    | *岸田由起子，*田村浩一
+  dl
+    dt 東京逓信病院研修医2年
+    dd 平川雄亮
+  dl
+    dt 同 腎臓内科 
+    dd 東原崇明、松村実美子、宇仁理恵、高野秀樹  
+  dl 
+    dt 同病理科
+    dd 岸田由起子，田村浩一
 
 
 section
@@ -14,8 +18,8 @@ section
     dd 腎機能低下  
   dl.dl-horizontal 
     dt 現病歴 
-    dd 以前よりAfを指摘されていたが、両側視床出血によりADL全介助状態となり、抗凝固療法は中止していた。転科13日前より傾眠傾向が出現し、SpO2低下を伴うようになり、往診医の紹介で、当院救急外来受診され、精査の結果肺炎を契機とした慢性心不全増悪の診断で、9日前に循環器内科入院となった。入院同日より抗生剤加療と共に、利尿剤ラシックスによる除水療法を開始し心不全は改善傾向にあったが、腎機能は入院時sCr 1.17 mg/dlより急速に増悪し、転科時にはsCr 5.63mg/dlまで増悪した。(FENa 1.8%, FEUN 42%, NAG, β2MG高値であり、腎性腎不全を疑い、)精査加療目的に当科転科となった。(第1病日)
-
+    dd 以前よりAfを指摘されていたが、両側視床出血によりADL全介助状態となり、抗凝固療法は中止していた。転科13日前より傾眠傾向が出現し、SpO2低下を伴うようになり、往診医の紹介で、当院救急外来受診され、精査の結果肺炎を契機とした慢性心不全増悪の診断で、9日前に循環器内科入院となった。入院同日より抗生剤加療と共に、利尿剤ラシックスによる除水療法を開始し心不全は改善傾向にあったが、腎機能は入院時sCr 1.17 mg/dlより急速に増悪し、転科時にはsCr 5.63mg/dlまで増悪した。精査加療目的に当科転科となった。(第1病日)
+//- (FENa 1.8%, FEUN 42%, NAG, β2MG高値であり、腎性腎不全を疑い、)
 
 section
   h2 症例： 69歳男性
@@ -363,6 +367,12 @@ section
             enabled: false
           },
           legend:{
+            align: 'left',
+            verticalAlign: 'top',
+            x: 100,
+            y: -10,
+            layout:"vertical",
+            floating: true,
             symbolPadding: 15,
             symbolRadius: 24,
             useHTML: true,  
@@ -900,6 +910,200 @@ section
 
 section(data-background-image=src+"/CPC_CS_summary.jpg")
 
+section
+  h2 臨床経過 -多発動静脈血栓-
+  #container6(style="width:auto; height:650px;")
+  .invisible-counter.fg-3
+  script.
+    $(()=> { 
+      Highcharts.seriesTypes.columnrange.prototype.drawDataLabels = Highcharts.seriesTypes.column.prototype.drawDataLabels;
+
+      var myChart = Highcharts.chart('container6', {
+          chart: {
+            zoomType: 'x'
+          },
+          title: {
+            text: ''
+          },
+          tooltip:{
+            enabled: false
+          },
+          legend:{
+            align: 'left',
+            verticalAlign: 'top',
+            x: 100,
+            y: -10,
+            layout:"vertical",
+            floating: true,
+            symbolPadding: 15,
+            symbolRadius: 24,
+            useHTML: true,  
+            itemStyle:{
+              "fontSize": "30px", 
+              "fontWeight": "bold"
+            }
+          },
+          yAxis:[ {
+            title: {
+              text: ''
+            },
+            labels:{
+              y: 7
+            },
+            tickAmount: 6
+          }, {
+              offset:60,
+              labels: {
+                  enabled: false,
+                  style: {
+                      color: '#525151',
+                      font: '10px',
+                      fontWeight: 'bold',
+                  }
+                 /* formatter: function() {
+                      if (tasks[this.value]) {
+                          return tasks[this.value].name;
+                      }
+                  }*/
+              },
+              startOnTick: false,
+              endOnTick: false,
+              TickWidth:0,
+              gridLineWidth:0,
+              title: {
+                  text: ''
+              },
+              minPadding: 0.2,
+              maxPadding: 0.2
+          }],
+          plotOptions: {
+            series: {
+              fillOpacity: 0,
+              zoneAxis: 'x',
+              lineWidth: 5,
+              marker: {
+                radius: 7
+              }
+            }
+          },
+          xAxis: {
+            type: 'linear',
+            allowDecimals: false,
+            tickPixelInterval:120,
+            title: {
+              text: '入院後日数'
+            },
+            labels: {
+              formatter: function() {
+                return this.value;
+              },
+              y:30
+            },
+            plotBands: [{
+              color: '#ddd', // Color value
+              className: '', // Style of the plot line. Default to solid
+              from: 117.5, // Value of where the line will appear
+              to: 118.5,
+              label:{
+                text: "<div class='balloon'>造影CT</div>",
+                useHTML:true
+              }},{
+              color: '#ddd', // Color value
+              className: '', // Style of the plot line. Default to solid
+              from: 60.5, // Value of where the line will appear
+              to: 61.5,
+              label:{
+                text: "<div class='gray-balloon'>動脈表在化</div>",
+                useHTML:true
+              }},{
+              color: '#ddd', // Color value
+              className: 'fg-1', // Style of the plot line. Default to solid
+              from: 130.5, // Value of where the line will appear
+              to: 131.5,
+              label:{
+                text: "<div class='gray-balloon fg-1'>バスカテ挿入</div>",
+                useHTML:true
+              }},{
+              color: '#ddd', // Color value
+              className: 'fg-2', // Style of the plot line. Default to solid
+              from: 157.5, // Value of where the line will appear
+              to: 158.5,
+              label:{
+                text: "<div class='gray-balloon fg-2'>永久カテ留置</div>",
+                useHTML:true
+              }}
+            ]
+          }, 
+          series: data_source.concat(gantt_source2)
+      });
+      var counter = 0;
+      var series = myChart.series;
+      var reset =()=> _.each(series,(data)=>{
+          data.setVisible(false, false);
+          data.update({ showInLegend: false}, false);
+        }
+      );
+      var hide_chart = ()=>_.each(series,(data)=>{
+        if(data.name != "task"){
+          data.setVisible(false, false);
+          data.update({ showInLegend: false}, false);
+        }
+      });
+      var hide_task = ()=>_.each(series,(data)=>{
+        if(data.name == "task"){
+          data.setVisible(false, false);
+        }
+      });
+      var show_series=(list)=>{
+        list.map((i)=>{
+          series[i].show();
+          series[i].update({ showInLegend: true }, false);
+          }
+        )
+      }
+      var show_series_only=(list)=>{
+        hide_chart();
+        list.map((i)=>{
+          series[i].show();
+          series[i].update({ showInLegend: true }, false);
+          }
+        );
+        myChart.redraw();
+      }
+      var show_task_only=(list)=>{
+        hide_task();
+        list.map((i)=>{
+          series[series.length-i-1].show();
+          }
+        );
+        myChart.redraw();
+      }
+      Reveal.addEventListener( 'fragmentshown', function( event ) {
+        counter++;
+        render(counter);
+      });
+      Reveal.addEventListener( 'fragmenthidden', function( event ) {
+        counter--;
+        render(counter);
+      });
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+         counter = 0;
+         render(counter);
+      });
+      var render = (counter) =>{
+        switch(counter){
+          case 0:
+            show_series_only([6,7]);
+            hide_task();
+            break;
+          case 3:
+            show_series_only([13,14,15,16]);
+            break;
+          default: break; 
+        }
+      }
+      render(counter);
+    }); 
 
 
 section
@@ -1012,7 +1216,7 @@ section
   
 section
   h2 病理解剖で明らかにしたいこと
-  ul.list-unstyled
+  ul.list-unstyled.list
     li 1. 心機能低下の原因(冠動脈の状態・Afの原因)
     li 2. 大腸多発潰瘍/慢性下痢の原因
     li 3. 多発動静脈血栓症の分布と原因
@@ -1031,6 +1235,253 @@ section
       .green(style="display:inline-block;") ●
       | 病理で判明 
   img.plain.img-rounded(src=src+'/CPC_flowchart_post.png' style="width:120%;height: 325px;"　)
+
+
+section
+  h2 病理解剖で明らかにしたいこと
+  ul.list-unstyled.list
+    li.highlight 1. 心機能低下の原因(冠動脈の状態・Afの原因)
+    li.gray 2. 大腸多発潰瘍/慢性下痢の原因
+    li.gray 3. 多発動静脈血栓症の分布と原因
+    li.gray 4. 真菌感染のfocus
+    li.gray 5. 直接死因
+
+section
+  section
+    h2 1. 心機能低下の原因
+    p 病理待ち
+section
+  h2 病理解剖で明らかにしたいこと
+  ul.list-unstyled.list
+    li.gray 1. 心機能低下の原因(冠動脈の状態・Afの原因)
+    li.highlight 2. 大腸多発潰瘍/慢性下痢の原因
+    li.gray 3. 多発動静脈血栓症の分布と原因
+    li.gray 4. 真菌感染のfocus
+    li.gray 5. 直接死因
+
+section
+  section
+    h2 2. 大腸多発潰瘍/慢性下痢の原因
+    .row
+      .col-xs-8  
+        p: em 本症例の特徴
+        ul
+          li 第25病日からほぼ全期間で下痢が持続
+          li 感染症を繰り返し、抗菌薬を多用
+          li.fg-1 第70病日に<strong>GDH抗原陽性</strong>
+          li.fg-1 第123病日に便培から<strong>MRSA検出</strong>
+          li.fg-1 第189病日に<strong>CMV陽性</strong>
+          li.fg-3 第70病日以降は1,2週間おきに便培提出<br>
+            | ➡上記以外は正常細菌叢、CD toxinも陰性
+          li.fg-3 CSでは区域性潰瘍が散在(感染は否定的)
+          li.fg-4: em 病理解剖で炎症性腸疾患が判明
+      .col-xs-4.md-pl-10
+        p 鑑別
+        .row
+          .col-xs-6
+            table.table.table-condensed
+              tr
+                td: em 炎症性
+              tr.warning.fg-2.grow
+                td 感染性腸炎
+              tr.warning.fg-2.grow
+                td 抗菌薬関連腸炎
+              tr 
+                td 虚血性腸炎
+              tr 
+                td 炎症性腸疾患
+              tr 
+                td: em 吸収不良
+              tr 
+                td NOMI, セリアック病
+              tr 
+                td ホルモン産生腫瘍
+              tr 
+                td 慢性膵炎
+          .col-xs-6
+            table.table.table-condensed
+              tr 
+                td: em 蠕動調節障害
+              tr 
+                td アミロイドーシス
+              tr 
+                td 甲状腺機能亢進症
+              tr 
+                td: em 神経内分泌腫瘍
+              tr 
+                td ガストリノーマ
+              tr 
+                td VIPoma
+              tr 
+                td カルチノイド
+     
+  section
+    h2 NOMIの可能性は?
+    .row
+      .col-xs-6
+        p: em NOMIのリスク
+        ul
+          li.red 50歳以上
+          li.red 透析患者
+          li 心大血管手術後
+          li.red 心疾患(MI、不整脈など)
+          li.red 肝腎疾患
+        p: em NOMIの検査所見
+        p LDH, CK, AMYが上昇
+      .col-xs-6
+        p: em 本例での推移
+        #container5(style="width:auto; height:500px;")
+    script.
+      $(()=> { 
+        Highcharts.seriesTypes.columnrange.prototype.drawDataLabels = Highcharts.seriesTypes.column.prototype.drawDataLabels;
+
+        var myChart = Highcharts.chart('container5', {
+            chart: {
+              zoomType: 'x'
+            },
+            title: {
+              text: ''
+            },
+            tooltip:{
+              enabled: false
+            },
+            legend:{
+              symbolPadding: 15,
+              symbolRadius: 24,
+              useHTML: true,  
+              itemStyle:{
+                "fontSize": "30px", 
+                "fontWeight": "bold"
+              }
+            },
+            yAxis:[ {
+              title: {
+                text: ''
+              },
+              labels:{
+                y: 7
+              },
+              tickAmount: 6
+            }, {
+                offset:60,
+                labels: {
+                    enabled: false,
+                    style: {
+                        color: '#525151',
+                        font: '10px',
+                        fontWeight: 'bold',
+                    }
+                   /* formatter: function() {
+                        if (tasks[this.value]) {
+                            return tasks[this.value].name;
+                        }
+                    }*/
+                },
+                startOnTick: false,
+                endOnTick: false,
+                TickWidth:0,
+                gridLineWidth:0,
+                title: {
+                    text: ''
+                },
+                minPadding: 0.2,
+                maxPadding: 0.2
+            }],
+            plotOptions: {
+              series: {
+                fillOpacity: 0,
+                zoneAxis: 'x',
+                lineWidth: 5,
+                marker: {
+                  radius: 7
+                }
+              }
+            },
+            xAxis: {
+              type: 'linear',
+              allowDecimals: false,
+              tickPixelInterval:120,
+              title: {
+                text: '入院後日数'
+              },
+              labels: {
+                formatter: function() {
+                  return this.value+1;
+                },
+                y:30
+              }
+            }, 
+            series: data_source
+        });
+        var counter = 0;
+        var series = myChart.series;
+        var reset =()=> _.each(series,(data)=>{
+            data.setVisible(false, false);
+            data.update({ showInLegend: false}, false);
+          }
+        );
+        var hide_chart = ()=>_.each(series,(data)=>{
+          if(data.name != "task"){
+            data.setVisible(false, false);
+            data.update({ showInLegend: false}, false);
+          }
+        });
+        
+        var show_series=(list)=>{
+          list.map((i)=>{
+            series[i].show();
+            series[i].update({ showInLegend: true }, false);
+            }
+          )
+        }
+        var show_series_only=(list)=>{
+          hide_chart();
+          list.map((i)=>{
+            series[i].show();
+            series[i].update({ showInLegend: true }, false);
+            }
+          );
+          myChart.redraw();
+        }
+        Reveal.addEventListener( 'fragmentshown', function( event ) {
+          counter++;
+          render(counter);
+        });
+        Reveal.addEventListener( 'fragmenthidden', function( event ) {
+          counter--;
+          render(counter);
+        });
+        Reveal.addEventListener( 'slidechanged', function( event ) {
+           counter = 0;
+           render(counter);
+        });
+        var render = (counter) =>{
+          switch(counter){
+            case 0:
+              show_series_only([21,22,23]);
+              break;
+            default: break; 
+          }
+        }
+        render(counter);
+      }); 
+
+  section
+    h2 甲状腺機能亢進症の可能性は?
+    p TSH 2.15 μIU/mLと低下なし
+    p ➡甲状腺機能亢進症は否定的
+
+  section 
+    h2 感染性腸炎の検索
+    p: em 鑑別
+    ul
+      li 偽膜性大腸炎
+      li 結核性腸炎
+      li エルシニア腸炎
+      li サイトメガロウィルス腸炎
+      li 単純ヘルペス腸炎
+      li アメーバ症
+      li 寄生虫
 section
   h2 IBDの病態
   .row
@@ -1055,7 +1506,225 @@ section
     | Harrison's Principles of Internal Medicine, D.L.Kasper, A.S.Fauci, S.L.Hauser, et al
 
 section
-  h2 IBDと血栓症 ①腸管外合併症
+  h2 病理解剖で明らかにしたいこと
+  ul.list-unstyled.list
+    li.gray 1. 心機能低下の原因(冠動脈の状態・Afの原因)
+    li.gray 2. 大腸多発潰瘍/慢性下痢の原因
+    li.highlight 3. 多発動静脈血栓症の分布と原因
+    li.gray 4. 真菌感染のfocus
+    li.gray 5. 直接死因
+
+section
+  h2 3. 多発動静脈血栓症の分布と原因
+  .row
+    .col-xs-5
+      p: em 血栓素因検索(第124病日)
+      table.table.table-condensed.table-striped
+        tr
+          td ﾌﾟﾛﾃｲﾝC（活性）
+          td 46
+          td %
+        tr
+          td プロテインＳ
+          td 54
+          td %
+        tr
+          td ループスＡＣ
+          td 0.99
+          td
+        tr
+          td 抗核抗体
+          td <40
+          td
+        tr
+          td 抗ｶﾙｼﾞｵﾘﾋﾟﾝ抗体IgG
+          td <8
+          td
+        tr
+          td 抗ｶﾙｼﾞｵﾘﾋﾟﾝB2ｸﾞﾘｺP
+          td <1.2
+          td
+      p プロテインC/Sが軽度低下
+      p APSや膠原病は否定的
+      p.fg-1 炎症性腸疾患+バスカテ留置が原因?
+    .col-xs-7.md-pl-20
+      #container7(style="width:auto; height:600px;")
+  script.
+    $(()=> { 
+      Highcharts.seriesTypes.columnrange.prototype.drawDataLabels = Highcharts.seriesTypes.column.prototype.drawDataLabels;
+
+      var myChart = Highcharts.chart('container7', {
+          chart: {
+            zoomType: 'x'
+          },
+          title: {
+            text: ''
+          },
+          tooltip:{
+            enabled: false
+          },
+          legend:{
+            align: 'left',
+            verticalAlign: 'top',
+            x: 100,
+            y: -10,
+            layout:"vertical",
+            floating: true,
+            symbolPadding: 15,
+            symbolRadius: 24,
+            useHTML: true,  
+            itemStyle:{
+              "fontSize": "30px", 
+              "fontWeight": "bold"
+            }
+          },
+          yAxis:[ {
+            title: {
+              text: ''
+            },
+            labels:{
+              y: 7
+            },
+            tickAmount: 6
+          }, {
+              offset:60,
+              labels: {
+                  enabled: false,
+                  style: {
+                      color: '#525151',
+                      font: '10px',
+                      fontWeight: 'bold',
+                  }
+                 /* formatter: function() {
+                      if (tasks[this.value]) {
+                          return tasks[this.value].name;
+                      }
+                  }*/
+              },
+              startOnTick: false,
+              endOnTick: false,
+              TickWidth:0,
+              gridLineWidth:0,
+              title: {
+                  text: ''
+              },
+              minPadding: 0.2,
+              maxPadding: 0.2
+          }],
+          plotOptions: {
+            series: {
+              fillOpacity: 0,
+              zoneAxis: 'x',
+              lineWidth: 5,
+              marker: {
+                radius: 7
+              }
+            }
+          },
+          xAxis: {
+            type: 'linear',
+            allowDecimals: false,
+            tickPixelInterval:120,
+            title: {
+              text: '入院後日数'
+            },
+            labels: {
+              formatter: function() {
+                return this.value;
+              },
+              y:30
+            },
+            plotBands: [{
+              color: '#ddd', // Color value
+              className: '', // Style of the plot line. Default to solid
+              from: 60.5, // Value of where the line will appear
+              to: 61.5,
+              label:{
+                text: "<div class='gray-balloon'>動脈表在化</div>",
+                useHTML:true
+              }},{
+              color: '#ddd', // Color value
+              className: '', // Style of the plot line. Default to solid
+              from: 130.5, // Value of where the line will appear
+              to: 131.5,
+              label:{
+                text: "<div class='gray-balloon '>バスカテ挿入</div>",
+                useHTML:true
+              }}
+            ]
+          }, 
+          series: data_source.concat(gantt_source2)
+      });
+      var counter = 0;
+      var series = myChart.series;
+      var reset =()=> _.each(series,(data)=>{
+          data.setVisible(false, false);
+          data.update({ showInLegend: false}, false);
+        }
+      );
+      var hide_chart = ()=>_.each(series,(data)=>{
+        if(data.name != "task"){
+          data.setVisible(false, false);
+          data.update({ showInLegend: false}, false);
+        }
+      });
+      var hide_task = ()=>_.each(series,(data)=>{
+        if(data.name == "task"){
+          data.setVisible(false, false);
+        }
+      });
+      var show_series=(list)=>{
+        list.map((i)=>{
+          series[i].show();
+          series[i].update({ showInLegend: true }, false);
+          }
+        )
+      }
+      var show_series_only=(list)=>{
+        hide_chart();
+        list.map((i)=>{
+          series[i].show();
+          series[i].update({ showInLegend: true }, false);
+          }
+        );
+        myChart.redraw();
+      }
+      var show_task_only=(list)=>{
+        hide_task();
+        list.map((i)=>{
+          series[series.length-i-1].show();
+          }
+        );
+        myChart.redraw();
+      }
+      Reveal.addEventListener( 'fragmentshown', function( event ) {
+        counter++;
+        render(counter);
+      });
+      Reveal.addEventListener( 'fragmenthidden', function( event ) {
+        counter--;
+        render(counter);
+      });
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+         counter = 0;
+         render(counter);
+      });
+      var render = (counter) =>{
+        switch(counter){
+          case 0:
+            show_series_only([6,7]);
+            hide_task();
+            break;
+          default: break; 
+        }
+      }
+      render(counter);
+    }); 
+
+
+section
+  h2 3. 多発動静脈血栓症の分布と原因
+  p: em IBDの腸管外合併症
   table.table.table-condensed.table-boaderd(style="font-size:150%;")
     tr
       td
@@ -1119,26 +1788,71 @@ section
       td
   p.reference World J Gastroenterol. 2006 Aug 14:12(30):4819-31
 section
-  h2 考察：IBDと血栓症
+  h2 3. 多発動静脈血栓症の分布と原因
+  //- ul
+  //-   li IBD全体の約1/3に腸管外合併症
+  //-   li 潰瘍性大腸炎の15%, Crohn病の37%
+  p: em IBDと血栓リスク
   ul
-    li IBD全体の約1/3に腸管外合併症
-    li 潰瘍性大腸炎の15%, Crohn病の37%
-    li 中でも血栓症は生命予後に関わる
-    li IBD患者のDVT発症率は1-8%
-    li IBD患者のDVT/PE発症リスクは健常者の3倍
-    li 病理的には40%に達するという報告あり 
+    li IBD患者の<em>DVT発症率は1-8%</em>と少なくない
+    li IBD患者のDVT/PE発症リスクは<strong>健常者の3倍</strong>
+    li <strong>病理的には40%に達する</strong>という報告あり 
     li 寛解期にも有意に血栓症発症リスク上昇
-  p.reference Thrombosis in inflammatory bowel diseases: what’s the link?, Thrombosis Journal 2015, 13:14  Martina Giannotta et al.
+  p 本症例のような長期臥床の場合はさらに<strong>VTE発症リスク</strong>が8倍になる
+  p: em IBDによる血栓の診断・治療
+  ul
+    li 小血管-大血管まで分布
+    li 中でもPE, 下肢DVT, 小脳, 肝臓, 門脈で報告が多い
+    li DVT/PEの診断・治療は国際ガイドライン準拠
+  p.reference.md-mt-40 Thrombosis in inflammatory bowel diseases: what’s the link?, Thrombosis Journal 2015, 13:14  Martina Giannotta et al.
+
 
 section
-  h2 考察：IBDと血栓症
-  ul
-    li 血栓症の好発部位 (小血管-大血管まで分布)
-    li PE, 下肢DVT, 小脳, 肝臓, 門脈 etc.
-    li DVT/PEの診断・治療は国際ガイドライン準拠
-    li 入院自体でVTE発症リスクが8倍
-    li ➡ IBD患者が入院では血栓症の予防が特に重要
-  p.reference Thrombosis in inflammatory bowel diseases: what’s the link?, Thrombosis Journal 2015, 13:14  Martina Giannotta et al.
+  h2 病理解剖で明らかにしたいこと
+  ul.list-unstyled.list
+    li.gray 1. 心機能低下の原因(冠動脈の状態・Afの原因)
+    li.gray 2. 大腸多発潰瘍/慢性下痢の原因
+    li.gray 3. 多発動静脈血栓症の分布と原因
+    li.highlight 4. 真菌感染のfocus
+    li.gray 5. 直接死因
+section
+  h2 4. 真菌感染のfocus
+  p 病理待ち
+section
+  h2 病理解剖で明らかにしたいこと
+  ul.list-unstyled.list
+    li.gray 1. 心機能低下の原因(冠動脈の状態・Afの原因)
+    li.gray 2. 大腸多発潰瘍/慢性下痢の原因
+    li.gray 3. 多発動静脈血栓症の分布と原因
+    li.gray 4. 真菌感染のfocus
+    li.highlight 5. 直接死因
+section
+  h2 5. 直接死因
+  .row
+    .col-xs-7
+      p: em 臨床経過
+      ul
+        li 第193病日、透析中に突然の血圧低下
+        li 徐脈を伴い、致死的な不整脈はない
+        li アトロピン・ボスミン投与も血圧上昇せず
+        li その後, VT→PEとなり死亡した
+      p: em 原因は?
+      ul
+        li 不整脈なく、CK上昇せず
+          br
+          | → 心原性も否定的
+        li 炎症反応は落ち着いていた
+          br
+          | → 敗血症は否定的
+        li 臨床経過からは出血または肺塞栓？
+        li (病理待ち)
+    .col-xs-5.md-pl-10
+      p: em 鑑別
+      ul.list
+        li 循環血漿量低下(出血 etc)
+        li.fg-1.gray 心原性(急性心筋梗塞 etc)
+        li 閉塞性(肺塞栓 etc)
+        li.fg-2.gray 敗血症
 
 section
   h2 結語
@@ -1585,6 +2299,18 @@ script.
         type:"area",
         name:"バンコマイシン",
         data: [[47,7.7],[67,18.8],[146,15.4],[153,19.7],[159,18.8],[165,18],[174,16.3],[183,11.7],[190,11.9]]
+      }, {
+        type:"area",
+        name:"CK",
+        data: [[-8,92],[-1,30],[0,25],[1,33],[4,37],[11,48],[13,23],[15,24],[16,27],[18,36],[20,48],[22,50],[23,42],[25,51],[27,67],[29,45],[32,37],[34,41],[36,45],[39,63],[41,83],[43,64],[46,34],[47,31],[48,25],[49,24],[50,18],[53,27],[53,27],[55,86],[57,114],[60,81],[62,60],[64,36],[67,24],[69,21],[71,26],[74,24],[76,23],[78,19],[81,38],[83,41],[85,37],[88,19],[90,13],[92,11],[95,13],[97,10],[98,11],[99,17],[102,11],[104,11],[106,10],[109,10],[111,10],[113,10],[116,20],[118,15],[120,12],[123,14],[125,12],[127,21],[130,16],[132,13],[134,14],[137,11],[139,10],[141,6],[144,7],[146,7],[151,12],[153,20],[155,20],[158,18],[162,20],[167,12],[168,12],[169,15],[172,10],[174,8],[179,9],[181,10],[183,20],[186,19],[188,19],[190,39],[193,5],[193,36],[193,26]]
+      }, {
+        type:"area",
+        name:"LDH",
+        data: [[-8,252],[-7,228],[-5,308],[-3,313],[-1,312],[0,314],[1,321],[4,261],[6,262],[8,249],[11,258],[13,228],[15,240],[16,248],[18,247],[20,227],[22,249],[23,231],[25,293],[27,309],[29,288],[32,258],[34,225],[36,272],[39,240],[41,249],[43,223],[46,196],[47,196],[48,188],[49,199],[50,264],[53,187],[53,232],[55,324],[57,198],[60,278],[62,260],[64,222],[67,181],[69,180],[71,185],[74,229],[76,161],[78,156],[81,137],[83,135],[85,131],[88,148],[90,127],[92,168],[95,148],[97,163],[98,156],[99,126],[102,135],[104,121],[106,132],[109,142],[111,147],[113,161],[116,145],[118,143],[120,148],[123,141],[125,163],[127,166],[130,170],[132,154],[134,194],[137,229],[139,212],[141,202],[144,219],[145,178],[146,200],[148,210],[151,252],[153,261],[155,329],[158,291],[160,304],[162,324],[165,303],[167,324],[168,353],[169,363],[172,321],[174,287],[176,318],[179,271],[181,294],[183,334],[186,320],[188,298],[190,346],[193,515],[193,349]]
+      }, {
+        type:"area",
+        name:"ALP",
+        data: [[-8,115],[-7,122],[-5,109],[-3,102],[1,71],[4,85],[6,101],[8,113],[11,120],[13,97],[15,99],[16,93],[18,93],[20,89],[22,92],[23,89],[25,87],[27,111],[29,112],[32,118],[34,115],[39,116],[41,109],[43,108],[46,103],[47,105],[49,135],[53,142],[53,111],[55,118],[60,123],[62,99],[64,99],[67,96],[69,91],[71,93],[74,95],[76,89],[78,93],[81,94],[83,97],[85,99],[88,111],[90,103],[92,108],[95,102],[97,110],[98,123],[99,105],[102,108],[104,104],[106,123],[109,122],[111,129],[113,135],[116,148],[118,148],[120,152],[123,147],[125,160],[127,205],[130,210],[132,214],[134,178],[137,269],[144,260],[145,233],[146,224],[148,231],[160,299],[162,305],[165,289],[167,322],[168,355],[169,347],[172,373],[176,396],[179,390],[181,399],[183,408],[186,402],[188,456],[190,460],[193,634],[193,518]]
       }
     ]
   var tasks = [{

@@ -143,6 +143,9 @@ body {
   color:#6FB162;
   font-weight: bold !important;
 }
+.gray{
+  color:#999;
+}
 section .strong{
     color: #fff;
     border-left: 0;
@@ -279,6 +282,7 @@ section .strong{
 .reveal .slides section .fragment.gray{
   opacity: 1;
   visibility: visible;
+  color: inherit;
 }
 
 .reveal .slides section tr.fragment:not(.visible){
@@ -328,6 +332,10 @@ ul:not(.list-unstyled) li:before {
   margin: 20px 0;
   line-height: 1.3; }
 
+.reveal .highlight{
+  font-weight: bold;
+  font-size: 120%;
+}
 
 section p.reference {
     font-size: 12px;
