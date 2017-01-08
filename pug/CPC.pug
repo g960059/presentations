@@ -1080,7 +1080,7 @@ section
          if(!done){
           counter = 0;
          }else{
-          counter=1;
+          counter=2;
          }
          render(counter);
       });
@@ -1089,12 +1089,14 @@ section
           case 0:
             show_series_only([0]);
             myChart.xAxis[0].setExtremes(-8, 145);
-            break;
             done=false;
+            break;
+            
           case 1:
             myChart.xAxis[0].setExtremes(-8, 193);
-            break;
             done=true;
+            break;
+            
           default: break; 
         }
       }
