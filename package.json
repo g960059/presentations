@@ -37,9 +37,11 @@
     "gulp-s3-upload": "^1.6.4",
     "gulp-sequence": "^0.4.6",
     "gulp-webserver": "^0.9.1",
+    "gulp-webshot": "^0.2.3",
     "jstransformer-markdown-it": "^2.0.0",
     "minimist": "^1.2.0",
     "rename": "^1.0.3",
-    "run-sequence": "^1.2.2"
+    "run-sequence": "^1.2.2",
+    "webshot": "^0.18.0"
   }
 }

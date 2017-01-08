@@ -10,6 +10,7 @@ const html2jade = require('gulp-html2jade');
 const jade = require('gulp-jade');
 const runSequence = require('run-sequence');
 const fileSync = require('gulp-file-sync');
+
 var s3 = require('gulp-s3-upload')({
     accessKeyId: "AKIAIOIJOCJNUTSYCRXQ",
     secretAccessKey: "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",
@@ -103,8 +104,6 @@ gulp.task('dev',(cb) => {
 gulp.task('publish',(cb) => {
   return runSequence('sync_','rename','upload','pug_s3','serve','watch_s3','sync', cb);
 });
-
-
 
 //upload to S3
 gulp.task("upload", () => {

@@ -342,6 +342,7 @@ section p.reference {
     color: gray;
     float: right;
     font-style: italic;
+    text-align: right;
     margin:0;
 }
 section p.reference:first-of-type{
