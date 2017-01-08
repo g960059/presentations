@@ -1174,7 +1174,28 @@ section
               },
               minPadding: 0.2,
               maxPadding: 0.2
-          }],
+          },{ // Primary yAxis
+            labels: {
+                y: 7,
+                enabled:false,
+                style: {
+                    color: Highcharts.getOptions().colors[3]
+                }
+            },
+            tickAmount: 4,
+            startOnTick: false,
+            endOnTick: false,
+            TickWidth:0,
+            gridLineWidth:0,
+            title: {
+                text: '',
+                style: {
+                    color: Highcharts.getOptions().colors[3]
+                }
+            },
+            opposite: true
+
+        }],
           plotOptions: {
             series: {
               fillOpacity: 0,
@@ -1233,7 +1254,7 @@ section
               }}
             ]
           }, 
-          series: data_source.concat(gantt_source_)
+          series: data_source.concat(gantt_source__)
       });
       var counter = 0;
       var series = myChart.series;
@@ -1645,7 +1666,7 @@ section
     li 1. 心機能低下の原因(冠動脈の状態・Afの原因)
     li 2. 大腸多発潰瘍/慢性下痢の原因
     li 3. 多発動静脈血栓症の分布と原因
-    li 4. 原発性アルドステロン症はあったのか？
+    li 4. 原発性アルドステロン症の原因
     li 5. 直接死因
 
 section
@@ -1668,7 +1689,7 @@ section
     li.highlight 1. 心機能低下の原因(冠動脈の状態・Afの原因)
     li.gray 2. 大腸多発潰瘍/慢性下痢の原因
     li.gray 3. 多発動静脈血栓症の分布と原因
-    li.gray 4. 原発性アルドステロン症はあったのか？
+    li.gray 4. 原発性アルドステロン症の原因
     li.gray 5. 直接死因
 
 section
@@ -1686,7 +1707,7 @@ section
     li.gray 1. 心機能低下の原因(冠動脈の状態・Afの原因)
     li.highlight 2. 大腸多発潰瘍/慢性下痢の原因
     li.gray 3. 多発動静脈血栓症の分布と原因
-    li.gray 4. 原発性アルドステロン症はあったのか？
+    li.gray 4. 原発性アルドステロン症の原因
     li.gray 5. 直接死因
 
 section
@@ -1999,7 +2020,7 @@ section
     li.gray 1. 心機能低下の原因(冠動脈の状態・Afの原因)
     li.gray 2. 大腸多発潰瘍/慢性下痢の原因
     li.highlight 3. 多発動静脈血栓症の分布と原因
-    li.gray 4. 原発性アルドステロン症はあったのか？
+    li.gray 4. 原発性アルドステロン症の原因
     li.gray 5. 直接死因
 
 section
@@ -2249,10 +2270,10 @@ section
     li.gray 1. 心機能低下の原因(冠動脈の状態・Afの原因)
     li.gray 2. 大腸多発潰瘍/慢性下痢の原因
     li.gray 3. 多発動静脈血栓症の分布と原因
-    li.highlight 4. 原発性アルドステロン症はあったのか？
+    li.highlight 4. 原発性アルドステロン症の原因
     li.gray 5. 直接死因
 section
-  h2 4. 原発性アルドステロン症はあったのか？
+  h2 4. 原発性アルドステロン症の原因
   p: em 臨床経過
   ul
     li 入院時よりHTN, 高Na血症, 低K血症を認めた
@@ -2266,7 +2287,7 @@ section
     li.gray 1. 心機能低下の原因(冠動脈の状態・Afの原因)
     li.gray 2. 大腸多発潰瘍/慢性下痢の原因
     li.gray 3. 多発動静脈血栓症の分布と原因
-    li.gray 4. 原発性アルドステロン症はあったのか？
+    li.gray 4. 原発性アルドステロン症の原因
     li.highlight 5. 直接死因
 section
   h2 5. 直接死因
