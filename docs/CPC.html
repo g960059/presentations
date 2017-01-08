@@ -719,6 +719,7 @@
                   case 0:
                     show_series_only([0,1]);
                     myChart.xAxis[0].setExtremes(-8, 8); 
+                    done=false;
                     break;
                   case 1:
                     show_series_only([1,2,3]);
@@ -1195,9 +1196,11 @@
                     show_series_only([0]);
                     myChart.xAxis[0].setExtremes(-8, 145);
                     break;
+                    done=false;
                   case 1:
                     myChart.xAxis[0].setExtremes(-8, 193);
                     break;
+                    done=true;
                   default: break; 
                 }
               }
@@ -2127,7 +2130,6 @@
               </table>
               <p>プロテインC/Sが軽度低下</p>
               <p>APSや膠原病は否定的</p>
-              <p class="fg-1">炎症性腸疾患・透析・カテーテル留置が原因?</p>
             </div>
             <div class="col-xs-7 md-pl-20">
               <div id="container7" style="width:auto; height:600px"></div>
@@ -2305,25 +2307,8 @@
               render(counter);
             }); 
             
+            
           </script>
-        </section>
-        <section>
-          <h2>3. 多発動静脈血栓症の分布と原因</h2>
-          <p><em>IBDと血栓リスク</em></p>
-          <ul>
-            <li>IBD患者の<em>DVT発症率は1-8%</em>と少なくない</li>
-            <li>IBD患者のDVT/PE発症リスクは<strong>健常者の3倍</strong></li>
-            <li><strong>病理的には40%に達する</strong>という報告あり </li>
-            <li>寛解期にも有意に血栓症発症リスク上昇</li>
-          </ul>
-          <p>本症例のような長期臥床の場合はさらに<strong>VTE発症リスクが8倍</strong>になる</p>
-          <p><em>IBDによる血栓の診断・治療</em></p>
-          <ul>
-            <li>小血管-大血管まで分布</li>
-            <li>中でもPE, 下肢DVT, 小脳, 肝臓, 門脈で報告が多い</li>
-            <li>DVT/PEの診断・治療は国際ガイドライン準拠</li>
-          </ul>
-          <p class="reference md-mt-40">Thrombosis in inflammatory bowel diseases: what’s the link?, Thrombosis Journal 2015, 13:14  Martina Giannotta et al.</p>
         </section>
         <section>
           <h2>透析と血栓リスク</h2>
@@ -2342,6 +2327,23 @@
           </ul>
           <div class="arrow-down"></div>
           <p>本症例においては、維持透析、Af、カテーテル挿入に伴う血栓傾向が最も考えられた。しかし、最終的な血栓の局在と分布は広範囲であった。</p>
+        </section>
+        <section>
+          <h2>IBDと血栓リスク</h2>
+          <ul>
+            <li>IBD患者の<em>DVT発症率は1-8%</em>と少なくない</li>
+            <li>IBD患者のDVT/PE発症リスクは<strong>健常者の3倍</strong></li>
+            <li><strong>病理的には40%に達する</strong>という報告あり </li>
+            <li>寛解期にも有意に血栓症発症リスク上昇</li>
+          </ul>
+          <p>本症例のような長期臥床の場合はさらに<strong>VTE発症リスクが8倍</strong>になる</p>
+          <p><em>IBDによる血栓の診断・治療</em></p>
+          <ul>
+            <li>小血管-大血管まで分布</li>
+            <li>中でもPE, 下肢DVT, 小脳, 肝臓, 門脈で報告が多い</li>
+            <li>DVT/PEの診断・治療は国際ガイドライン準拠</li>
+          </ul>
+          <p class="reference md-mt-40">Thrombosis in inflammatory bowel diseases: what’s the link?, Thrombosis Journal 2015, 13:14  Martina Giannotta et al.</p>
         </section>
         <section>
           <h2>病理解剖で明らかにしたいこと</h2>
