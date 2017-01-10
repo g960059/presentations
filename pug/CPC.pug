@@ -13,11 +13,11 @@ section
 
 section
   h2 はじめに
-  p: em 本症例で苦慮したこと: <strong>「慢性下痢症」</strong>と<strong>「多発動静脈血栓」</strong>
+  p: em 本症例で原因診断に苦慮した事: <strong>「慢性下痢症」</strong>・<strong>「多発動静脈血栓」</strong>
   p: em 本症例の特徴
   ul.list
     li 末期腎不全による易感染性で感染を繰り返した
-    li 感染性腸炎や抗菌薬関連腸炎等では説明がつかない<em>慢性下痢症が6ヶ月間持続</em>
+    li 感染性腸炎や抗菌薬関連腸炎等では説明がつかない<em>慢性下痢症が</em><br><em>6ヶ月間持続</em>
     li 感染や透析, Afを背景に血栓リスクは高かった
     li 一方で、想定される以上に<em>重度の多発動静脈血栓症</em>を認めた
 
@@ -1326,6 +1326,218 @@ section
 section(data-background-image=src+"/CPC_CS_summary.png")
 
 section
+  h2 ③ 慢性下痢症
+  #container4_(style="width:960px; height:650px;")
+
+  script.
+    $(()=> { 
+      Highcharts.seriesTypes.columnrange.prototype.drawDataLabels = Highcharts.seriesTypes.column.prototype.drawDataLabels;
+
+      var myChart = Highcharts.chart('container4_', {
+          chart: {
+            zoomType: 'x'
+          },
+          title: {
+            text: ''
+          },
+          tooltip:{
+            enabled: false
+          },
+          legend:{
+            align: 'left',
+            verticalAlign: 'top',
+            x: 130,
+            y: 200,
+            layout:"vertical",
+            floating: true,
+            symbolPadding: 15,
+            symbolRadius: 24,
+            useHTML: true,  
+            itemStyle:{
+              "fontSize": "30px", 
+              "fontWeight": "bold"
+            }
+          },
+          yAxis:[ {
+            title: {
+              text: ''
+            },
+            labels:{
+              y: 7
+            },
+            tickAmount: 6
+          }, {
+              offset:60,
+              labels: {
+                  enabled: false,
+                  style: {
+                      color: '#525151',
+                      font: '10px',
+                      fontWeight: 'bold',
+                  }
+                 /* formatter: function() {
+                      if (tasks[this.value]) {
+                          return tasks[this.value].name;
+                      }
+                  }*/
+              },
+              startOnTick: false,
+              endOnTick: false,
+              TickWidth:0,
+              gridLineWidth:0,
+              title: {
+                  text: ''
+              },
+              minPadding: 0.2,
+              maxPadding: 0.2
+          },{ // Primary yAxis
+            labels: {
+                y: 7,
+                enabled:false,
+                style: {
+                    color: Highcharts.getOptions().colors[3]
+                }
+            },
+            tickAmount: 4,
+            startOnTick: false,
+            endOnTick: false,
+            TickWidth:0,
+            gridLineWidth:0,
+            title: {
+                text: '',
+                style: {
+                    color: Highcharts.getOptions().colors[3]
+                }
+            },
+            opposite: true
+
+        }],
+          plotOptions: {
+            series: {
+              fillOpacity: 0,
+              zoneAxis: 'x',
+              lineWidth: 8,
+              marker: {
+                radius: 7
+              }
+            }
+          },
+          xAxis: {
+            type: 'linear',
+            allowDecimals: false,
+            tickPixelInterval:120,
+            title: {
+              text: '転科後日数'
+            },
+            labels: {
+              formatter: function() {
+                return this.value;
+              },
+              y:30
+            },
+            plotBands: [{
+              color: '#ddd', // Color value
+              className: '', // Style of the plot line. Default to solid
+              from: -0.5, // Value of where the line will appear
+              to: 0.5,
+              label:{
+                text: "<div class='gray-balloon'>GDH陽性</div>",
+                useHTML:true
+              }},{
+              color: '#ddd', // Color value
+              className: '', // Style of the plot line. Default to solid
+              from: 69.5, // Value of where the line will appear
+              to: 76.5,
+              label:{
+                text: "<div class='gray-balloon'>GDH・CD toxin陽性</div>",
+                useHTML:true
+              }},{
+              color: '#ddd', // Color value
+              className: '', // Style of the plot line. Default to solid
+              from: 122.5, // Value of where the line will appear
+              to: 129.5,
+              label:{
+                text: "<div class='gray-balloon'>MRSA陽性</div>",
+                useHTML:true
+              }},{
+              color: '#c3efff', // Color value
+              className: '', // Style of the plot line. Default to solid
+              from: 125.5, // Value of where the line will appear
+              to: 126.5,
+              label:{
+                text: "<div class='balloon'>CS</div>",
+                useHTML:true
+              }}
+            ]
+          }, 
+          series: data_source.concat(gantt_source_)
+      });
+      var counter = 0;
+      var series = myChart.series;
+      var reset =()=> _.each(series,(data)=>{
+          data.setVisible(false, false);
+          data.update({ showInLegend: false}, false);
+        }
+      );
+      var hide_chart = ()=>_.each(series,(data)=>{
+        if(data.name != "task"){
+          data.setVisible(false, false);
+          data.update({ showInLegend: false}, false);
+        }
+      });
+      var hide_task = ()=>_.each(series,(data)=>{
+        if(data.name == "task"){
+          data.setVisible(false, false);
+        }
+      });
+      var show_series=(list)=>{
+        list.map((i)=>{
+          series[i].show();
+          series[i].update({ showInLegend: true }, false);
+          }
+        )
+      }
+      var show_series_only=(list)=>{
+        hide_chart();
+        list.map((i)=>{
+          series[i].show();
+          series[i].update({ showInLegend: true }, false);
+          }
+        );
+        myChart.redraw();
+      }
+      var show_task_only=(list)=>{
+        hide_task();
+        list.map((i)=>{
+          series[series.length-i-1].show();
+          }
+        );
+        myChart.redraw();
+      }
+      Reveal.addEventListener( 'fragmentshown', function( event ) {
+        counter++;
+        render(counter);
+      });
+      Reveal.addEventListener( 'fragmenthidden', function( event ) {
+        counter--;
+        render(counter);
+      });
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+         counter = 0;
+         render(counter);
+      });
+      var render = (counter) =>{
+        switch(counter){
+          case 0:
+            show_series_only([24,25]);
+            break;
+          default: break; 
+        }
+      }
+      render(counter);
+    }); 
+
+section
   h2 臨床経過
   ul.list.list-unstyled(style="font-size:150%")
     li.gray ① 腎機能増悪と透析導入
@@ -1410,7 +1622,28 @@ section
               },
               minPadding: 0.2,
               maxPadding: 0.2
-          }],
+          },{ // Primary yAxis
+            labels: {
+                y: 7,
+                enabled:false,
+                style: {
+                    color: Highcharts.getOptions().colors[3]
+                }
+            },
+            tickAmount: 4,
+            startOnTick: false,
+            endOnTick: false,
+            TickWidth:0,
+            gridLineWidth:0,
+            title: {
+                text: '',
+                style: {
+                    color: Highcharts.getOptions().colors[3]
+                }
+            },
+            opposite: true
+
+        }],
           plotOptions: {
             series: {
               fillOpacity: 0,
@@ -1566,88 +1799,6 @@ section
       .blue(style="display:inline-block;")  ●
       | 推察  
   img.plain.stretch.img-rounded(src=src+'/CPC_flowchart_pre.png')
-  //- span.mermaid.
-  //-   graph TD;
-  //-     a1(HTN)
-  //-     a2(CHF)
-  //-     a3(Af)
-  //-     a4(OMI)
-  //-     a5(CKD/末期腎不全/透析)
-  //-     b1(易感染性)
-  //-     a6(肺炎/膿胸)
-  //-     a7(胸腔ドレナージ/気胸)
-  //-     a8(サイトメガロウイルス感染症)
-  //-     a10(抗菌薬関連性腸炎)
-  //-     a11(大腸多発潰瘍)
-  //-     a12(真菌感染症)
-  //-     a13(出血性十二指腸潰瘍)
-  //-     a14(右PCA領域脳梗塞)
-  //-     a15(多発同静脈血栓症)
-  //-     a16(両側視床出血)
-  //-     a17(貧血)
-  //-     a18(薬剤性間質性腎炎)
-  //-     a19(ADL低下)
-  //-     a20(下痢)
-
-  //-     s1(心機能低下)
-  //-     s2(肺塞栓)
-  //-     s3(循環血漿量低下)
-
-  //-     d1(炎症性腸疾患)
-  //-     c1(血圧低下)
-  //-     F(死亡)
-
-  //-     a1 --> a16
-  //-     a1 --> a5
-      
-  //-     a1 --> a4
-  //-     a1 --> a3
-  //-     a18-->  a5
-  //-     a2 --> a5
-  //-     a4 --> a2
-  //-     a3 --> a2
-      
-  //-     a5 --> b1
-  //-     a5 --> a17
-
-  //-     b1 --> a6
-  //-     b1 --> a8
-  //-     b1 --> a10
-  //-     b1 --> a12
-
-  //-     a3 --> a14
-  //-     a6 --> a7
-
-  //-     a3 --> a15
-  //-     a5 --> a15
-  //-     b1 --> a15
-
-  //-     a16 --> a19
-  //-     a19 --> a13
-  //-     a19 --> a6
-  //-     a13 --> a17
-
-  //-     a11 -.-> a20
-  //-     a10 -.-> a20
-  //-     a20 -.-> s3
-  //-     a17 -.-> s3
-  //-     a15 -.-> s2
-  //-     a2 -.-> s1
-  //-     a5 -.-> s3
-  //-     s1 -.-> c1
-  //-     s2 -.-> c1
-  //-     s3 -.-> c1
-  //-     c1 --> F
-
-  //-     d1==>a11
-  //-     d1==>a20
-  //-     d1==>a15
-      
-
-  //-     class F diag-f-Class;
-  //-     class s1,s2,s3,c1 diag-s-Class;
-  //-     class a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,b1 diag-a-Class;
-  //-     class d1 diag-d-Class;
 
   script.
     $(()=>{ 
@@ -2013,9 +2164,21 @@ section
               td VIPoma
             tr 
               td カルチノイド
+
+section
+  h2 2. 大腸多発潰瘍/慢性下痢の原因
+  ul
+    li 炎症性腸疾患(IBD)では腸管外合併症として尿路結石や閉塞性水腎症、間質性腎炎、糸球体腎炎を合併しやすいという報告がある
+      p.reference J Crohns Colitis. 2016 Feb;10(2):226-35. doi: 10.1093/ecco-jcc/jjv138. Epub 2015 Jul 29.
+    li 一方で、CKDや末期腎不全を背景としたIBDの発症については報告がない
+  ul
+    li 一般的に消化管ではMΦや樹状細胞によってTh17惹起される状態となっており、Tregによって抑制系が優位に働いている(免疫寛容)
+    li 腸管の感染症(特にセグメント細菌)にてTh17が誘導されやすいことが知られている。
+      p.reference Clostridium difficile infection and inflammatory bowel disease
+    li IBDは免疫寛容が崩れることが原因と言われている
+    li 今回はもともとIBDの素因があったところに感染及び薬剤性白血球減少により免疫寛容のバランスが崩れてしまったことで前景化したと考えた
+
    
-
-
 section
   h2 病理解剖で明らかにしたいこと
   ul.list-unstyled.list
@@ -2032,7 +2195,7 @@ section
       p: em 血栓素因検索(第124病日)
       table.table.table-condensed.table-striped
         tr
-          td ﾌﾟﾛﾃｲﾝC（活性）
+          td プロテインC
           td 46
           td %
         tr
@@ -2120,7 +2283,24 @@ section
               },
               minPadding: 0.2,
               maxPadding: 0.2
-          }],
+          },{ // Primary yAxis
+            labels: {
+                y: 7,
+                style: {
+                  color: Highcharts.getOptions().colors[4]
+                }
+            },
+            tickAmount: 4,
+            startOnTick: false,
+            endOnTick: false,
+            TickWidth:0,
+            gridLineWidth:0,
+            title: {
+                text: ''
+            },
+            opposite: true
+
+        }],
           plotOptions: {
             series: {
               fillOpacity: 0,
@@ -2238,8 +2418,8 @@ section
     li 末期腎不全においては、尿毒症の影響により凝固カスケード、血小板、及び血管壁の機能異常により、出血・血栓リスクが上がる。
     li 透析においてはESA製剤の使用や、透析膜の生体適合性も血栓リスクの増悪因子とされている。
       p.reference Semin Dial. 17(1):71; 2004
-    li 透析含めた末期腎不全患者においては、腎機能正常患者に比べ出血リスクは2.3倍、静脈塞栓は1.83 倍、脳梗塞は6.1 倍増加する。その他、網膜静脈塞栓リスクも3.1 倍増加するとされる。
-      p.reference Am J Kidney Dis. 58(5):746-755, 2011    Kidney Int. 64; 603-609, 2003
+    li 透析含めた末期腎不全患者においては、腎機能正常患者に比べ出血リスクは2.3倍、静脈塞栓は1.83 倍、脳梗塞は6.1 倍増加する。その他、肺塞栓症は2.02 倍増加するとされている。
+      p.reference Am J Kidney Dis. 58(5):746-755, 2011    Nephrol Dial Transplant. On line; Jul 22, 2016
     br
     li なお、透析患者におけるAf合併率は10-15%とされ、脳梗塞リスクは上昇するものの、PE合併に関してはアブレーション治療合併症が主体であり、極稀と考えられる。
       p.reference PLoS One. 12(1); 2017
@@ -2296,34 +2476,24 @@ section
   p: em 臨床経過
   ul.list
     li 第150病日頃より膿胸改善目的に透析による除水を増やした
-    li 同時期より透析中の血圧低下を認めるようになった
-    li 以降は適宜昇圧薬や輸血、アルブミンを投与しながら透析を行った
-    li 第193病日、透析中に突然の血圧低下
-    li 徐脈を伴っていたが、致死的な不整脈なし
-    li アトロピン・ボスミン投与も血圧上昇せず, VT→PEとなり死亡した
+    li 同時期より透析中の血圧がsBP 100 mmHg未満を頻回に推移するようになり、適宜昇圧剤、輸血、アルブミン製剤を使用して透析を継続した
+    li 第193病日、透析中に突然の血圧低下で測定不能となり、HR 40/min台の高度徐脈、呼吸停止となった
+    li アトロピン・ボスミン投与も血圧上昇せず, VT→PEAとなり死亡した
 section
   h2 5. 直接死因
-  .row
-    .col-xs-7
-      ul
-        li CK-MB 5 IU/Lと上昇なし
-          br
-          | → AMIは否定的だが、AfやCHF等による心機能低下の関与が考慮される
-        li 炎症反応は改善傾向であったが、第190病日の血培からMRSA2セット陽性
-          br
-          | → 敗血症の関与も考慮される
-        li 病理で右室の拡張や肝中心静脈の出血なし
-        li 左肺動脈に巨大な器質化塞栓あり、直接ショックに繋がった数日の経過で詰まったと思われた
-          br
-          | → 肺塞栓が直接の原因ではないが、
-        li: em 病理ではショックをきたすほどの出血の原因は見つからず、左肺動脈に巨大血栓を認めた
-    .col-xs-5.md-pl-10
-      p: em 鑑別
-      ul.list
-        li 循環血漿量低下(出血 etc)
-        li 心原性(急性心筋梗塞 etc)
-        li 閉塞性(肺塞栓 etc)
-        li 敗血症
+  ul
+    li CK-MB 5 IU/Lと上昇なし
+      br
+      | → AMIは否定的だが、AfやCHF等による心機能低下の関与が考慮される
+    li 炎症反応は改善傾向であったが、第190病日の血培からMRSA2セット陽性
+      br
+      | → 敗血症の関与も考慮される
+    li 病理で右室の拡張や肝中心静脈の出血なし
+    li 左肺動脈に巨大な器質化塞栓あり、数日の経過で閉塞したと想定された
+      br
+      | → 肺塞栓が直接の原因ではないが、大きな影響があったと思われる
+  p: em 心機能低下、敗血症、肺塞栓状態に、透析による除水が後押しとなり、循環動態が破綻して死亡に至ったと考えられた
+
 
 section
   h2 本症例のまとめ
@@ -2335,8 +2505,6 @@ section
 section
   h1 補足スライド
 
-section
-  h2 下肢の血栓予防はしていたか？
 
 section
   h2 質問表
@@ -2348,16 +2516,23 @@ section
   p sCrは増悪傾向であったが、WBCやCRPの増悪傾向はおさまっており、スペクトラムは
   p: em なぜsCrは改善していたのか
   p アルブミン投与し、補液も増やしていた
-  p: em 透析導入したのか
-  p 肺炎があり、溢水傾向であった
 section
   h2 質問表
+  p: em なぜ透析導入したのか
+  p 肺炎があり、溢水傾向であった
   p: em UCでなぜ下痢主体だったのか
   p 胃瘻から経管栄養を行っていた。
   p: em UCはいつから？何が要因？
   p 消化管感染症からUCを増悪させるという報告がある。もともとUCの素因があったのではないか。
   p: em 高Na, 低Kはいつから
   p 3年前の血液検査では電解質異常を指摘されていない
+  p: em 下肢の血栓予防はしていたか？
+  p 血栓指摘以後は弾性ストッキングを使用していた
+
+section
+  h2 質問表
+  p: em Afについて
+  p 入院時: CHADS2-VAScスコア 6点, HAS-BLED 5点
 section
   h2 質問表
   p: em 造影CTで同静脈血栓症を認めた際にどういう対応をしたか
@@ -2438,7 +2613,7 @@ section
       p
         em 通常の場合 <br>
         | 食物や常在細菌叢などに対しては<br>
-        | CD4+T細胞, 抑制系T細胞等により<br>
+        | Treg細胞等により<br>
         | 免疫反応が抑制(免疫寛容)
       p
         em 炎症性腸疾患の場合<br>
@@ -2452,6 +2627,9 @@ section
     br
     | Harrison's Principles of Internal Medicine, D.L.Kasper, A.S.Fauci, S.L.Hauser, et al
 
+section
+  h2 IBDと血栓
+  img.plain.img-rounded(src=src+'/IBD_coag.png'　)
 //- section
 //-   #container_(style="width:auto; height:650px;")
 //-   .invisible-counter.fg-3
@@ -2833,6 +3011,88 @@ section
 //-       render(counter);
 //-     }); 
 
+  //- span.mermaid.
+  //-   graph TD;
+  //-     a1(HTN)
+  //-     a2(CHF)
+  //-     a3(Af)
+  //-     a4(OMI)
+  //-     a5(CKD/末期腎不全/透析)
+  //-     b1(易感染性)
+  //-     a6(肺炎/膿胸)
+  //-     a7(胸腔ドレナージ/気胸)
+  //-     a8(サイトメガロウイルス感染症)
+  //-     a10(抗菌薬関連性腸炎)
+  //-     a11(大腸多発潰瘍)
+  //-     a12(真菌感染症)
+  //-     a13(出血性十二指腸潰瘍)
+  //-     a14(右PCA領域脳梗塞)
+  //-     a15(多発同静脈血栓症)
+  //-     a16(両側視床出血)
+  //-     a17(貧血)
+  //-     a18(薬剤性間質性腎炎)
+  //-     a19(ADL低下)
+  //-     a20(下痢)
+
+  //-     s1(心機能低下)
+  //-     s2(肺塞栓)
+  //-     s3(循環血漿量低下)
+
+  //-     d1(炎症性腸疾患)
+  //-     c1(血圧低下)
+  //-     F(死亡)
+
+  //-     a1 --> a16
+  //-     a1 --> a5
+      
+  //-     a1 --> a4
+  //-     a1 --> a3
+  //-     a18-->  a5
+  //-     a2 --> a5
+  //-     a4 --> a2
+  //-     a3 --> a2
+      
+  //-     a5 --> b1
+  //-     a5 --> a17
+
+  //-     b1 --> a6
+  //-     b1 --> a8
+  //-     b1 --> a10
+  //-     b1 --> a12
+
+  //-     a3 --> a14
+  //-     a6 --> a7
+
+  //-     a3 --> a15
+  //-     a5 --> a15
+  //-     b1 --> a15
+
+  //-     a16 --> a19
+  //-     a19 --> a13
+  //-     a19 --> a6
+  //-     a13 --> a17
+
+  //-     a11 -.-> a20
+  //-     a10 -.-> a20
+  //-     a20 -.-> s3
+  //-     a17 -.-> s3
+  //-     a15 -.-> s2
+  //-     a2 -.-> s1
+  //-     a5 -.-> s3
+  //-     s1 -.-> c1
+  //-     s2 -.-> c1
+  //-     s3 -.-> c1
+  //-     c1 --> F
+
+  //-     d1==>a11
+  //-     d1==>a20
+  //-     d1==>a15
+      
+
+  //-     class F diag-f-Class;
+  //-     class s1,s2,s3,c1 diag-s-Class;
+  //-     class a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,b1 diag-a-Class;
+  //-     class d1 diag-d-Class;
 
 
 script.
